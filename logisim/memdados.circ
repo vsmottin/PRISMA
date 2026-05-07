@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.16.1.4.jar" version="1.0">
+  This file is intended to be loaded by Logisim http://logisim.altervista.org
+
+  <lib desc="#Wiring" name="0">
+    <tool name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="32"/>
+      <a name="incoming" val="32"/>
+    </tool>
+    <tool name="Pin">
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="Probe">
+      <a name="radix" val="16"/>
+    </tool>
+    <tool name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="16"/>
+    </tool>
+    <tool name="Clock">
+      <a name="facing" val="north"/>
+    </tool>
+  </lib>
+  <lib desc="#Gates" name="1">
+    <tool name="AND Gate">
+      <a name="facing" val="north"/>
+    </tool>
+  </lib>
+  <lib desc="#Plexers" name="2">
+    <tool name="Multiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Demultiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+  </lib>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#Base" name="6">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="color" val="#000000"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <main name="datamem"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+  </options>
+  <mappings>
+    <tool lib="6" map="Button2" name="Poke Tool"/>
+    <tool lib="6" map="Button3" name="Menu Tool"/>
+    <tool lib="6" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="6" name="Poke Tool"/>
+    <tool lib="6" name="Edit Tool"/>
+    <tool lib="6" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="color" val="#000000"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin">
+      <a name="tristate" val="false"/>
+    </tool>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="labelloc" val="east"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="datamem">
+    <a name="circuit" val="datamem"/>
+    <a name="clabel" val="Mem. dados"/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="clabelcolor" val="#000000"/>
+    <appear>
+      <path d="M90,182 Q103,155 109,182" fill="none" stroke="#808080" stroke-width="2"/>
+      <rect fill="none" height="139" stroke="#000000" stroke-width="2" width="93" x="55" y="45"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="70" y="76">end.</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="64" y="144">ED</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="139" y="75">LD</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="100" y="60">MemWrite</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="79" y="169">MemRead</text>
+      <circ-port height="8" pin="110,750" width="8" x="56" y="76"/>
+      <circ-port height="8" pin="110,890" width="8" x="56" y="126"/>
+      <circ-port height="10" pin="1140,60" width="10" x="135" y="55"/>
+      <circ-port height="8" pin="600,920" width="8" x="86" y="46"/>
+      <circ-port height="8" pin="660,930" width="8" x="66" y="176"/>
+      <circ-port height="8" pin="640,890" width="8" x="96" y="176"/>
+      <circ-port height="8" pin="680,890" width="8" x="126" y="176"/>
+      <circ-anchor facing="east" height="6" width="6" x="137" y="57"/>
+    </appear>
+    <wire from="(820,100)" to="(820,140)"/>
+    <wire from="(600,110)" to="(760,110)"/>
+    <wire from="(680,150)" to="(840,150)"/>
+    <wire from="(510,60)" to="(730,60)"/>
+    <wire from="(660,140)" to="(820,140)"/>
+    <wire from="(760,100)" to="(760,110)"/>
+    <wire from="(800,100)" to="(800,130)"/>
+    <wire from="(640,130)" to="(800,130)"/>
+    <wire from="(210,80)" to="(730,80)"/>
+    <wire from="(840,100)" to="(840,150)"/>
+    <wire from="(110,750)" to="(150,750)"/>
+    <wire from="(600,110)" to="(600,920)"/>
+    <wire from="(640,130)" to="(640,890)"/>
+    <wire from="(660,140)" to="(660,930)"/>
+    <wire from="(680,150)" to="(680,890)"/>
+    <wire from="(150,740)" to="(150,750)"/>
+    <wire from="(210,80)" to="(210,890)"/>
+    <wire from="(110,890)" to="(210,890)"/>
+    <wire from="(190,410)" to="(510,410)"/>
+    <wire from="(510,60)" to="(510,410)"/>
+    <wire from="(870,60)" to="(1140,60)"/>
+    <comp lib="0" loc="(1140,60)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Dados lidos"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="0" loc="(110,890)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Escreve dado"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="0" loc="(600,920)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="MemWrite"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="0" loc="(660,930)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="MemRead"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="0" loc="(110,750)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Endereço"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="4" loc="(870,60)" name="RAM">
+      <a name="addrWidth" val="24"/>
+      <a name="dataWidth" val="32"/>
+      <a name="bus" val="separate"/>
+      <a name="Select" val="high"/>
+      <a name="simpleMode" val="false"/>
+    </comp>
+    <comp lib="0" loc="(150,740)" name="Splitter">
+      <a name="fanout" val="32"/>
+      <a name="incoming" val="32"/>
+    </comp>
+    <comp lib="0" loc="(190,410)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="24"/>
+      <a name="incoming" val="24"/>
+    </comp>
+    <comp lib="0" loc="(680,890)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="clear"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+    <comp lib="0" loc="(640,890)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="clk"/>
+      <a name="labelloc" val="south"/>
+    </comp>
+  </circuit>
+</project>
