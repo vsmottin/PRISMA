@@ -55,8 +55,8 @@
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <lib desc="file#/Users/pedrohenrique/Desktop/Sacrificio/memdados.circ" name="7"/>
-  <lib desc="file#/Users/pedrohenrique/Desktop/Sacrificio/meminstr.circ" name="8"/>
+  <lib desc="file#memdados.circ" name="7"/>
+  <lib desc="file#meminstr.circ" name="8"/>
   <main name="negativo"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
