@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project source="2.7.1" version="1.0">
-  This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
+<project source="4.1.0" version="1.0">
 
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
@@ -55,8 +54,6 @@
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <lib desc="file#memdados.circ" name="7"/>
-  <lib desc="file#meminstr.circ" name="8"/>
   <main name="zero"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
