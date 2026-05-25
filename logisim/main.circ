@@ -42,20 +42,20 @@
       <a name="font" val="SansSerif plain 12"/>
     </tool>
   </lib>
-  <lib desc="file#meminstr.circ" name="7"/>
-  <lib desc="file#negativo.circ" name="8"/>
+  <lib desc="file#negativo.circ" name="7"/>
+  <lib desc="file#bancoRegistradores.circ" name="8"/>
   <lib desc="file#ucULA.circ" name="9"/>
-  <lib desc="file#extensoresSinal.circ" name="10"/>
-  <lib desc="file#zero.circ" name="11"/>
-  <lib desc="file#conc.circ" name="12"/>
-  <lib desc="file#ucBranch.circ" name="13"/>
-  <lib desc="file#bancoRegistradores.circ" name="14"/>
+  <lib desc="file#memdados.circ" name="10"/>
+  <lib desc="file#extensoresSinal.circ" name="11"/>
+  <lib desc="file#contador.circ" name="12"/>
+  <lib desc="file#ula.circ" name="13"/>
+  <lib desc="file#ucBranch.circ" name="14"/>
   <lib desc="file#decodificador.circ" name="15"/>
-  <lib desc="file#memdados.circ" name="16"/>
-  <lib desc="file#ucPrincipal.circ" name="17"/>
-  <lib desc="file#ula.circ" name="18"/>
-  <lib desc="file#contador.circ" name="19"/>
-  <lib desc="file#ImmGen.circ" name="20"/>
+  <lib desc="file#conc.circ" name="16"/>
+  <lib desc="file#ImmGen.circ" name="17"/>
+  <lib desc="file#ucPrincipal.circ" name="18"/>
+  <lib desc="file#zero.circ" name="19"/>
+  <lib desc="file#meminstr.circ" name="20"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -88,9 +88,15 @@
     <a name="circuit" val="main"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="simulationFrequency" val="8.0"/>
+    <comp lib="0" loc="(1010,280)" name="Tunnel">
+      <a name="label" val="MemToReg"/>
+    </comp>
     <comp lib="0" loc="(1010,650)" name="Tunnel">
       <a name="facing" val="north"/>
       <a name="label" val="RegWrite"/>
+    </comp>
+    <comp lib="0" loc="(1020,320)" name="Tunnel">
+      <a name="label" val="MemWrite"/>
     </comp>
     <comp lib="0" loc="(1130,690)" name="Tunnel">
       <a name="facing" val="north"/>
@@ -251,7 +257,7 @@
     </comp>
     <comp lib="0" loc="(470,430)" name="Tunnel">
       <a name="facing" val="south"/>
-      <a name="label" val="PC_4_b16e401b"/>
+      <a name="label" val="PC_4"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(60,550)" name="Tunnel">
@@ -296,7 +302,7 @@
     </comp>
     <comp lib="0" loc="(820,600)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="PC_4_b16e401b"/>
+      <a name="label" val="PC_4"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(820,690)" name="Tunnel">
@@ -346,12 +352,6 @@
     <comp lib="0" loc="(990,240)" name="Tunnel">
       <a name="label" val="RegWrite"/>
     </comp>
-    <comp lib="0" loc="(990,280)" name="Tunnel">
-      <a name="label" val="MemToReg"/>
-    </comp>
-    <comp lib="0" loc="(990,320)" name="Tunnel">
-      <a name="label" val="MemWrite"/>
-    </comp>
     <comp lib="0" loc="(990,360)" name="Tunnel">
       <a name="label" val="Jalr"/>
     </comp>
@@ -377,13 +377,13 @@
       <a name="negate1" val="true"/>
       <a name="size" val="30"/>
     </comp>
-    <comp lib="13" loc="(760,720)" name="main"/>
-    <comp lib="14" loc="(1000,510)" name="bancoRegistradores"/>
+    <comp lib="10" loc="(1510,550)" name="datamem"/>
+    <comp lib="12" loc="(290,380)" name="contador"/>
+    <comp lib="13" loc="(1230,520)" name="ula"/>
+    <comp lib="14" loc="(760,720)" name="main"/>
     <comp lib="15" loc="(560,580)" name="decodificador"/>
-    <comp lib="16" loc="(1510,550)" name="datamem"/>
-    <comp lib="17" loc="(850,220)" name="ucPrincipal"/>
-    <comp lib="18" loc="(1230,520)" name="ula"/>
-    <comp lib="19" loc="(290,380)" name="contador"/>
+    <comp lib="17" loc="(660,920)" name="immGen"/>
+    <comp lib="18" loc="(850,220)" name="ucPrincipal"/>
     <comp lib="2" loc="(1150,640)" name="Multiplexer">
       <a name="width" val="32"/>
     </comp>
@@ -399,7 +399,7 @@
     <comp lib="2" loc="(900,590)" name="Multiplexer">
       <a name="width" val="32"/>
     </comp>
-    <comp lib="20" loc="(660,920)" name="immGen"/>
+    <comp lib="20" loc="(480,540)" name="MemInstr"/>
     <comp lib="3" loc="(140,540)" name="Adder">
       <a name="width" val="32"/>
     </comp>
@@ -423,7 +423,7 @@
     <comp lib="6" loc="(815,440)" name="Text">
       <a name="text" val="rd"/>
     </comp>
-    <comp lib="7" loc="(480,540)" name="MemInstr"/>
+    <comp lib="8" loc="(1000,510)" name="bancoRegistradores"/>
     <comp lib="9" loc="(920,800)" name="ucULA"/>
     <wire from="(1010,610)" to="(1010,650)"/>
     <wire from="(1070,500)" to="(1170,500)"/>
@@ -540,10 +540,10 @@
     <wire from="(880,340)" to="(920,340)"/>
     <wire from="(880,610)" to="(880,620)"/>
     <wire from="(890,240)" to="(990,240)"/>
-    <wire from="(890,320)" to="(990,320)"/>
+    <wire from="(890,320)" to="(1020,320)"/>
     <wire from="(90,530)" to="(100,530)"/>
     <wire from="(900,260)" to="(920,260)"/>
-    <wire from="(900,280)" to="(990,280)"/>
+    <wire from="(900,280)" to="(1010,280)"/>
     <wire from="(900,300)" to="(920,300)"/>
     <wire from="(900,590)" to="(930,590)"/>
     <wire from="(920,830)" to="(920,840)"/>
