@@ -79,10 +79,10 @@
       <text dominant-baseline="central" fill="#ff0000" font-family="Dialog" font-size="12" text-anchor="middle" x="21" y="12">end</text>
       <text dominant-baseline="central" fill="#ff0000" font-family="Dialog" font-size="12" text-anchor="middle" x="73" y="12">instr</text>
       <circ-anchor facing="east" x="90" y="10"/>
-      <circ-port dir="in" pin="220,420" x="10" y="10"/>
+      <circ-port dir="in" pin="220,410" x="10" y="10"/>
       <circ-port dir="out" pin="830,260" x="90" y="10"/>
     </appear>
-    <comp lib="0" loc="(220,420)" name="Pin">
+    <comp lib="0" loc="(220,410)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="PC_address"/>
       <a name="labelloc" val="east"/>
