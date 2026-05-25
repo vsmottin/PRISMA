@@ -105,7 +105,7 @@
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="116" y="134">rs2</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="118" y="164">rd</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="118" y="194">f3</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="118" y="224">f7</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="119" y="224">f7</text>
       <circ-port height="8" pin="150,380" width="8" x="6" y="136"/>
       <circ-port height="10" pin="320,250" width="10" x="125" y="65"/>
       <circ-port height="10" pin="320,310" width="10" x="125" y="155"/>
@@ -115,26 +115,26 @@
       <circ-port height="10" pin="320,500" width="10" x="125" y="215"/>
       <circ-anchor facing="east" height="6" width="6" x="57" y="177"/>
     </appear>
-    <wire from="(200,400)" to="(260,400)"/>
+    <wire from="(200,410)" to="(260,410)"/>
     <wire from="(200,380)" to="(260,380)"/>
     <wire from="(200,310)" to="(260,310)"/>
-    <wire from="(200,320)" to="(260,320)"/>
     <wire from="(200,290)" to="(260,290)"/>
+    <wire from="(200,270)" to="(260,270)"/>
+    <wire from="(200,280)" to="(260,280)"/>
     <wire from="(200,260)" to="(260,260)"/>
     <wire from="(200,250)" to="(260,250)"/>
     <wire from="(200,240)" to="(260,240)"/>
     <wire from="(200,230)" to="(260,230)"/>
     <wire from="(200,220)" to="(260,220)"/>
-    <wire from="(200,270)" to="(260,270)"/>
-    <wire from="(200,280)" to="(260,280)"/>
     <wire from="(200,300)" to="(260,300)"/>
-    <wire from="(200,350)" to="(260,350)"/>
-    <wire from="(200,340)" to="(260,340)"/>
+    <wire from="(200,320)" to="(260,320)"/>
     <wire from="(200,330)" to="(260,330)"/>
-    <wire from="(200,390)" to="(260,390)"/>
+    <wire from="(200,340)" to="(260,340)"/>
+    <wire from="(200,350)" to="(260,350)"/>
     <wire from="(200,370)" to="(260,370)"/>
     <wire from="(200,360)" to="(260,360)"/>
-    <wire from="(200,410)" to="(260,410)"/>
+    <wire from="(200,400)" to="(260,400)"/>
+    <wire from="(200,390)" to="(260,390)"/>
     <wire from="(200,420)" to="(260,420)"/>
     <wire from="(200,430)" to="(260,430)"/>
     <wire from="(200,440)" to="(260,440)"/>
@@ -154,43 +154,6 @@
     <wire from="(280,440)" to="(320,440)"/>
     <wire from="(280,500)" to="(320,500)"/>
     <wire from="(150,380)" to="(180,380)"/>
-    <comp lib="0" loc="(180,380)" name="Splitter">
-      <a name="fanout" val="32"/>
-      <a name="incoming" val="32"/>
-      <a name="appear" val="center"/>
-    </comp>
-    <comp lib="0" loc="(280,310)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="5"/>
-      <a name="incoming" val="5"/>
-      <a name="appear" val="center"/>
-    </comp>
-    <comp lib="0" loc="(320,500)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="7"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="funct7"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="0" loc="(280,390)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="5"/>
-      <a name="incoming" val="5"/>
-      <a name="appear" val="center"/>
-    </comp>
-    <comp lib="0" loc="(280,500)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="7"/>
-      <a name="incoming" val="7"/>
-      <a name="appear" val="center"/>
-    </comp>
-    <comp lib="0" loc="(150,380)" name="Pin">
-      <a name="width" val="32"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="instrução"/>
-      <a name="labelloc" val="south"/>
-    </comp>
     <comp lib="0" loc="(320,310)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -199,33 +162,29 @@
       <a name="label" val="rd"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="0" loc="(280,350)" name="Splitter">
+    <comp lib="0" loc="(280,500)" name="Splitter">
       <a name="facing" val="west"/>
-      <a name="fanout" val="3"/>
-      <a name="incoming" val="3"/>
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
       <a name="appear" val="center"/>
     </comp>
-    <comp lib="0" loc="(280,440)" name="Splitter">
+    <comp lib="0" loc="(280,250)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="0" loc="(280,310)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="5"/>
       <a name="incoming" val="5"/>
       <a name="appear" val="center"/>
     </comp>
-    <comp lib="0" loc="(320,350)" name="Pin">
+    <comp lib="0" loc="(280,350)" name="Splitter">
       <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="3"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="funct3"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="0" loc="(320,390)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="5"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="rs1"/>
-      <a name="labelloc" val="north"/>
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
+      <a name="appear" val="center"/>
     </comp>
     <comp lib="0" loc="(320,250)" name="Pin">
       <a name="facing" val="west"/>
@@ -235,6 +194,20 @@
       <a name="label" val="opcode"/>
       <a name="labelloc" val="north"/>
     </comp>
+    <comp lib="0" loc="(320,350)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="3"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="funct3"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(280,390)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="5"/>
+      <a name="incoming" val="5"/>
+      <a name="appear" val="center"/>
+    </comp>
     <comp lib="0" loc="(320,440)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -243,11 +216,38 @@
       <a name="label" val="rs2"/>
       <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="0" loc="(280,250)" name="Splitter">
+    <comp lib="0" loc="(320,500)" name="Pin">
       <a name="facing" val="west"/>
-      <a name="fanout" val="7"/>
-      <a name="incoming" val="7"/>
+      <a name="output" val="true"/>
+      <a name="width" val="7"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="funct7"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(280,440)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="5"/>
+      <a name="incoming" val="5"/>
       <a name="appear" val="center"/>
+    </comp>
+    <comp lib="0" loc="(180,380)" name="Splitter">
+      <a name="fanout" val="32"/>
+      <a name="incoming" val="32"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="0" loc="(320,390)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="rs1"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(150,380)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="instrução"/>
+      <a name="labelloc" val="south"/>
     </comp>
   </circuit>
 </project>
