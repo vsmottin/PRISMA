@@ -94,6 +94,7 @@
       <circ-port dir="out" pin="1300,640" x="250" y="40"/>
       <circ-port dir="out" pin="660,400" x="280" y="70"/>
       <circ-port dir="out" pin="670,640" x="270" y="50"/>
+      <circ-port dir="out" pin="770,640" x="210" y="50"/>
       <circ-port dir="out" pin="840,400" x="290" y="90"/>
       <circ-port dir="out" pin="850,640" x="230" y="40"/>
       <circ-port dir="out" pin="920,960" x="240" y="180"/>
@@ -333,6 +334,17 @@
       <a name="facing" val="south"/>
       <a name="label" val="Auipc"/>
     </comp>
+    <comp lib="0" loc="(770,620)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="Auipc"/>
+    </comp>
+    <comp lib="0" loc="(770,640)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="north"/>
+      <a name="label" val="Auipc_uc"/>
+      <a name="labelloc" val="south"/>
+      <a name="type" val="output"/>
+    </comp>
     <comp lib="0" loc="(770,780)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="label" val="Itype"/>
@@ -349,10 +361,6 @@
       <a name="facing" val="south"/>
       <a name="label" val="Jalr"/>
     </comp>
-    <comp lib="0" loc="(810,510)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="label" val="Auipc"/>
-    </comp>
     <comp lib="0" loc="(810,750)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="label" val="Load"/>
@@ -364,17 +372,16 @@
       <a name="labelloc" val="south"/>
       <a name="type" val="output"/>
     </comp>
-    <comp lib="0" loc="(850,630)" name="Splitter">
-      <a name="appear" val="center"/>
-      <a name="facing" val="north"/>
+    <comp lib="0" loc="(850,620)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="Lui"/>
     </comp>
     <comp lib="0" loc="(850,640)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
-      <a name="label" val="AluSrcA"/>
+      <a name="label" val="Lui_uc"/>
       <a name="labelloc" val="south"/>
       <a name="type" val="output"/>
-      <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(850,780)" name="Tunnel">
       <a name="facing" val="south"/>
@@ -383,10 +390,6 @@
     <comp lib="0" loc="(870,250)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="label" val="Load"/>
-    </comp>
-    <comp lib="0" loc="(870,510)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="label" val="Lui"/>
     </comp>
     <comp lib="0" loc="(880,290)" name="Tunnel">
       <a name="facing" val="south"/>
@@ -840,6 +843,7 @@
     <wire from="(720,810)" to="(720,860)"/>
     <wire from="(720,860)" to="(870,860)"/>
     <wire from="(730,310)" to="(730,320)"/>
+    <wire from="(770,620)" to="(770,640)"/>
     <wire from="(770,780)" to="(770,850)"/>
     <wire from="(770,850)" to="(880,850)"/>
     <wire from="(780,320)" to="(780,330)"/>
@@ -849,19 +853,14 @@
     <wire from="(810,250)" to="(810,260)"/>
     <wire from="(810,260)" to="(830,260)"/>
     <wire from="(810,330)" to="(810,340)"/>
-    <wire from="(810,510)" to="(810,600)"/>
-    <wire from="(810,600)" to="(840,600)"/>
     <wire from="(810,750)" to="(810,840)"/>
     <wire from="(810,840)" to="(890,840)"/>
     <wire from="(820,300)" to="(820,340)"/>
     <wire from="(830,260)" to="(830,340)"/>
     <wire from="(840,370)" to="(840,400)"/>
-    <wire from="(840,600)" to="(840,610)"/>
     <wire from="(850,260)" to="(850,340)"/>
     <wire from="(850,260)" to="(870,260)"/>
-    <wire from="(850,600)" to="(850,610)"/>
-    <wire from="(850,600)" to="(870,600)"/>
-    <wire from="(850,630)" to="(850,640)"/>
+    <wire from="(850,620)" to="(850,640)"/>
     <wire from="(850,780)" to="(850,830)"/>
     <wire from="(850,830)" to="(900,830)"/>
     <wire from="(860,300)" to="(860,340)"/>
@@ -869,7 +868,6 @@
     <wire from="(870,250)" to="(870,260)"/>
     <wire from="(870,330)" to="(870,340)"/>
     <wire from="(870,330)" to="(910,330)"/>
-    <wire from="(870,510)" to="(870,600)"/>
     <wire from="(870,860)" to="(870,870)"/>
     <wire from="(880,290)" to="(880,300)"/>
     <wire from="(880,850)" to="(880,870)"/>
