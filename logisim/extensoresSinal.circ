@@ -28,7 +28,7 @@
       <a name="facing" val="north"/>
     </tool>
     <tool name="Constant">
-      <a name="facing" val="west"/>
+      <a name="facing" val="south"/>
     </tool>
   </lib>
   <lib desc="#Gates" name="1">
@@ -136,6 +136,7 @@
     <wire from="(330,350)" to="(330,360)"/>
     <wire from="(330,360)" to="(330,370)"/>
     <wire from="(330,370)" to="(330,380)"/>
+    <wire from="(330,380)" to="(330,390)"/>
     <wire from="(350,220)" to="(400,220)"/>
     <wire from="(400,210)" to="(400,220)"/>
     <wire from="(400,220)" to="(450,220)"/>
@@ -144,6 +145,7 @@
     <a name="appearance" val="custom"/>
     <a name="circuit" val="extensorSinal_12"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="32.0"/>
     <appear>
       <ellipse cx="190" cy="170" fill="none" rx="39" ry="38" stroke="#000000"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="191" y="161">extensor</text>
@@ -230,6 +232,7 @@
     <a name="appearance" val="custom"/>
     <a name="circuit" val="extensorSinal_13"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="32.0"/>
     <appear>
       <ellipse cx="190" cy="170" fill="none" rx="39" ry="38" stroke="#000000"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="191" y="161">extensor</text>
@@ -316,6 +319,7 @@
     <a name="appearance" val="custom"/>
     <a name="circuit" val="extensorSinal_20"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="32.0"/>
     <appear>
       <ellipse cx="190" cy="170" fill="none" rx="39" ry="38" stroke="#000000"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="191" y="161">extensor</text>
@@ -336,10 +340,14 @@
       <a name="facing" val="south"/>
       <a name="radix" val="10signed"/>
     </comp>
-    <comp lib="0" loc="(260,220)" name="Splitter">
+    <comp lib="0" loc="(250,340)" name="Splitter">
       <a name="appear" val="right"/>
       <a name="fanout" val="20"/>
       <a name="incoming" val="20"/>
+    </comp>
+    <comp lib="0" loc="(330,210)" name="Constant">
+      <a name="facing" val="south"/>
+      <a name="value" val="0x0"/>
     </comp>
     <comp lib="0" loc="(350,220)" name="Splitter">
       <a name="facing" val="west"/>
@@ -361,39 +369,40 @@
     </comp>
     <wire from="(170,220)" to="(220,220)"/>
     <wire from="(220,200)" to="(220,220)"/>
-    <wire from="(220,220)" to="(260,220)"/>
-    <wire from="(280,230)" to="(330,230)"/>
-    <wire from="(280,240)" to="(330,240)"/>
-    <wire from="(280,250)" to="(330,250)"/>
-    <wire from="(280,260)" to="(330,260)"/>
-    <wire from="(280,270)" to="(330,270)"/>
-    <wire from="(280,280)" to="(330,280)"/>
-    <wire from="(280,290)" to="(330,290)"/>
-    <wire from="(280,300)" to="(330,300)"/>
-    <wire from="(280,310)" to="(330,310)"/>
-    <wire from="(280,320)" to="(330,320)"/>
-    <wire from="(280,330)" to="(330,330)"/>
-    <wire from="(280,340)" to="(330,340)"/>
-    <wire from="(280,350)" to="(330,350)"/>
-    <wire from="(280,360)" to="(330,360)"/>
-    <wire from="(280,370)" to="(330,370)"/>
-    <wire from="(280,380)" to="(330,380)"/>
-    <wire from="(280,390)" to="(330,390)"/>
-    <wire from="(280,400)" to="(330,400)"/>
-    <wire from="(280,410)" to="(330,410)"/>
-    <wire from="(280,420)" to="(330,420)"/>
-    <wire from="(330,420)" to="(330,430)"/>
-    <wire from="(330,430)" to="(330,440)"/>
-    <wire from="(330,440)" to="(330,450)"/>
-    <wire from="(330,450)" to="(330,460)"/>
-    <wire from="(330,460)" to="(330,470)"/>
-    <wire from="(330,470)" to="(330,480)"/>
-    <wire from="(330,480)" to="(330,490)"/>
-    <wire from="(330,490)" to="(330,500)"/>
-    <wire from="(330,500)" to="(330,510)"/>
-    <wire from="(330,510)" to="(330,520)"/>
-    <wire from="(330,520)" to="(330,530)"/>
-    <wire from="(330,530)" to="(330,540)"/>
+    <wire from="(220,220)" to="(250,220)"/>
+    <wire from="(250,220)" to="(250,340)"/>
+    <wire from="(270,350)" to="(330,350)"/>
+    <wire from="(270,360)" to="(330,360)"/>
+    <wire from="(270,370)" to="(330,370)"/>
+    <wire from="(270,380)" to="(330,380)"/>
+    <wire from="(270,390)" to="(330,390)"/>
+    <wire from="(270,400)" to="(330,400)"/>
+    <wire from="(270,410)" to="(330,410)"/>
+    <wire from="(270,420)" to="(330,420)"/>
+    <wire from="(270,430)" to="(330,430)"/>
+    <wire from="(270,440)" to="(330,440)"/>
+    <wire from="(270,450)" to="(330,450)"/>
+    <wire from="(270,460)" to="(330,460)"/>
+    <wire from="(270,470)" to="(330,470)"/>
+    <wire from="(270,480)" to="(330,480)"/>
+    <wire from="(270,490)" to="(330,490)"/>
+    <wire from="(270,500)" to="(330,500)"/>
+    <wire from="(270,510)" to="(330,510)"/>
+    <wire from="(270,520)" to="(330,520)"/>
+    <wire from="(270,530)" to="(330,530)"/>
+    <wire from="(270,540)" to="(330,540)"/>
+    <wire from="(330,210)" to="(330,230)"/>
+    <wire from="(330,230)" to="(330,240)"/>
+    <wire from="(330,240)" to="(330,250)"/>
+    <wire from="(330,250)" to="(330,260)"/>
+    <wire from="(330,260)" to="(330,270)"/>
+    <wire from="(330,270)" to="(330,280)"/>
+    <wire from="(330,280)" to="(330,290)"/>
+    <wire from="(330,290)" to="(330,300)"/>
+    <wire from="(330,300)" to="(330,310)"/>
+    <wire from="(330,310)" to="(330,320)"/>
+    <wire from="(330,320)" to="(330,330)"/>
+    <wire from="(330,330)" to="(330,340)"/>
     <wire from="(350,220)" to="(400,220)"/>
     <wire from="(400,210)" to="(400,220)"/>
     <wire from="(400,220)" to="(450,220)"/>
@@ -402,6 +411,7 @@
     <a name="appearance" val="custom"/>
     <a name="circuit" val="extensorSinal_21"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="32.0"/>
     <appear>
       <ellipse cx="190" cy="170" fill="none" rx="39" ry="38" stroke="#000000"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="191" y="161">extensor</text>

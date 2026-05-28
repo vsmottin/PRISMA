@@ -46,19 +46,19 @@
     </tool>
   </lib>
   <lib desc="file#meminstr.circ" name="7"/>
-  <lib desc="file#bancoRegistradores.circ" name="8"/>
-  <lib desc="file#extensoresSinal.circ" name="9"/>
-  <lib desc="file#ula.circ" name="10"/>
-  <lib desc="file#contador.circ" name="11"/>
-  <lib desc="file#ImmGen.circ" name="12"/>
-  <lib desc="file#zero.circ" name="13"/>
-  <lib desc="file#ucULA.circ" name="14"/>
-  <lib desc="file#negativo.circ" name="15"/>
-  <lib desc="file#memdados.circ" name="16"/>
-  <lib desc="file#ucPrincipal.circ" name="17"/>
-  <lib desc="file#ucBranch.circ" name="18"/>
-  <lib desc="file#decodificador.circ" name="19"/>
-  <lib desc="file#conc.circ" name="20"/>
+  <lib desc="file#zero.circ" name="8"/>
+  <lib desc="file#ucULA.circ" name="9"/>
+  <lib desc="file#contador.circ" name="10"/>
+  <lib desc="file#extensoresSinal.circ" name="11"/>
+  <lib desc="file#ula.circ" name="12"/>
+  <lib desc="file#ucBranch.circ" name="13"/>
+  <lib desc="file#negativo.circ" name="14"/>
+  <lib desc="file#ucPrincipal.circ" name="15"/>
+  <lib desc="file#conc.circ" name="16"/>
+  <lib desc="file#ImmGen.circ" name="17"/>
+  <lib desc="file#decodificador.circ" name="18"/>
+  <lib desc="file#memdados.circ" name="19"/>
+  <lib desc="file#bancoRegistradores.circ" name="20"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -90,7 +90,7 @@
   <circuit name="main">
     <a name="circuit" val="main"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <a name="simulationFrequency" val="32.0"/>
+    <a name="simulationFrequency" val="8.0"/>
     <comp lib="0" loc="(100,530)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="PC"/>
@@ -407,14 +407,13 @@
       <a name="negate1" val="true"/>
       <a name="size" val="30"/>
     </comp>
-    <comp lib="10" loc="(1380,520)" name="ula"/>
-    <comp lib="11" loc="(350,380)" name="contador"/>
-    <comp lib="12" loc="(720,920)" name="immGen"/>
-    <comp lib="14" loc="(980,800)" name="ucULA"/>
-    <comp lib="16" loc="(1660,550)" name="datamem"/>
-    <comp lib="17" loc="(910,220)" name="ucPrincipal"/>
-    <comp lib="18" loc="(820,720)" name="main"/>
-    <comp lib="19" loc="(620,580)" name="decodificador"/>
+    <comp lib="10" loc="(350,380)" name="contador"/>
+    <comp lib="12" loc="(1380,520)" name="ula"/>
+    <comp lib="13" loc="(820,720)" name="main"/>
+    <comp lib="15" loc="(910,220)" name="ucPrincipal"/>
+    <comp lib="17" loc="(720,920)" name="immGen"/>
+    <comp lib="18" loc="(620,580)" name="decodificador"/>
+    <comp lib="19" loc="(1660,550)" name="datamem"/>
     <comp lib="2" loc="(1230,490)" name="Multiplexer">
       <a name="width" val="32"/>
     </comp>
@@ -436,6 +435,7 @@
     <comp lib="2" loc="(960,590)" name="Multiplexer">
       <a name="width" val="32"/>
     </comp>
+    <comp lib="20" loc="(1060,510)" name="bancoRegistradores"/>
     <comp lib="3" loc="(150,540)" name="Adder">
       <a name="width" val="32"/>
     </comp>
@@ -463,7 +463,7 @@
       <a name="font" val="Dialog plain 10"/>
       <a name="text" val="TypeB_Jal"/>
     </comp>
-    <comp lib="6" loc="(267,572)" name="Text">
+    <comp lib="6" loc="(265,570)" name="Text">
       <a name="font" val="Dialog plain 10"/>
       <a name="text" val="rs1_Imm"/>
     </comp>
@@ -484,7 +484,7 @@
       <a name="text" val="Mux jump"/>
     </comp>
     <comp lib="7" loc="(540,540)" name="MemInstr"/>
-    <comp lib="8" loc="(1060,510)" name="bancoRegistradores"/>
+    <comp lib="9" loc="(980,800)" name="ucULA"/>
     <wire from="(100,530)" to="(110,530)"/>
     <wire from="(1020,770)" to="(1360,770)"/>
     <wire from="(1050,610)" to="(1050,620)"/>
