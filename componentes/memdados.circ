@@ -80,19 +80,17 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="simulationFrequency" val="32.0"/>
     <appear>
-      <path d="M90,182 Q103,155 109,182" fill="none" stroke="#808080" stroke-width="2"/>
-      <rect fill="none" height="139" stroke="#000000" stroke-width="2" width="93" x="55" y="45"/>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="70" y="76">end.</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="64" y="144">ED</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="139" y="75">LD</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="100" y="60">MemWrite</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="79" y="169">MemRead</text>
-      <circ-anchor facing="east" x="140" y="60"/>
-      <circ-port dir="in" pin="330,360" x="60" y="80"/>
-      <circ-port dir="in" pin="760,110" x="100" y="180"/>
-      <circ-port dir="in" pin="760,180" x="60" y="130"/>
-      <circ-port dir="in" pin="760,50" x="90" y="50"/>
-      <circ-port dir="out" pin="1140,60" x="140" y="60"/>
+      <rect fill="none" height="120" stroke="#000000" stroke-width="2" width="99" x="50" y="50"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="67" y="89">end.</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="62" y="130">ED</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="137" y="111">LD</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="98" y="59">MemWrite</text>
+      <circ-anchor facing="east" x="100" y="160"/>
+      <circ-port dir="in" pin="330,360" x="50" y="90"/>
+      <circ-port dir="in" pin="760,110" x="100" y="170"/>
+      <circ-port dir="in" pin="760,180" x="50" y="130"/>
+      <circ-port dir="in" pin="760,50" x="100" y="50"/>
+      <circ-port dir="out" pin="1140,60" x="150" y="110"/>
     </appear>
     <comp lib="0" loc="(1140,60)" name="Pin">
       <a name="appearance" val="classic"/>

@@ -46,8 +46,8 @@
     </tool>
   </lib>
   <lib desc="file#overflow.circ" name="7"/>
-  <lib desc="file#zero.circ" name="8"/>
-  <lib desc="file#negativo.circ" name="9"/>
+  <lib desc="file#negativo.circ" name="8"/>
+  <lib desc="file#zero.circ" name="9"/>
   <main name="ULA"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -305,8 +305,8 @@
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Unsigned"/>
     </comp>
-    <comp lib="8" loc="(560,270)" name="zero"/>
-    <comp lib="9" loc="(610,280)" name="negativo"/>
+    <comp lib="8" loc="(610,280)" name="negativo"/>
+    <comp lib="9" loc="(560,270)" name="zero"/>
     <wire from="(190,190)" to="(190,220)"/>
     <wire from="(190,220)" to="(190,260)"/>
     <wire from="(190,220)" to="(200,220)"/>

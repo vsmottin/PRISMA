@@ -27,6 +27,9 @@
       <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </tool>
+    <tool name="Constant">
+      <a name="facing" val="south"/>
+    </tool>
   </lib>
   <lib desc="#Gates" name="1"/>
   <lib desc="#Plexers" name="2"/>
@@ -71,16 +74,15 @@
     <a name="clabelfont" val="Dialog plain 12"/>
     <a name="simulationFrequency" val="8.0"/>
     <appear>
-      <rect fill="#ffffff" height="70" rx="5" ry="5" stroke="#000000" stroke-width="2" width="80" x="10" y="0"/>
-      <path d="M40,0 Q44,9 48,0" fill="none" stroke="#808080" stroke-width="2"/>
-      <text dominant-baseline="central" font-family="Dialog" font-size="12" text-anchor="middle" x="46" y="42">Memória</text>
-      <text dominant-baseline="central" font-family="Dialog" font-size="12" text-anchor="middle" x="47" y="52">de</text>
-      <text dominant-baseline="central" font-family="Dialog" font-size="12" text-anchor="middle" x="51" y="62">instruções</text>
-      <text dominant-baseline="central" fill="#ff0000" font-family="Dialog" font-size="12" text-anchor="middle" x="21" y="12">end</text>
-      <text dominant-baseline="central" fill="#ff0000" font-family="Dialog" font-size="12" text-anchor="middle" x="73" y="12">instr</text>
-      <circ-anchor facing="east" x="90" y="10"/>
-      <circ-port dir="in" pin="180,410" x="10" y="10"/>
-      <circ-port dir="out" pin="730,350" x="90" y="10"/>
+      <rect fill="#ffffff" height="70" rx="5" ry="5" stroke="#000000" stroke-width="2" width="80" x="40" y="50"/>
+      <text dominant-baseline="central" font-family="Dialog" font-size="12" text-anchor="middle" x="81" y="80">Memória</text>
+      <text dominant-baseline="central" font-family="Dialog" font-size="12" text-anchor="middle" x="81" y="93">de</text>
+      <text dominant-baseline="central" font-family="Dialog" font-size="12" text-anchor="middle" x="79" y="104">instruções</text>
+      <text dominant-baseline="central" font-family="Dialog" font-size="12" text-anchor="middle" x="56" y="59">end</text>
+      <text dominant-baseline="central" font-family="Dialog" font-size="12" text-anchor="middle" x="101" y="59">instr</text>
+      <circ-anchor facing="east" x="70" y="60"/>
+      <circ-port dir="in" pin="180,410" x="40" y="60"/>
+      <circ-port dir="out" pin="730,350" x="120" y="60"/>
     </appear>
     <comp lib="0" loc="(180,410)" name="Pin">
       <a name="appearance" val="classic"/>
