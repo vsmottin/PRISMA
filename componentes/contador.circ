@@ -9,9 +9,11 @@
       <a name="incoming" val="32"/>
     </tool>
     <tool name="Pin">
+      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </tool>
     <tool name="Probe">
+      <a name="appearance" val="classic"/>
       <a name="radix" val="16"/>
     </tool>
     <tool name="Tunnel">
@@ -22,6 +24,7 @@
       <a name="facing" val="north"/>
     </tool>
     <tool name="Clock">
+      <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </tool>
   </lib>
@@ -30,29 +33,13 @@
       <a name="facing" val="north"/>
     </tool>
   </lib>
-  <lib desc="#Plexers" name="2">
-    <tool name="Multiplexer">
-      <a name="enable" val="false"/>
-    </tool>
-    <tool name="Demultiplexer">
-      <a name="enable" val="false"/>
-    </tool>
-  </lib>
+  <lib desc="#Plexers" name="2"/>
   <lib desc="#Arithmetic" name="3"/>
-  <lib desc="#Memory" name="4">
-    <tool name="ROM">
-      <a name="contents">addr/data: 8 8
-0
-</a>
-    </tool>
-  </lib>
+  <lib desc="#Memory" name="4"/>
   <lib desc="#I/O" name="5"/>
   <lib desc="#Base" name="6">
     <tool name="Text Tool">
-      <a name="text" val=""/>
       <a name="font" val="SansSerif plain 12"/>
-      <a name="halign" val="center"/>
-      <a name="valign" val="base"/>
     </tool>
   </lib>
   <main name="contador"/>
@@ -70,68 +57,64 @@
     <tool lib="6" name="Poke Tool"/>
     <tool lib="6" name="Edit Tool"/>
     <tool lib="6" name="Text Tool">
-      <a name="text" val=""/>
       <a name="font" val="SansSerif plain 12"/>
-      <a name="halign" val="center"/>
-      <a name="valign" val="base"/>
     </tool>
     <sep/>
-    <tool lib="0" name="Pin">
-      <a name="tristate" val="false"/>
-    </tool>
+    <tool lib="0" name="Pin"/>
     <tool lib="0" name="Pin">
       <a name="facing" val="west"/>
-      <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
+      <a name="type" val="output"/>
     </tool>
     <tool lib="1" name="NOT Gate"/>
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
   <circuit name="contador">
+    <a name="appearance" val="custom"/>
     <a name="circuit" val="contador"/>
-    <a name="clabel" val=""/>
-    <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <a name="simulationFrequency" val="32.0"/>
     <appear>
       <rect fill="none" height="54" stroke="#000000" stroke-width="2" width="99" x="61" y="55"/>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="109" y="51">Contador de ciclos</text>
-      <circ-port height="8" pin="310,380" width="8" x="56" y="76"/>
-      <circ-port height="10" pin="420,340" width="10" x="155" y="75"/>
-      <circ-anchor facing="east" height="6" width="6" x="107" y="97"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="109" y="44">Contador de ciclos</text>
+      <circ-anchor facing="east" x="110" y="100"/>
+      <circ-port dir="in" pin="300,380" x="60" y="80"/>
+      <circ-port dir="out" pin="590,340" x="160" y="80"/>
     </appear>
-    <wire from="(310,380)" to="(340,380)"/>
-    <wire from="(380,340)" to="(400,340)"/>
-    <wire from="(340,380)" to="(360,380)"/>
-    <wire from="(400,340)" to="(420,340)"/>
-    <wire from="(260,310)" to="(260,330)"/>
-    <wire from="(260,310)" to="(400,310)"/>
-    <wire from="(360,360)" to="(360,380)"/>
-    <wire from="(260,330)" to="(270,330)"/>
-    <wire from="(260,350)" to="(270,350)"/>
-    <wire from="(340,350)" to="(350,350)"/>
-    <wire from="(400,310)" to="(400,340)"/>
-    <wire from="(340,350)" to="(340,380)"/>
-    <wire from="(310,340)" to="(350,340)"/>
-    <comp lib="0" loc="(310,380)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Clock"/>
-    </comp>
-    <comp lib="0" loc="(420,340)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="label" val="Contador"/>
-      <a name="labelloc" val="north"/>
-    </comp>
     <comp lib="0" loc="(260,350)" name="Constant">
       <a name="width" val="32"/>
     </comp>
-    <comp lib="4" loc="(380,340)" name="Register">
+    <comp lib="0" loc="(300,380)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="0" loc="(590,340)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Contador"/>
+      <a name="labelloc" val="north"/>
+      <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="3" loc="(310,340)" name="Adder">
       <a name="width" val="32"/>
     </comp>
+    <comp lib="4" loc="(400,310)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="width" val="32"/>
+    </comp>
+    <wire from="(260,290)" to="(260,330)"/>
+    <wire from="(260,290)" to="(520,290)"/>
+    <wire from="(260,330)" to="(270,330)"/>
+    <wire from="(260,350)" to="(270,350)"/>
+    <wire from="(300,380)" to="(370,380)"/>
+    <wire from="(310,340)" to="(400,340)"/>
+    <wire from="(370,360)" to="(370,380)"/>
+    <wire from="(370,360)" to="(400,360)"/>
+    <wire from="(370,380)" to="(400,380)"/>
+    <wire from="(460,340)" to="(520,340)"/>
+    <wire from="(520,290)" to="(520,340)"/>
+    <wire from="(520,340)" to="(590,340)"/>
   </circuit>
 </project>

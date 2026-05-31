@@ -88,12 +88,10 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="100" y="60">MemWrite</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="79" y="169">MemRead</text>
       <circ-anchor facing="east" x="140" y="60"/>
-      <circ-port dir="in" pin="190,890" x="60" y="130"/>
-      <circ-port dir="in" pin="400,750" x="60" y="80"/>
-      <circ-port dir="in" pin="600,920" x="90" y="50"/>
-      <circ-port dir="in" pin="640,890" x="100" y="180"/>
-      <circ-port dir="in" pin="660,930" x="70" y="180"/>
-      <circ-port dir="in" pin="680,890" x="130" y="180"/>
+      <circ-port dir="in" pin="330,360" x="60" y="80"/>
+      <circ-port dir="in" pin="760,110" x="100" y="180"/>
+      <circ-port dir="in" pin="760,180" x="60" y="130"/>
+      <circ-port dir="in" pin="760,50" x="90" y="50"/>
       <circ-port dir="out" pin="1140,60" x="140" y="60"/>
     </appear>
     <comp lib="0" loc="(1140,60)" name="Pin">
@@ -104,50 +102,40 @@
       <a name="type" val="output"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(190,890)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="Escreve_dado"/>
-      <a name="labelloc" val="south"/>
-      <a name="width" val="32"/>
-    </comp>
-    <comp lib="0" loc="(400,750)" name="Pin">
+    <comp lib="0" loc="(330,360)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="Endereco"/>
       <a name="labelloc" val="north"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(440,740)" name="Splitter">
+    <comp lib="0" loc="(370,360)" name="Splitter">
       <a name="fanout" val="32"/>
       <a name="incoming" val="32"/>
     </comp>
-    <comp lib="0" loc="(480,410)" name="Splitter">
+    <comp lib="0" loc="(410,30)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="24"/>
       <a name="incoming" val="24"/>
     </comp>
-    <comp lib="0" loc="(600,920)" name="Pin">
+    <comp lib="0" loc="(720,80)" name="Constant"/>
+    <comp lib="0" loc="(760,110)" name="Pin">
       <a name="appearance" val="classic"/>
-      <a name="facing" val="north"/>
-      <a name="label" val="MemWrite"/>
-      <a name="labelloc" val="south"/>
-    </comp>
-    <comp lib="0" loc="(640,890)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="facing" val="north"/>
       <a name="label" val="clk"/>
       <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="0" loc="(660,930)" name="Pin">
+    <comp lib="0" loc="(760,180)" name="Pin">
       <a name="appearance" val="classic"/>
-      <a name="facing" val="north"/>
-      <a name="label" val="MemRead"/>
+      <a name="label" val="Escreve_dado"/>
+      <a name="labelloc" val="south"/>
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(760,50)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="MemWrite"/>
       <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="0" loc="(680,890)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="facing" val="north"/>
-      <a name="label" val="clear"/>
-      <a name="labelloc" val="south"/>
+    <comp lib="1" loc="(830,90)" name="NOT Gate">
+      <a name="size" val="20"/>
     </comp>
     <comp lib="4" loc="(850,20)" name="RAM">
       <a name="addrWidth" val="24"/>
@@ -158,20 +146,18 @@
     <wire from="(1090,110)" to="(1100,110)"/>
     <wire from="(1100,60)" to="(1100,110)"/>
     <wire from="(1100,60)" to="(1140,60)"/>
-    <wire from="(190,890)" to="(210,890)"/>
-    <wire from="(210,110)" to="(210,890)"/>
-    <wire from="(210,110)" to="(850,110)"/>
-    <wire from="(400,750)" to="(440,750)"/>
-    <wire from="(440,740)" to="(440,750)"/>
-    <wire from="(480,410)" to="(510,410)"/>
-    <wire from="(510,30)" to="(510,410)"/>
-    <wire from="(510,30)" to="(850,30)"/>
-    <wire from="(600,70)" to="(600,920)"/>
-    <wire from="(600,70)" to="(850,70)"/>
-    <wire from="(640,90)" to="(640,890)"/>
-    <wire from="(640,90)" to="(850,90)"/>
-    <wire from="(660,80)" to="(660,930)"/>
-    <wire from="(660,80)" to="(850,80)"/>
-    <wire from="(680,150)" to="(680,890)"/>
+    <wire from="(330,360)" to="(370,360)"/>
+    <wire from="(410,30)" to="(850,30)"/>
+    <wire from="(720,80)" to="(850,80)"/>
+    <wire from="(760,110)" to="(770,110)"/>
+    <wire from="(760,180)" to="(790,180)"/>
+    <wire from="(760,50)" to="(770,50)"/>
+    <wire from="(770,50)" to="(770,70)"/>
+    <wire from="(770,70)" to="(850,70)"/>
+    <wire from="(770,90)" to="(770,110)"/>
+    <wire from="(770,90)" to="(810,90)"/>
+    <wire from="(790,110)" to="(790,180)"/>
+    <wire from="(790,110)" to="(850,110)"/>
+    <wire from="(830,90)" to="(850,90)"/>
   </circuit>
 </project>
