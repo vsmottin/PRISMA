@@ -17,6 +17,7 @@
       <a name="radix" val="16"/>
     </tool>
     <tool name="Tunnel">
+      <a name="facing" val="north"/>
       <a name="width" val="16"/>
     </tool>
     <tool name="Pull Resistor">
@@ -27,7 +28,7 @@
       <a name="facing" val="north"/>
     </tool>
     <tool name="Constant">
-      <a name="facing" val="south"/>
+      <a name="facing" val="west"/>
     </tool>
   </lib>
   <lib desc="#Gates" name="1">
@@ -44,21 +45,21 @@
       <a name="font" val="SansSerif plain 12"/>
     </tool>
   </lib>
-  <lib desc="file#bancoRegistradores.circ" name="7"/>
-  <lib desc="file#ula.circ" name="8"/>
-  <lib desc="file#ucBranch.circ" name="9"/>
-  <lib desc="file#ImmGen.circ" name="10"/>
-  <lib desc="file#conc.circ" name="11"/>
-  <lib desc="file#ucULA.circ" name="12"/>
-  <lib desc="file#meminstr.circ" name="13"/>
-  <lib desc="file#controleEnderecamento.circ" name="14"/>
-  <lib desc="file#ucPrincipal.circ" name="15"/>
-  <lib desc="file#extensoresSinal.circ" name="16"/>
-  <lib desc="file#negativo.circ" name="17"/>
-  <lib desc="file#memdados.circ" name="18"/>
-  <lib desc="file#zero.circ" name="19"/>
-  <lib desc="file#decodificador.circ" name="20"/>
-  <lib desc="file#contador.circ" name="21"/>
+  <lib desc="file#zero.circ" name="7"/>
+  <lib desc="file#extensoresSinal.circ" name="8"/>
+  <lib desc="file#negativo.circ" name="9"/>
+  <lib desc="file#ucPrincipal.circ" name="10"/>
+  <lib desc="file#ImmGen.circ" name="11"/>
+  <lib desc="file#contador.circ" name="12"/>
+  <lib desc="file#decodificador.circ" name="13"/>
+  <lib desc="file#ucULA.circ" name="14"/>
+  <lib desc="file#bancoRegistradores.circ" name="15"/>
+  <lib desc="file#memdados.circ" name="16"/>
+  <lib desc="file#controleEnderecamento.circ" name="17"/>
+  <lib desc="file#ula.circ" name="18"/>
+  <lib desc="file#conc.circ" name="19"/>
+  <lib desc="file#meminstr.circ" name="20"/>
+  <lib desc="file#ucBranch.circ" name="21"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -428,12 +429,15 @@
       <a name="negate1" val="true"/>
       <a name="size" val="30"/>
     </comp>
-    <comp lib="10" loc="(720,920)" name="immGen"/>
-    <comp lib="12" loc="(980,800)" name="ucULA"/>
-    <comp lib="13" loc="(540,540)" name="MemInstr"/>
-    <comp lib="14" loc="(1080,960)" name="ucEnderecamento"/>
-    <comp lib="15" loc="(910,220)" name="ucPrincipal"/>
-    <comp lib="18" loc="(1660,540)" name="datamem"/>
+    <comp lib="10" loc="(910,220)" name="ucPrincipal"/>
+    <comp lib="11" loc="(720,920)" name="immGen"/>
+    <comp lib="12" loc="(350,380)" name="contador"/>
+    <comp lib="13" loc="(620,580)" name="decodificador"/>
+    <comp lib="14" loc="(980,800)" name="ucULA"/>
+    <comp lib="15" loc="(1060,510)" name="bancoRegistradores"/>
+    <comp lib="16" loc="(1660,540)" name="datamem"/>
+    <comp lib="17" loc="(1080,960)" name="ucEnderecamento"/>
+    <comp lib="18" loc="(1380,520)" name="ula"/>
     <comp lib="2" loc="(1230,490)" name="Multiplexer">
       <a name="width" val="32"/>
     </comp>
@@ -455,8 +459,8 @@
     <comp lib="2" loc="(960,590)" name="Multiplexer">
       <a name="width" val="32"/>
     </comp>
-    <comp lib="20" loc="(620,580)" name="decodificador"/>
-    <comp lib="21" loc="(350,380)" name="contador"/>
+    <comp lib="20" loc="(540,540)" name="MemInstr"/>
+    <comp lib="21" loc="(820,720)" name="main"/>
     <comp lib="3" loc="(150,540)" name="Adder">
       <a name="width" val="32"/>
     </comp>
@@ -504,9 +508,6 @@
       <a name="font" val="Dialog plain 12"/>
       <a name="text" val="Mux jump"/>
     </comp>
-    <comp lib="7" loc="(1060,510)" name="bancoRegistradores"/>
-    <comp lib="8" loc="(1380,520)" name="ula"/>
-    <comp lib="9" loc="(820,720)" name="main"/>
     <wire from="(100,530)" to="(110,530)"/>
     <wire from="(1020,770)" to="(1360,770)"/>
     <wire from="(1050,610)" to="(1050,620)"/>
