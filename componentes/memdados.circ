@@ -132,14 +132,11 @@
       <a name="label" val="MemWrite"/>
       <a name="labelloc" val="south"/>
     </comp>
-    <comp lib="1" loc="(830,90)" name="NOT Gate">
-      <a name="size" val="20"/>
-    </comp>
     <comp lib="4" loc="(850,20)" name="RAM">
       <a name="addrWidth" val="24"/>
       <a name="appearance" val="logisim_evolution"/>
+      <a name="asyncread" val="true"/>
       <a name="dataWidth" val="32"/>
-      <a name="trigger" val="falling"/>
     </comp>
     <wire from="(1090,110)" to="(1100,110)"/>
     <wire from="(1100,60)" to="(1100,110)"/>
@@ -153,9 +150,8 @@
     <wire from="(770,50)" to="(770,70)"/>
     <wire from="(770,70)" to="(850,70)"/>
     <wire from="(770,90)" to="(770,110)"/>
-    <wire from="(770,90)" to="(810,90)"/>
+    <wire from="(770,90)" to="(850,90)"/>
     <wire from="(790,110)" to="(790,180)"/>
     <wire from="(790,110)" to="(850,110)"/>
-    <wire from="(830,90)" to="(850,90)"/>
   </circuit>
 </project>

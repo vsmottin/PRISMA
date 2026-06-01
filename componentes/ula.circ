@@ -28,7 +28,7 @@
       <a name="facing" val="north"/>
     </tool>
     <tool name="Constant">
-      <a name="facing" val="west"/>
+      <a name="facing" val="south"/>
     </tool>
   </lib>
   <lib desc="#Gates" name="1">
@@ -45,9 +45,9 @@
       <a name="font" val="SansSerif plain 12"/>
     </tool>
   </lib>
-  <lib desc="file#overflow.circ" name="7"/>
-  <lib desc="file#negativo.circ" name="8"/>
-  <lib desc="file#zero.circ" name="9"/>
+  <lib desc="file#zero.circ" name="7"/>
+  <lib desc="file#overflow.circ" name="8"/>
+  <lib desc="file#negativo.circ" name="9"/>
   <main name="ULA"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -149,10 +149,12 @@
     <comp lib="0" loc="(330,450)" name="Bit Extender">
       <a name="in_width" val="1"/>
       <a name="out_width" val="32"/>
+      <a name="type" val="zero"/>
     </comp>
     <comp lib="0" loc="(330,750)" name="Bit Extender">
       <a name="in_width" val="1"/>
       <a name="out_width" val="32"/>
+      <a name="type" val="zero"/>
     </comp>
     <comp lib="0" loc="(330,870)" name="Bit Extender">
       <a name="in_width" val="1"/>
@@ -305,8 +307,16 @@
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Unsigned"/>
     </comp>
-    <comp lib="8" loc="(610,280)" name="negativo"/>
-    <comp lib="9" loc="(560,270)" name="zero"/>
+    <comp lib="6" loc="(471,869)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="Não usada"/>
+    </comp>
+    <comp lib="6" loc="(472,754)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="Não usada"/>
+    </comp>
+    <comp lib="7" loc="(560,270)" name="zero"/>
+    <comp lib="9" loc="(610,280)" name="negativo"/>
     <wire from="(190,190)" to="(190,220)"/>
     <wire from="(190,220)" to="(190,260)"/>
     <wire from="(190,220)" to="(200,220)"/>
@@ -330,7 +340,7 @@
     <wire from="(270,460)" to="(280,460)"/>
     <wire from="(270,740)" to="(280,740)"/>
     <wire from="(270,820)" to="(310,820)"/>
-    <wire from="(270,880)" to="(280,880)"/>
+    <wire from="(270,860)" to="(280,860)"/>
     <wire from="(280,120)" to="(290,120)"/>
     <wire from="(280,170)" to="(290,170)"/>
     <wire from="(280,450)" to="(280,460)"/>
@@ -340,7 +350,7 @@
     <wire from="(280,700)" to="(290,700)"/>
     <wire from="(280,740)" to="(280,750)"/>
     <wire from="(280,750)" to="(290,750)"/>
-    <wire from="(280,870)" to="(280,880)"/>
+    <wire from="(280,860)" to="(280,870)"/>
     <wire from="(280,870)" to="(290,870)"/>
     <wire from="(310,810)" to="(310,820)"/>
     <wire from="(310,820)" to="(330,820)"/>
