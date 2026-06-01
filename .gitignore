@@ -1,0 +1,5 @@
+# Arquivos de autosave do Logisim
+*.autosave
+
+# macOS
+.DS_Store
