@@ -213,11 +213,15 @@
       <a name="select" val="2"/>
       <a name="width" val="4"/>
     </comp>
+    <comp lib="6" loc="(251,407)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="imm[5:11] = 0x20"/>
+    </comp>
     <comp lib="6" loc="(300,355)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="sra/srai"/>
     </comp>
-    <comp lib="6" loc="(305,330)" name="Text">
+    <comp lib="6" loc="(304,335)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="srl/srli"/>
     </comp>
@@ -257,7 +261,7 @@
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="Rtype_Itype"/>
     </comp>
-    <comp lib="6" loc="(755,260)" name="Text">
+    <comp lib="6" loc="(756,265)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="Btype"/>
     </comp>
