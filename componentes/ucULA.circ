@@ -182,6 +182,10 @@
       <a name="type" val="output"/>
       <a name="width" val="4"/>
     </comp>
+    <comp lib="1" loc="(180,320)" name="AND Gate">
+      <a name="negate0" val="true"/>
+      <a name="size" val="30"/>
+    </comp>
     <comp lib="2" loc="(270,280)" name="Multiplexer">
       <a name="width" val="4"/>
     </comp>
@@ -204,13 +208,13 @@
       <a name="select" val="2"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="6" loc="(125,340)" name="Text">
-      <a name="font" val="SansSerif bold 12"/>
-      <a name="text" val="0x20"/>
-    </comp>
-    <comp lib="6" loc="(155,475)" name="Text">
+    <comp lib="6" loc="(155,478)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="imm[5:11] = 0x20"/>
+    </comp>
+    <comp lib="6" loc="(185,277)" name="Text">
+      <a name="font" val="SansSerif bold 12"/>
+      <a name="text" val="add/addi"/>
     </comp>
     <comp lib="6" loc="(190,405)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
@@ -219,10 +223,6 @@
     <comp lib="6" loc="(190,425)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="sra/srai"/>
-    </comp>
-    <comp lib="6" loc="(200,275)" name="Text">
-      <a name="font" val="SansSerif bold 12"/>
-      <a name="text" val="add"/>
     </comp>
     <comp lib="6" loc="(200,295)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
@@ -264,19 +264,19 @@
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="0x7"/>
     </comp>
-    <comp lib="6" loc="(564,345)" name="Text">
+    <comp lib="6" loc="(560,345)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="bltu/bgeu"/>
     </comp>
-    <comp lib="6" loc="(572,325)" name="Text">
+    <comp lib="6" loc="(570,325)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="blt/bge"/>
     </comp>
-    <comp lib="6" loc="(678,314)" name="Text">
+    <comp lib="6" loc="(675,310)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="beq/bne"/>
     </comp>
-    <comp lib="6" loc="(689,254)" name="Text">
+    <comp lib="6" loc="(685,250)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="funct3 &gt;= 0x4"/>
     </comp>
@@ -294,14 +294,17 @@
     </comp>
     <wire from="(100,260)" to="(100,330)"/>
     <wire from="(100,330)" to="(100,460)"/>
-    <wire from="(100,330)" to="(250,330)"/>
+    <wire from="(100,330)" to="(150,330)"/>
     <wire from="(100,460)" to="(250,460)"/>
+    <wire from="(110,260)" to="(110,310)"/>
+    <wire from="(110,310)" to="(140,310)"/>
     <wire from="(120,210)" to="(120,240)"/>
+    <wire from="(180,320)" to="(250,320)"/>
     <wire from="(230,270)" to="(240,270)"/>
     <wire from="(230,290)" to="(240,290)"/>
     <wire from="(230,400)" to="(240,400)"/>
     <wire from="(230,420)" to="(240,420)"/>
-    <wire from="(250,300)" to="(250,330)"/>
+    <wire from="(250,300)" to="(250,320)"/>
     <wire from="(250,430)" to="(250,460)"/>
     <wire from="(270,280)" to="(450,280)"/>
     <wire from="(270,410)" to="(430,410)"/>
