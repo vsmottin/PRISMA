@@ -41,7 +41,7 @@
       <a name="font" val="SansSerif plain 12"/>
     </tool>
   </lib>
-  <main name="main"/>
+  <main name="ucDesvio"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -69,9 +69,9 @@
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="main">
+  <circuit name="ucDesvio">
     <a name="appearance" val="custom"/>
-    <a name="circuit" val="main"/>
+    <a name="circuit" val="ucDesvio"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="simulationFrequency" val="32.0"/>
     <appear>

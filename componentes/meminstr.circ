@@ -41,7 +41,7 @@
       <a name="font" val="Dialog plain 12"/>
     </tool>
   </lib>
-  <main name="MemInstr"/>
+  <main name="memInstr"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -68,9 +68,9 @@
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="MemInstr">
+  <circuit name="memInstr">
     <a name="appearance" val="custom"/>
-    <a name="circuit" val="MemInstr"/>
+    <a name="circuit" val="memInstr"/>
     <a name="clabelfont" val="Dialog plain 12"/>
     <a name="simulationFrequency" val="8.0"/>
     <appear>
