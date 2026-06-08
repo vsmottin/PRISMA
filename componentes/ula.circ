@@ -27,9 +27,6 @@
       <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </tool>
-    <tool name="Constant">
-      <a name="facing" val="south"/>
-    </tool>
   </lib>
   <lib desc="#Gates" name="1">
     <tool name="AND Gate">
@@ -42,12 +39,13 @@
   <lib desc="#I/O" name="5"/>
   <lib desc="#Base" name="6">
     <tool name="Text Tool">
-      <a name="font" val="SansSerif plain 12"/>
+      <a name="font" val="Dialog plain 12"/>
     </tool>
   </lib>
-  <lib desc="file#zero.circ" name="7"/>
+  <lib desc="file#overflow.circ" name="7"/>
   <lib desc="file#negativo.circ" name="8"/>
-  <lib desc="file#overflow.circ" name="9"/>
+  <lib desc="file#zero.circ" name="9"/>
+  <lib desc="file#extensoresSinal.circ" name="10"/>
   <main name="ULA"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -63,7 +61,7 @@
     <tool lib="6" name="Poke Tool"/>
     <tool lib="6" name="Edit Tool"/>
     <tool lib="6" name="Text Tool">
-      <a name="font" val="SansSerif plain 12"/>
+      <a name="font" val="Dialog plain 12"/>
     </tool>
     <sep/>
     <tool lib="0" name="Pin"/>
@@ -139,26 +137,6 @@
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="radix" val="10signed"/>
-    </comp>
-    <comp lib="0" loc="(330,450)" name="Bit Extender">
-      <a name="in_width" val="1"/>
-      <a name="out_width" val="32"/>
-      <a name="type" val="zero"/>
-    </comp>
-    <comp lib="0" loc="(330,750)" name="Bit Extender">
-      <a name="in_width" val="1"/>
-      <a name="out_width" val="32"/>
-      <a name="type" val="zero"/>
-    </comp>
-    <comp lib="0" loc="(330,810)" name="Bit Extender">
-      <a name="in_width" val="1"/>
-      <a name="out_width" val="32"/>
-      <a name="type" val="zero"/>
-    </comp>
-    <comp lib="0" loc="(330,870)" name="Bit Extender">
-      <a name="in_width" val="1"/>
-      <a name="out_width" val="32"/>
-      <a name="type" val="zero"/>
     </comp>
     <comp lib="0" loc="(460,430)" name="Tunnel">
       <a name="facing" val="north"/>
@@ -242,6 +220,10 @@
       <a name="size" val="30"/>
       <a name="width" val="32"/>
     </comp>
+    <comp lib="10" loc="(350,450)" name="extensorSinal_1"/>
+    <comp lib="10" loc="(350,750)" name="extensorSinal_1"/>
+    <comp lib="10" loc="(350,810)" name="extensorSinal_1"/>
+    <comp lib="10" loc="(350,870)" name="extensorSinal_1"/>
     <comp lib="2" loc="(510,330)" name="Multiplexer">
       <a name="select" val="4"/>
       <a name="width" val="32"/>
@@ -296,7 +278,7 @@
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Unsigned"/>
     </comp>
-    <comp lib="6" loc="(370,740)" name="Text">
+    <comp lib="6" loc="(377,740)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Não usada"/>
     </comp>
@@ -304,7 +286,7 @@
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Não usada"/>
     </comp>
-    <comp lib="7" loc="(560,270)" name="zero"/>
+    <comp lib="9" loc="(560,270)" name="zero"/>
     <wire from="(190,190)" to="(190,220)"/>
     <wire from="(190,220)" to="(190,260)"/>
     <wire from="(190,220)" to="(200,220)"/>
@@ -348,18 +330,18 @@
     <wire from="(330,260)" to="(470,260)"/>
     <wire from="(330,350)" to="(340,350)"/>
     <wire from="(330,400)" to="(350,400)"/>
-    <wire from="(330,450)" to="(360,450)"/>
     <wire from="(330,510)" to="(370,510)"/>
     <wire from="(330,570)" to="(380,570)"/>
     <wire from="(330,630)" to="(390,630)"/>
     <wire from="(330,690)" to="(400,690)"/>
-    <wire from="(330,750)" to="(410,750)"/>
-    <wire from="(330,810)" to="(420,810)"/>
-    <wire from="(330,870)" to="(430,870)"/>
     <wire from="(340,270)" to="(340,350)"/>
     <wire from="(340,270)" to="(470,270)"/>
     <wire from="(350,280)" to="(350,400)"/>
     <wire from="(350,280)" to="(470,280)"/>
+    <wire from="(350,450)" to="(360,450)"/>
+    <wire from="(350,750)" to="(410,750)"/>
+    <wire from="(350,810)" to="(420,810)"/>
+    <wire from="(350,870)" to="(430,870)"/>
     <wire from="(360,290)" to="(360,450)"/>
     <wire from="(360,290)" to="(470,290)"/>
     <wire from="(370,300)" to="(370,510)"/>
