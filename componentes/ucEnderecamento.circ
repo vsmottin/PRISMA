@@ -79,7 +79,7 @@
     <tool lib="5" name="Register"/>
   </toolbar>
   <circuit name="ucEnderecamento">
-    <a name="appearance" val="logisim_evolution"/>
+    <a name="appearance" val="custom"/>
     <a name="circuit" val="ucEnderecamento"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="32.0"/>
@@ -89,8 +89,8 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="9" text-anchor="middle" x="161" y="108">de</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="9" text-anchor="middle" x="161" y="93">Controle</text>
       <circ-anchor facing="east" x="160" y="140"/>
-      <circ-port dir="in" pin="110,120" x="130" y="150"/>
-      <circ-port dir="in" pin="220,90" x="130" y="70"/>
+      <circ-port dir="in" pin="110,120" x="130" y="70"/>
+      <circ-port dir="in" pin="220,90" x="130" y="150"/>
       <circ-port dir="in" pin="350,90" x="120" y="110"/>
       <circ-port dir="out" pin="600,130" x="190" y="70"/>
       <circ-port dir="out" pin="710,130" x="200" y="90"/>
