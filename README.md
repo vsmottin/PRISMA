@@ -1,5 +1,4 @@
 # risc-v
-
 ![Logisim_Evolution](https://img.shields.io/badge/Logisim_Evolution-006039) ![RISC-V](https://img.shields.io/badge/RISC--V-2C2C2C)
 
 Repositório criado com o propósito de implementar versões de um _datapath_ (caminho de dados) para a arquitetura **RISC-V** usando o **Logisim Evolution**.
@@ -9,7 +8,6 @@ O processador é montado de forma modular: cada bloco funcional (ULA, banco de r
 Projeto orientado pelo Prof. Dr. João Fabrício Filho, 2026/1.
 
 ## Estrutura
-
 ```
 risc-v/
 ├── main.circ                         # circuito principal: integra todos os componentes
@@ -20,7 +18,6 @@ risc-v/
 ```
 
 ### Componentes
-
 | Arquivo (`componentes/`)   | Circuito             | Função                                                       |
 | -------------------------- | -------------------- | ------------------------------------------------------------ |
 | `ULA.circ`                 | `ULA`                | Unidade Lógica e Aritmética.                                 |
@@ -31,7 +28,7 @@ risc-v/
 | `bancoRegistradores.circ`  | `bancoRegistradores` | Banco de registradores.                                      |
 | `contadorCiclos.circ`      | `contador`           | Contador de ciclos de _PC_.                                  |
 | `decodificador.circ`       | `decodificador`      | Decodificador da instrução (separa os campos).               |
-| `geradorImm.circ`          | `immGen`             | Gerador de imediatos.                                        |
+| `geradorImm.circ`          | `geradorImm`         | Gerador de imediatos.                                        |
 | `extensoresSinal.circ`     | `extensorSinal_*` / `extensorZero_*` | Extensores de sinal e de zero (ver convenção abaixo). |
 | `memInstr.circ`            | `memInstr`           | Memória de instruções.                                       |
 | `memDados.circ`            | `memDados`           | Memória de dados.                                            |
@@ -39,16 +36,13 @@ risc-v/
 
 
 #### Convenção de nomenclatura
-
-- **camelCase**, em português e sem acentuação.
+- **lowerCamelCase**, em português e sem acentuação, com exceção de siglas (como `ULA`).
 - Unidades de controle usam o prefixo **`uc`**: `ucPrincipal`, `ucULA`, `ucDesvio`, `ucEnderecamento`.
+- Memórias usam o prefixo **`mem`**: `memInstr` e `memDados`.
 - **Extensores** seguem o padrão `extensor<tipo>_<largura>`, onde `<tipo>` é `Sinal` (extensão de sinal) ou `Zero` (extensão de zero) e `<largura>` é a quantidade de bits da entrada. Quando aplicável, um sufixo identifica o formato da instrução:
-  - `extensorSinal_12`, `extensorSinal_21` — extensão de sinal de 12 e 21 bits.
-  - `extensorZero_8`, `extensorZero_16` — extensão de zero de 8 e 16 bits.
-  - `extensorZero_20_typeU` — extensão de zero de 20 bits, específica para instruções _type-U_.
+  - `extensorZero_20_typeU`: extensão de zero de 20 bits, específica para instruções de Tipo U.
 
 ## Execução
-
 O `.jar` do Logisim Evolution já está incluso na raiz do repositório. É necessário ter o **Java (JRE/JDK)** instalado. Abra o terminal na raiz do projeto e execute:
 
 ```bash
@@ -56,7 +50,6 @@ java -jar logisim-evolution-4.1.0-all.jar
 ```
 
 ### Dentro do Logisim
-
 1. Com o Logisim aberto, clique em **`File` → `Open...`**.
 2. Selecione o arquivo **`main.circ`** na raiz do projeto. Os componentes em `componentes/` são carregados automaticamente como bibliotecas.
 3. Para testar o processador, carregue um programa na memória:
