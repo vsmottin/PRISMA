@@ -42,7 +42,7 @@
       <a name="font" val="SansSerif plain 12"/>
     </tool>
   </lib>
-  <main name="contador"/>
+  <main name="contadorCiclos"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -70,9 +70,9 @@
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="contador">
+  <circuit name="contadorCiclos">
     <a name="appearance" val="custom"/>
-    <a name="circuit" val="contador"/>
+    <a name="circuit" val="contadorCiclos"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="simulationFrequency" val="32.0"/>
     <appear>

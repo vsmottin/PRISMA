@@ -46,7 +46,7 @@
     </tool>
   </lib>
   <lib desc="file#extensoresSinal.circ" name="7"/>
-  <main name="immGen"/>
+  <main name="geradorImm"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -74,15 +74,16 @@
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="immGen">
+  <circuit name="geradorImm">
     <a name="appearance" val="custom"/>
-    <a name="circuit" val="immGen"/>
+    <a name="circuit" val="geradorImm"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="simulationFrequency" val="32.0"/>
     <appear>
       <ellipse cx="220" cy="119" fill="none" rx="30" ry="63" stroke="#000000"/>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="219" y="126">Gen</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="219" y="114">Imm</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="10" text-anchor="middle" x="220" y="104">Gerador</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="10" text-anchor="middle" x="219" y="117">de</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="10" text-anchor="middle" x="220" y="132">Imediato</text>
       <circ-anchor facing="east" x="220" y="160"/>
       <circ-port dir="in" pin="120,250" x="190" y="120"/>
       <circ-port dir="in" pin="1290,520" x="190" y="100"/>

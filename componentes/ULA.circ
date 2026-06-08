@@ -42,8 +42,6 @@
       <a name="font" val="Dialog plain 12"/>
     </tool>
   </lib>
-  <lib desc="file#overflow.circ" name="7"/>
-  <lib desc="file#negativo.circ" name="8"/>
   <lib desc="file#zero.circ" name="9"/>
   <lib desc="file#extensoresSinal.circ" name="10"/>
   <main name="ULA"/>

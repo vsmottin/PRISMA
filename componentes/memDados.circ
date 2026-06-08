@@ -46,7 +46,7 @@
     </tool>
   </lib>
   <lib desc="file#extensoresSinal.circ" name="7"/>
-  <main name="datamem"/>
+  <main name="memDados"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -74,9 +74,9 @@
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
   </toolbar>
-  <circuit name="datamem">
+  <circuit name="memDados">
     <a name="appearance" val="custom"/>
-    <a name="circuit" val="datamem"/>
+    <a name="circuit" val="memDados"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="simulationFrequency" val="32.0"/>
     <appear>
@@ -89,9 +89,10 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="8" text-anchor="middle" x="87" y="159">byteEnable</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="8" text-anchor="middle" x="84" y="60">unsigned</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="8" text-anchor="middle" x="81" y="171">size</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="104" y="101">Mem</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="105" y="115">Dados</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="105" y="130">Dados</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="8" text-anchor="middle" x="82" y="49">offset</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="106" y="102">Memória</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="106" y="115">de</text>
       <circ-anchor facing="east" x="140" y="60"/>
       <circ-port dir="in" pin="180,100" x="60" y="90"/>
       <circ-port dir="in" pin="180,190" x="130" y="180"/>
