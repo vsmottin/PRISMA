@@ -45,7 +45,7 @@
       <a name="font" val="Dialog plain 12"/>
     </tool>
   </lib>
-  <lib desc="file#extensoresSinal.circ" name="7"/>
+  <lib desc="file#../Extensores/extensoresSinal.circ" name="7"/>
   <main name="memDados"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
