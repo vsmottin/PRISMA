@@ -2,38 +2,36 @@
 
 ![Circuito do Contador de Ciclos](contadorCiclos_imagem.png)
 
-O contador de ciclos é responsável por registrar a quantidade total de ciclos de _clock_ decorridos durante a execução de um programa no _datapath_. Ele incrementa o seu valor continuamente a cada ciclo, desde que o fluxo do programa esteja operando de maneira normal.
+O Contador de Ciclos é o componente responsável por registrar a quantidade total de ciclos de clock decorridos durante a execução de um programa no processador. Ele incrementa seu valor de forma combinacional e armazena o acumulado em um registrador sequencial.
 
-O controle de execução é feito recebendo o sinal de `Clock` do sistema e o sinal `Stop`, sendo este último gerado pela unidade de controle ao identificar um _opcode_ inválido.
+<br>
 
 ## Interface
-| Pino | Direção | Largura | Descrição |
-| --- | --- | --- | --- |
-| `Clock` | Entrada | 1 bit | Sinal de _clock_ do sistema. |
-| `Contador` | Saída | 32 bits | Valor atual do número de ciclos totais executados. |
 
+| Pino | Direção | Largura | Descrição |
+| :--- | :---: | :---: | :--- |
+| `Clock` | Entrada | 1 bit | Sinal de clock do sistema (gated pelo sinal de parada). |
+| `Contador` | Saída | 32 bits | Valor acumulado de ciclos totais executados. |
+
+<br>
 
 ## Funcionamento
-O módulo de contagem atua como um acumulador simples em malha fechada. Em seu funcionamento normal, o somador recebe o valor do próprio contador armazenado no registrador e soma com a constante de valor lógico `1`.
 
-A decisão de registrar esse novo incremento ou congelar a contagem depende exclusivamente da entrada de `Clock` do registrador. Existe uma operação lógica AND entre o sinal de `Clock` externo e o sinal negado de `Stop`, controlando a atualização do componente:
+O módulo atua como um acumulador simples em malha fechada. Em seu estado ativo, a cada borda de subida do sinal `Clock` recebido, o valor atual do contador é incrementado em `1` (`Contador = Contador + 1`).
 
-- **Operação contínua**
-    - Se `Stop == 0` (falso), a negação se torna `1`, permitindo que o `Clock` atravesse a porta AND. Na próxima borda de subida, o registrador salva o novo valor incrementado. Logo, `Contador = Contador + 1`.
+### Mecanismo de parada
+Embora o circuito interno do contador seja puramente um acumulador básico, o controle de congelamento da contagem é realizado de forma externa na unidade superior (`main.circ`). 
 
+Para pausar a contagem quando o programa finaliza ou atinge uma condição de parada:
+1. A unidade de controle principal (`ucPrincipal`) ativa o sinal **`Stop`** ao identificar uma instrução de parada ou opcode inválido.
+2. Uma porta lógica AND externa realiza a operação `CLK & !Stop`.
+3. Quando `Stop` é `1`, a saída da porta AND é forçada a `0`, congelando o sinal de clock que alimenta o registrador do contador. Isso impede novas atualizações e mantém o valor da contagem congelado no último estado.
 
-- **Condição de parada**
-    - Se `Stop == 1` (verdadeiro), um _opcode_ inválido foi identificado. A negação se torna `0`, o que força a saída da porta AND para `0`. Sem receber o pulso do _clock_, o registrador para de atualizar, mantendo o valor do `Contador` intacto no estado em que parou.
-
-
+<br>
 
 ## Implementação
-Internamente, o contador possui lógica sequencial e combinacional básica, fechando um laço de repetição constante.
 
-Blocos usados:
-- **Somador**
-    - Circuito combinacional que tem como entrada superior a constante `00000001` e como entrada inferior o valor de `Q` do registrador. Retorna continuamente o valor atual somado em 1.
+Para a montagem deste circuito no Logisim, são utilizados blocos voltados para lógica sequencial e combinacional básica:
 
-
-- **Registrador**
-    - Módulo sequencial que armazena o valor atualizado da contagem. Sua entrada `D` recebe o resultado do somador, e sua saída `Q` alimenta simultaneamente o próprio somador e o bloco de saída.
+- **Somador:** circuito que soma continuamente a constante `1` ao valor atual do contador vindo do registrador.
+*   **Registrador:** componente que armazena a contagem atualizada. Sua entrada `D` recebe o resultado do somador, e sua saída `Q` alimenta simultaneamente o próprio somador e o pino de saída `Contador`.

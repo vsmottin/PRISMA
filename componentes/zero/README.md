@@ -1,29 +1,30 @@
-# Zero
+# Detector de Zero
 
 ![Circuito do Zero](zero_imagem.png)
 
-O Zero é um componente interno da unidade lógica e aritmética (ULA) responsável por verificar se o resultado da operação atual é igual a zero. Ele atua como uma _flag_ de condição, sendo fundamental para o _datapath_ lidar com instruções de desvio condicional.
+O Detector de Zero é um componente interno à Unidade Lógica e Aritmética (ULA). Ele atua verificando se o resultado de 32 bits de uma operação matemática ou lógica calculada é igual a zero, emitindo um sinal booleano (`Zero`) de 1 bit que é fundamental para a tomada de decisões em desvios condicionais (*branches*).
+
+<br>
 
 ## Interface
+
 | Pino | Direção | Largura | Descrição |
-| --- | --- | --- | --- |
+| :--- | :---: | :---: | :--- |
 | `Result` | Entrada | 32 bits | Resultado final da operação calculada pela ULA. |
-| `Zero` | Saída | 1 bit | Sinal que indica se o resultado recebido é nulo (`1`) ou não nulo (`0`). |
+| `Zero` | Saída | 1 bit | Sinalizador de resultado nulo (`1` para igual a zero, `0` caso contrário). |
+
+<br>
 
 ## Funcionamento
-A decisão de ativar ou desativar o sinal de saída baseia-se exclusivamente no teste de igualdade do comparador:
 
-- **Resultado Nulo**
-    - Se `Result == 0`, todos os bits que compõem o valor estão em nível lógico baixo. A condição do comparador é perfeitamente satisfeita, fazendo com que a saída seja ativada. Logo, `Zero = 1`.
+O circuito realiza um teste simples de igualdade lógica de forma inteiramente combinacional:
 
-- **Resultado Não Nulo**
-    - Se `Result != 0`, pelo menos um bit no barramento possui valor lógico alto. A condição de igualdade falha, fazendo com que a saída do comparador seja desativada. Logo, `Zero = 0`.
+*   **Resultado igual a zero (`Result == 0`):** quando todos os 32 bits da entrada `Result` estão em nível lógico baixo (`0`), a condição de igualdade é satisfeita e a saída `Zero` é ativada (`Zero = 1`).
+*   **Resultado diferente de zero (`Result != 0`):** se pelo menos um dos 32 bits da entrada estiver em nível lógico alto (`1`), a comparação de igualdade falha e a saída é desativada (`Zero = 0`).
 
-
+<br>
 
 ## Implementação
-Internamente, o módulo Zero é composto puramente por lógica combinacional, sem necessidade de sinais de controle de estado ou pulso de _clock_, gerando a resposta assim que o resultado da operação realizada na ULA é calculado.
 
-Blocos usados:
-- **Comparador**
-    - Circuito responsável pela operação. Possui em sua entrada superior a constante `00000000` e na entrada inferior, `Result`. Ele avalia a condição de igualdade (`=`) e emite a resposta booleana diretamente para o pino de saída `Zero`.
+O circuito é projetado de maneira muito simples e rápida através de blocos combinacionais:
+*   **Comparador:** bloco configurado para comparar a entrada de 32 bits `Result` com uma constante de valor `0` (`0x00000000`). Ele avalia se as duas entradas são iguais (`=`) e emite a resposta booleana correspondente diretamente ao pino de saída `Zero`.
