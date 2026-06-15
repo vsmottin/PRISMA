@@ -3,7 +3,7 @@
 
 Repositório criado com o propósito de implementar versões de um _datapath_ (caminho de dados) para a arquitetura **RISC-V** usando o **Logisim Evolution**.
 
-O processador é montado de forma modular: cada bloco funcional (ULA, banco de registradores, memórias, unidades de controle, etc.) tem seu próprio arquivo `.circ` dentro de `componentes/`, e o circuito principal `main.circ` os importa como bibliotecas para compor o _datapath_ completo.
+O processador é montado de forma modular: cada bloco funcional (ULA, banco de registradores, memórias, unidades de controle, etc.) tem sua **própria pasta** dentro de `componentes/`, contendo o arquivo `.circ`, a imagem do circuito e um `README.md` que documenta sua interface, funcionamento e implementação. O circuito principal `main.circ` importa esses `.circ` como bibliotecas para compor o _datapath_ completo.
 
 Projeto orientado pelo Prof. Dr. João Fabrício Filho, 2026/1.
 
@@ -11,28 +11,33 @@ Projeto orientado pelo Prof. Dr. João Fabrício Filho, 2026/1.
 ```
 risc-v/
 ├── main.circ                         # circuito principal: integra todos os componentes
-├── componentes/                      # blocos funcionais reutilizáveis
+├── componentes/                      # um diretório por bloco funcional
+│   └── <componente>/
+│       ├── <componente>.circ         # circuito do componente
+│       ├── <componente>_imagem.png   # imagem do circuito
+│       └── README.md                 # manual: interface, funcionamento e implementação
 ├── codigos/                          # programas em linguagem de máquina para teste
 ├── logisim-evolution-4.1.0-all.jar   # .jar do Logisim Evolution usado
 └── RISCV_CARD.pdf                    # cartão de referência da ISA RISC-V
 ```
 
 ### Componentes
-| Arquivo (`componentes/`)   | Circuito             | Função                                                       |
-| -------------------------- | -------------------- | ------------------------------------------------------------ |
-| `ULA.circ`                 | `ULA`                | Unidade Lógica e Aritmética.                                 |
-| `ucULA.circ`               | `ucULA`              | Unidade de controle da ULA (define a operação).              |
-| `ucPrincipal.circ`         | `ucPrincipal`        | Unidade de controle principal (gera os sinais de controle).  |
-| `ucDesvio.circ`            | `ucDesvio`           | Unidade de controle de desvios (_branches_).                 |
-| `ucEnderecamento.circ`     | `ucEnderecamento`    | Unidade de controle de endereçamento.                        |
-| `bancoRegistradores.circ`  | `bancoRegistradores` | Banco de registradores.                                      |
-| `contadorCiclos.circ`      | `contador`           | Contador de ciclos de _PC_.                                  |
-| `decodificador.circ`       | `decodificador`      | Decodificador da instrução (separa os campos).               |
-| `geradorImm.circ`          | `geradorImm`         | Gerador de imediatos.                                        |
-| `extensoresSinal.circ`     | `extensorSinal_*` / `extensorZero_*` | Extensores de sinal e de zero (ver convenção abaixo). |
-| `memInstr.circ`            | `memInstr`           | Memória de instruções.                                       |
-| `memDados.circ`            | `memDados`           | Memória de dados.                                            |
-| `zero.circ`                | `zero`               | Flag de resultado zero da ULA.                               |
+Cada componente tem seu próprio manual (clique no nome para abrir o `README` com interface, funcionamento e imagem do circuito).
+
+| Componente (manual)                                          | Função                                                       |
+| ----------------------------------------------------------- | ------------------------------------------------------------ |
+| [ULA](componentes/ULA/README.md)                            | Unidade Lógica e Aritmética.                                 |
+| [ucULA](componentes/ucULA/README.md)                        | Unidade de controle da ULA (define a operação).              |
+| [ucPrincipal](componentes/ucPrincipal/README.md)            | Unidade de controle principal (gera os sinais de controle).  |
+| [ucDesvio](componentes/ucDesvio/README.md)                  | Unidade de controle de desvios (_branches_).                 |
+| [ucEnderecamento](componentes/ucEnderecamento/README.md)    | Unidade de controle de endereçamento.                        |
+| [bancoRegistradores](componentes/bancoRegistradores/README.md) | Banco de registradores.                                   |
+| [contadorCiclos](componentes/contadorCiclos/README.md)      | Contador de ciclos de _PC_.                                  |
+| [decodificador](componentes/decodificador/README.md)        | Decodificador da instrução (separa os campos).               |
+| [extensores](componentes/extensores/README.md)              | Extensores de sinal e de zero (ver convenção abaixo).        |
+| [memInstrucoes](componentes/memInstrucoes/README.md)        | Memória de instruções.                                       |
+| [memDados](componentes/memDados/README.md)                  | Memória de dados.                                            |
+| [zero](componentes/zero/README.md)                          | Flag de resultado zero da ULA.                               |
 
 
 #### Convenção de nomenclatura
