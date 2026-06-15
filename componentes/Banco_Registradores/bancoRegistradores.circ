@@ -27,6 +27,10 @@
       <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
     </tool>
+    <tool name="Constant">
+      <a name="value" val="0x0"/>
+      <a name="width" val="32"/>
+    </tool>
   </lib>
   <lib desc="#Gates" name="1">
     <tool name="AND Gate">
@@ -162,6 +166,10 @@
     <comp lib="0" loc="(270,2500)" name="Tunnel">
       <a name="label" val="WR"/>
       <a name="width" val="5"/>
+    </comp>
+    <comp lib="0" loc="(370,180)" name="Constant">
+      <a name="value" val="0x0"/>
+      <a name="width" val="32"/>
     </comp>
     <comp lib="2" loc="(1390,4860)" name="Demultiplexer">
       <a name="facing" val="west"/>
@@ -583,10 +591,10 @@
     <wire from="(320,2460)" to="(350,2460)"/>
     <wire from="(350,2460)" to="(350,4600)"/>
     <wire from="(350,4600)" to="(920,4600)"/>
-    <wire from="(360,180)" to="(360,2150)"/>
-    <wire from="(360,180)" to="(920,180)"/>
+    <wire from="(360,190)" to="(360,2150)"/>
     <wire from="(360,2450)" to="(360,4460)"/>
     <wire from="(360,4460)" to="(920,4460)"/>
+    <wire from="(370,180)" to="(920,180)"/>
     <wire from="(370,2440)" to="(370,4320)"/>
     <wire from="(370,320)" to="(370,2160)"/>
     <wire from="(370,320)" to="(920,320)"/>
