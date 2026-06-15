@@ -45,7 +45,6 @@
   <lib desc="file#componentes/ucULA/ucULA.circ" name="7"/>
   <lib desc="file#componentes/ucDesvio/ucDesvio.circ" name="8"/>
   <lib desc="file#componentes/Decodificador/decodificador.circ" name="9"/>
-  <lib desc="file#componentes/Gerador_de_imediato/geradorImm.circ" name="10"/>
   <lib desc="file#componentes/Contador_de_ciclos/contadorCiclos.circ" name="11"/>
   <lib desc="file#componentes/bancoRegistradores/bancoRegistradores.circ" name="12"/>
   <lib desc="file#componentes/memDados/memDados.circ" name="13"/>
