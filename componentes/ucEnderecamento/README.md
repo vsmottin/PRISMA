@@ -54,7 +54,7 @@ A máscara de escrita é construída em três etapas:
 O circuito é montado a partir dos seguintes blocos do Logisim:
 
 - **Distribuidores (*splitters*):** separam o `Funct3` em `Size` e `signal_unsigned` e extraem o `Offset` dos bits menos significativos do `Adress`.
-- **Multiplexador:** seletor de `Size` (2 bits) que escolhe a máscara base de bytes a partir de constantes (`0001`, `0011`, `1111`, `0000`).
+- **Multiplexador:** seletor de `Size` (2 bits) que escolhe a máscara base de bytes a partir de três constantes (`0001` para byte, `0011` para meia-palavra e `1111` para palavra).
 - **Deslocador (*shifter*):** desloca a máscara base para a esquerda conforme o `Offset`, alinhando-a à posição correta.
 - **Portas lógicas (AND):** quatro portas que combinam cada bit da máscara deslocada com o `writeEnable`, produzindo o `byteEnable` final apenas em operações de escrita.
 - **Constantes:** valores fixos das máscaras de byte usados como entradas do multiplexador.

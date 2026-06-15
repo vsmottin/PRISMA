@@ -30,8 +30,8 @@ O circuito separa o acesso em duas operações: a escrita, síncrona com o clock
 
 ### 1. Escrita (*store*)
 Para gravar dados, o circuito utiliza a entrada `dado` e os controles `byteEnable`, `offset` e `clk`:
-*   O dado de 32 bits é fatiado em quatro bytes e alinhado de acordo com o `offset`, de modo que o byte/meia-palavra caia na posição correta da palavra.
-*   O sinal `byteEnable` (4 bits) ativa individualmente o *write enable* de cada um dos quatro bancos de byte. Assim, `sb` habilita apenas um banco, `sh` habilita dois e `sw` habilita os quatro.
+*   O dado de 32 bits é distribuído para os quatro bancos de byte; um multiplexador controlado por `size` ajusta o padrão de bytes encaminhado conforme o tamanho do acesso.
+*   O sinal `byteEnable` (4 bits) — já alinhado pelo `offset` na unidade de controle de endereçamento — ativa individualmente o *write enable* de cada um dos quatro bancos de byte. Assim, `sb` habilita apenas um banco, `sh` habilita dois e `sw` habilita os quatro, fazendo o dado cair na posição correta da palavra.
 *   A gravação efetiva ocorre na borda de clock, apenas nos bancos habilitados; os demais mantêm seu conteúdo anterior.
 
 <br>

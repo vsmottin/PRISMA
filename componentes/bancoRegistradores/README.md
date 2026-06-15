@@ -61,4 +61,5 @@ O circuito é montado a partir dos seguintes blocos do Logisim:
 - **Registradores:** 32 unidades de 32 bits, cada uma com entrada de dados `D`, saída `Q`, habilitação de escrita `WE` e *reset* `R`, todas sincronizadas pelo `clk`.
 - **Demultiplexadores:** dois blocos com seletor de 5 bits (`WR`) — um de 32 bits, que direciona `WD` para o registrador correto, e um de 1 bit, que direciona o `RegWrite` para o `WE` correspondente.
 - **Multiplexadores:** dois blocos de 32 bits com seletor de 5 bits (`LR1` e `LR2`), responsáveis por encaminhar o conteúdo dos registradores escolhidos para as saídas `LD1` e `LD2`.
+- **Constante (`x0`):** uma constante de 32 bits com valor `0` é ligada à entrada `D` do registrador 0, fixando seu conteúdo em zero. Como a saída `Q` desse registrador alimenta a entrada `0` dos dois multiplexadores de leitura, qualquer leitura do endereço `0` retorna `0`.
 - **Distribuição de clock:** o sinal `clk` é ramificado para todos os 32 registradores, garantindo que a escrita ocorra de forma síncrona em todo o banco.
