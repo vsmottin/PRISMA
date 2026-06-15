@@ -42,8 +42,8 @@
       <a name="font" val="Dialog plain 12"/>
     </tool>
   </lib>
-  <lib desc="file#../Zero/zero.circ" name="9"/>
-  <lib desc="file#../Extensores/extensoresSinal.circ" name="10"/>
+  <lib desc="file#../zero/zero.circ" name="9"/>
+  <lib desc="file#../extensores/extensoresSinal.circ" name="10"/>
   <main name="ULA"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
