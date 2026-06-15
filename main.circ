@@ -44,12 +44,12 @@
   <lib desc="#Base" name="6"/>
   <lib desc="file#componentes/ucULA/ucULA.circ" name="7"/>
   <lib desc="file#componentes/ucDesvio/ucDesvio.circ" name="8"/>
-  <lib desc="file#componentes/Decodificador/decodificador.circ" name="9"/>
-  <lib desc="file#componentes/Contador_de_ciclos/contadorCiclos.circ" name="11"/>
+  <lib desc="file#componentes/decodificador/decodificador.circ" name="9"/>
+  <lib desc="file#componentes/contadorCiclos/contadorCiclos.circ" name="11"/>
   <lib desc="file#componentes/bancoRegistradores/bancoRegistradores.circ" name="12"/>
   <lib desc="file#componentes/memDados/memDados.circ" name="13"/>
   <lib desc="file#componentes/ULA/ULA.circ" name="14"/>
-  <lib desc="file#componentes/Zero/zero.circ" name="15"/>
+  <lib desc="file#componentes/zero/zero.circ" name="15"/>
   <lib desc="file#componentes/ucEnderecamento/ucEnderecamento.circ" name="16"/>
   <lib desc="file#componentes/memInstrucoes/memInstr.circ" name="17"/>
   <lib desc="file#componentes/ucPrincipal/ucPrincipal.circ" name="18"/>
