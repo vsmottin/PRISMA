@@ -1,6 +1,6 @@
 ## Descrição
 
-> Descreva as mudanças/implementações feitas neste PR, fornecendo contexto e detalhes importantes para ajudar os revisores a entenderem a motivação desta alteração/implementação.
+> Descreva as mudanças/implementações feitas neste PR, fornecendo contexto e detalhes importantes para ajudar a entender a motivação desta alteração/implementação.
 
 - Descrição
 
@@ -13,6 +13,6 @@
 
 ## Notas adicionais
 
-> Descreva aqui informações que julga importante para o entendimento do revisor.
+> Descreva aqui informações que julga importante.
 
 - Informação
