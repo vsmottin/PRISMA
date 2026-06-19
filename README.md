@@ -1,28 +1,66 @@
 # risc-v
+![Logisim_Evolution](https://img.shields.io/badge/Logisim_Evolution-006039) ![RISC-V](https://img.shields.io/badge/RISC--V-2C2C2C)
 
-![Logisim Evolution](https://img.shields.io/badge/Logisim-006039) ![RISC-V](https://img.shields.io/badge/RISC--V-2C2C2C)
+Repositório criado com o propósito de implementar versões de um _datapath_ (caminho de dados) para a arquitetura **RISC-V** usando o **Logisim Evolution**.
 
-Repositório criado com o propósito de implementar versões de um _datapath_ (caminho de dados) para a arquitetura RISC-V usando Logisim Evolution. 
-Projeto orientado por João Fabrício, 2026/1.
+O processador é montado de forma modular: cada bloco funcional (ULA, banco de registradores, memórias, unidades de controle, etc.) tem sua **própria pasta** dentro de `componentes/`, contendo o arquivo `.circ`, a imagem do circuito e um `README.md` que documenta sua interface, funcionamento e implementação. O circuito principal `main.circ` importa esses `.circ` como bibliotecas para compor o _datapath_ completo.
+
+Projeto orientado pelo Prof. Dr. João Fabrício Filho, 2026/1.
 
 ## Estrutura
+```
+risc-v/
+├── main.circ                         # circuito principal: integra todos os componentes
+├── componentes/                      # um diretório por bloco funcional
+│   └── <componente>/
+│       ├── <componente>.circ         # circuito do componente
+│       ├── <componente>_imagem.png   # imagem do circuito
+│       └── README.md                 # manual: interface, funcionamento e implementação
+├── codigos/                          # programas em linguagem de máquina para teste
+├── logisim-evolution-4.1.0-all.jar   # .jar do Logisim Evolution usado
+└── RISCV_CARD.pdf                    # cartão de referência da ISA RISC-V
+```
 
-- **`logisim/`**: Contém os circuitos do processador construídos no Logisim.
-- **`codigos/`**: Códigos com instruções em linguagem de máquina usados para testes.
+### Componentes
+Cada componente tem seu próprio manual (clique no nome para abrir o `README` com interface, funcionamento e imagem do circuito).
+
+| Componente (manual)                                          | Função                                                       |
+| ----------------------------------------------------------- | ------------------------------------------------------------ |
+| [ULA](componentes/ULA/README.md)                            | Unidade Lógica e Aritmética.                                 |
+| [ucULA](componentes/ucULA/README.md)                        | Unidade de controle da ULA (define a operação).              |
+| [ucPrincipal](componentes/ucPrincipal/README.md)            | Unidade de controle principal (gera os sinais de controle).  |
+| [ucDesvio](componentes/ucDesvio/README.md)                  | Unidade de controle de desvios (_branches_).                 |
+| [ucEnderecamento](componentes/ucEnderecamento/README.md)    | Unidade de controle de endereçamento.                        |
+| [bancoRegistradores](componentes/bancoRegistradores/README.md) | Banco de registradores.                                   |
+| [contadorCiclos](componentes/contadorCiclos/README.md)      | Contador de ciclos de _PC_.                                  |
+| [decodificador](componentes/decodificador/README.md)        | Decodificador da instrução (separa os campos).               |
+| [extensores](componentes/extensores/README.md)              | Extensores de sinal e de zero (ver convenção abaixo).        |
+| [memInstrucoes](componentes/memInstrucoes/README.md)        | Memória de instruções.                                       |
+| [memDados](componentes/memDados/README.md)                  | Memória de dados.                                            |
+| [zero](componentes/zero/README.md)                          | Flag de resultado zero da ULA.                               |
+
+
+#### Convenção de nomenclatura
+- **lowerCamelCase**, em português e sem acentuação, com exceção de siglas (como `ULA`).
+- Unidades de controle usam o prefixo **`uc`**: `ucPrincipal`, `ucULA`, `ucDesvio`, `ucEnderecamento`.
+- Memórias usam o prefixo **`mem`**: `memInstr` e `memDados`.
+- **Extensores** seguem o padrão `extensor<tipo>_<largura>`, onde `<tipo>` é `Sinal` (extensão de sinal) ou `Zero` (extensão de zero) e `<largura>` é a quantidade de bits da entrada. Quando aplicável, um sufixo identifica o formato da instrução:
+  - `extensorZero_20_typeU`: extensão de zero de 20 bits, específica para instruções de Tipo U.
 
 ## Execução
+O `.jar` do Logisim Evolution já está incluso na raiz do repositório. É necessário ter o **Java (JRE/JDK)** instalado. Abra o terminal na raiz do projeto e execute:
 
-O jar do Logisim Evolution já está incluso na raiz do repositório. É necessário ter o **Java (JRE/JDK)** instalado em seu sistema. Abra o terminal na raiz do projeto e execute o comando abaixo:
 ```bash
 java -jar logisim-evolution-4.1.0-all.jar
 ```
 
-#### Dentro do Logisim
-
-1. Com o Logisim aberto, clique em **`File` -> `Open...`**.
-2. Navegue até a pasta `logisim/` e selecione o arquivo **`main.circ`**.
-3. Para testar o processador, carregue as instruções na memória:
-   - Clique com o botão direito sobre o componente da Memória de Instruções.
+### Dentro do Logisim
+1. Com o Logisim aberto, clique em **`File` → `Open...`**.
+2. Selecione o arquivo **`main.circ`** na raiz do projeto. Os componentes em `componentes/` são carregados automaticamente como bibliotecas.
+3. Para testar o processador, carregue um programa na memória:
+   - Clique com o botão direito sobre o componente da **Memória de Instruções**.
    - Selecione **`Load Image...`**.
-   - Escolha um dos arquivos de teste localizados na pasta `codigos/`.
-4. Utilize a ferramenta de `Poke` (ícone da mãozinha) ou ative o Clock para observar a execução das instruções pelo _datapath_.
+   - Escolha um dos arquivos de teste da pasta `codigos/`.
+4. Use a ferramenta **`Poke`** (ícone da mãozinha) ou ative o **Clock** para acompanhar a execução das instruções pelo _datapath_.
+
+> O arquivo `RISCV_CARD.pdf` na raiz serve como referência rápida das instruções e formatos da ISA RISC-V durante os testes.
