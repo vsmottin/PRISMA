@@ -76,23 +76,18 @@
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="8.0"/>
     <appear>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="349"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="29"/>
-      <rect fill="#dedede" height="5" stroke="#c0c0c0" stroke-width="3" width="2" x="129" y="11"/>
       <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="889"/>
       <rect fill="#dedede" height="5" stroke="#c0c0c0" stroke-width="3" width="2" x="119" y="1174"/>
       <rect fill="#dedede" height="5" stroke="#c0c0c0" stroke-width="3" width="2" x="149" y="1174"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="199"/>
-      <rect fill="#373737" height="1158" rx="3" ry="3" stroke="#000000" stroke-width="2" width="61" x="104" y="17"/>
-      <rect fill="none" height="1149" rx="3" ry="3" stroke="#000000" width="53" x="108" y="21"/>
-      <text dominant-baseline="central" fill="#f0f0f0" font-family="Dialog" font-size="14" font-style="italic" font-weight="bold" text-anchor="middle" x="135" y="225">IF_ID</text>
-      <circ-anchor facing="east" x="150" y="20"/>
+      <rect fill="none" height="1149" rx="3" ry="3" stroke="#000000" width="61" x="100" y="21"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="16" font-weight="bold" text-anchor="middle" x="131" y="387">IF/ID</text>
+      <circ-anchor facing="east" x="130" y="360"/>
       <circ-port dir="in" pin="230,130" x="100" y="400"/>
       <circ-port dir="in" pin="230,170" x="100" y="410"/>
       <circ-port dir="in" pin="230,90" x="100" y="390"/>
       <circ-port dir="in" pin="290,270" x="100" y="370"/>
       <circ-port dir="in" pin="290,460" x="100" y="380"/>
-      <circ-port dir="out" pin="590,270" x="170" y="30"/>
+      <circ-port dir="out" pin="590,270" x="160" y="60"/>
       <circ-port dir="out" pin="590,460" x="170" y="890"/>
     </appear>
     <comp lib="0" loc="(230,130)" name="Pin">

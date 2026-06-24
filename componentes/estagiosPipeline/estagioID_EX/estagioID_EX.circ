@@ -76,54 +76,13 @@
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="8.0"/>
     <appear>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="759"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="769"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="789"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="749"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="779"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="789"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="749"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="769"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="779"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="759"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="509"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="529"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="109"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="129"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="89"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="59"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="99"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="119"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="149"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="39"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="79"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="49"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="139"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="69"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="129"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="509"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="529"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="149"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="119"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="139"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="69"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="79"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="39"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="59"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="89"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="109"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="49"/>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="101" y="99"/>
-      <rect fill="#dedede" height="5" stroke="#c0c0c0" stroke-width="3" width="2" x="129" y="11"/>
-      <rect fill="#dedede" height="5" stroke="#c0c0c0" stroke-width="3" width="2" x="149" y="1174"/>
-      <rect fill="#dedede" height="5" stroke="#c0c0c0" stroke-width="3" width="2" x="119" y="1174"/>
-      <rect fill="#373737" height="1158" rx="3" ry="3" stroke="#000000" stroke-width="2" width="61" x="104" y="17"/>
-      <rect fill="none" height="1149" rx="3" ry="3" stroke="#000000" width="53" x="108" y="21"/>
-      <text dominant-baseline="central" fill="#f0f0f0" font-family="Dialog" font-size="14" font-style="italic" font-weight="bold" text-anchor="middle" x="135" y="225">ID_EX</text>
-      <circ-anchor facing="east" x="150" y="20"/>
-      <circ-port dir="in" pin="110,390" x="130" y="10"/>
-      <circ-port dir="in" pin="110,430" x="150" y="1180"/>
-      <circ-port dir="in" pin="110,470" x="120" y="1180"/>
+      <rect fill="none" height="1149" rx="3" ry="3" stroke="#000000" width="59" x="100" y="21"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="16" font-weight="bold" text-anchor="middle" x="129" y="518">ID/EX</text>
+      <rect fill="none" height="1132" rx="10" ry="10" stroke="#000000" width="45" x="107" y="29"/>
+      <circ-anchor facing="east" x="130" y="500"/>
+      <circ-port dir="in" pin="110,390" x="130" y="20"/>
+      <circ-port dir="in" pin="110,430" x="140" y="1170"/>
+      <circ-port dir="in" pin="110,470" x="120" y="1170"/>
       <circ-port dir="in" pin="1540,160" x="100" y="810"/>
       <circ-port dir="in" pin="1550,310" x="100" y="520"/>
       <circ-port dir="in" pin="1560,1100" x="100" y="250"/>
@@ -145,27 +104,27 @@
       <circ-port dir="in" pin="910,620" x="100" y="170"/>
       <circ-port dir="in" pin="910,780" x="100" y="180"/>
       <circ-port dir="in" pin="910,940" x="100" y="190"/>
-      <circ-port dir="out" pin="1200,1100" x="170" y="200"/>
-      <circ-port dir="out" pin="1200,160" x="170" y="800"/>
-      <circ-port dir="out" pin="1200,310" x="170" y="510"/>
-      <circ-port dir="out" pin="1200,460" x="170" y="160"/>
-      <circ-port dir="out" pin="1200,620" x="170" y="170"/>
-      <circ-port dir="out" pin="1200,780" x="170" y="180"/>
-      <circ-port dir="out" pin="1200,940" x="170" y="190"/>
-      <circ-port dir="out" pin="1850,1100" x="170" y="250"/>
-      <circ-port dir="out" pin="1850,160" x="170" y="810"/>
-      <circ-port dir="out" pin="1850,310" x="170" y="520"/>
-      <circ-port dir="out" pin="1850,460" x="170" y="210"/>
-      <circ-port dir="out" pin="1850,620" x="170" y="220"/>
-      <circ-port dir="out" pin="1850,780" x="170" y="230"/>
-      <circ-port dir="out" pin="1850,940" x="170" y="240"/>
-      <circ-port dir="out" pin="2490,620" x="170" y="270"/>
-      <circ-port dir="out" pin="2500,310" x="170" y="530"/>
-      <circ-port dir="out" pin="2510,160" x="170" y="820"/>
-      <circ-port dir="out" pin="2510,460" x="170" y="260"/>
-      <circ-port dir="out" pin="2510,780" x="170" y="280"/>
-      <circ-port dir="out" pin="2510,940" x="170" y="290"/>
-      <circ-port dir="out" pin="510,160" x="170" y="790"/>
+      <circ-port dir="out" pin="1200,1100" x="160" y="200"/>
+      <circ-port dir="out" pin="1200,160" x="160" y="800"/>
+      <circ-port dir="out" pin="1200,310" x="160" y="510"/>
+      <circ-port dir="out" pin="1200,460" x="160" y="160"/>
+      <circ-port dir="out" pin="1200,620" x="160" y="170"/>
+      <circ-port dir="out" pin="1200,780" x="160" y="180"/>
+      <circ-port dir="out" pin="1200,940" x="160" y="190"/>
+      <circ-port dir="out" pin="1850,1100" x="160" y="250"/>
+      <circ-port dir="out" pin="1850,160" x="160" y="810"/>
+      <circ-port dir="out" pin="1850,310" x="160" y="520"/>
+      <circ-port dir="out" pin="1850,460" x="160" y="210"/>
+      <circ-port dir="out" pin="1850,620" x="160" y="220"/>
+      <circ-port dir="out" pin="1850,780" x="160" y="230"/>
+      <circ-port dir="out" pin="1850,940" x="160" y="240"/>
+      <circ-port dir="out" pin="2490,620" x="160" y="270"/>
+      <circ-port dir="out" pin="2500,310" x="160" y="530"/>
+      <circ-port dir="out" pin="2510,160" x="160" y="820"/>
+      <circ-port dir="out" pin="2510,460" x="160" y="260"/>
+      <circ-port dir="out" pin="2510,780" x="160" y="280"/>
+      <circ-port dir="out" pin="2510,940" x="160" y="290"/>
+      <circ-port dir="out" pin="510,160" x="160" y="790"/>
     </appear>
     <comp lib="0" loc="(1030,1120)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -882,15 +841,15 @@
       <a name="showInTab" val="true"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="7" loc="(1031,59)" name="Text">
+    <comp lib="7" loc="(1030,55)" name="Text">
       <a name="font" val="SansSerif bold 20"/>
       <a name="text" val="Decodificador"/>
     </comp>
-    <comp lib="7" loc="(2029,62)" name="Text">
+    <comp lib="7" loc="(2025,60)" name="Text">
       <a name="font" val="SansSerif bold 20"/>
       <a name="text" val="ucPrincipal e ucDesvio"/>
     </comp>
-    <comp lib="7" loc="(351,75)" name="Text">
+    <comp lib="7" loc="(350,75)" name="Text">
       <a name="font" val="SansSerif bold 20"/>
       <a name="text" val="PC"/>
     </comp>
