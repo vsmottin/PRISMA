@@ -71,34 +71,27 @@
     <tool lib="5" name="Register"/>
   </toolbar>
   <circuit name="estagioIF_ID">
-    <a name="appearance" val="logisim_evolution"/>
+    <a name="appearance" val="custom"/>
     <a name="circuit" val="estagioIF_ID"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="8.0"/>
     <appear>
-      <rect fill="#dedede" height="2" stroke="#c0c0c0" stroke-width="3" width="5" x="164" y="889"/>
+      <rect fill="#d6ffcc" height="881" stroke="#000000" width="40" x="110" y="29"/>
       <rect fill="#dedede" height="5" stroke="#c0c0c0" stroke-width="3" width="2" x="119" y="1174"/>
       <rect fill="#dedede" height="5" stroke="#c0c0c0" stroke-width="3" width="2" x="149" y="1174"/>
-      <rect fill="none" height="1149" rx="3" ry="3" stroke="#000000" width="61" x="100" y="21"/>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="16" font-weight="bold" text-anchor="middle" x="131" y="387">IF/ID</text>
-      <circ-anchor facing="east" x="130" y="360"/>
-      <circ-port dir="in" pin="230,130" x="100" y="400"/>
-      <circ-port dir="in" pin="230,170" x="100" y="410"/>
-      <circ-port dir="in" pin="230,90" x="100" y="390"/>
-      <circ-port dir="in" pin="290,270" x="100" y="370"/>
-      <circ-port dir="in" pin="290,460" x="100" y="380"/>
-      <circ-port dir="out" pin="590,270" x="160" y="60"/>
-      <circ-port dir="out" pin="590,460" x="170" y="890"/>
+      <rect fill="none" height="900" rx="3" ry="3" stroke="#000000" width="59" x="101" y="20"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" font-weight="bold" text-anchor="middle" x="131" y="457">IF/ID</text>
+      <circ-anchor facing="east" x="130" y="430"/>
+      <circ-port dir="in" pin="230,90" x="130" y="20"/>
+      <circ-port dir="in" pin="290,270" x="100" y="410"/>
+      <circ-port dir="in" pin="290,460" x="100" y="320"/>
+      <circ-port dir="out" pin="590,270" x="160" y="410"/>
+      <circ-port dir="out" pin="590,460" x="160" y="40"/>
     </appear>
-    <comp lib="0" loc="(230,130)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="Clear"/>
-      <a name="labelloc" val="east"/>
+    <comp lib="0" loc="(230,130)" name="Constant">
+      <a name="value" val="0x0"/>
     </comp>
-    <comp lib="0" loc="(230,170)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="label" val="Enable"/>
-    </comp>
+    <comp lib="0" loc="(230,170)" name="Constant"/>
     <comp lib="0" loc="(230,90)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="CLK"/>
