@@ -41,17 +41,17 @@
   <lib desc="#Memory" name="4"/>
   <lib desc="#I/O" name="5"/>
   <lib desc="#Base" name="6"/>
-  <lib desc="file#componentes\decodificador\decodificador.circ" name="7"/>
-  <lib desc="file#componentes\ULA\ULA.circ" name="8"/>
-  <lib desc="file#componentes\ucULA\ucULA.circ" name="9"/>
-  <lib desc="file#componentes\ucDesvio\ucDesvio.circ" name="10"/>
-  <lib desc="file#componentes\contadorCiclos\contadorCiclos.circ" name="11"/>
-  <lib desc="file#componentes\bancoRegistradores\bancoRegistradores.circ" name="12"/>
-  <lib desc="file#componentes\memInstrucoes\memInstr.circ" name="13"/>
-  <lib desc="file#componentes\zero\zero.circ" name="14"/>
-  <lib desc="file#componentes\ucPrincipal\ucPrincipal.circ" name="15"/>
-  <lib desc="file#componentes\memDados\memDados.circ" name="16"/>
-  <lib desc="file#componentes\ucEnderecamento\ucEnderecamento.circ" name="17"/>
+  <lib desc="file#../../componentes/decodificador/decodificador.circ" name="7"/>
+  <lib desc="file#../../componentes/memDados/memDados.circ" name="8"/>
+  <lib desc="file#../../componentes/ULA/ULA.circ" name="9"/>
+  <lib desc="file#../../componentes/ucEnderecamento/ucEnderecamento.circ" name="10"/>
+  <lib desc="file#../../componentes/zero/zero.circ" name="11"/>
+  <lib desc="file#../../componentes/memInstrucoes/memInstr.circ" name="12"/>
+  <lib desc="file#../../componentes/bancoRegistradores/bancoRegistradores.circ" name="13"/>
+  <lib desc="file#../../componentes/contadorCiclos/contadorCiclos.circ" name="14"/>
+  <lib desc="file#../../componentes/ucDesvio/ucDesvio.circ" name="15"/>
+  <lib desc="file#../../componentes/ucPrincipal/ucPrincipal.circ" name="16"/>
+  <lib desc="file#../../componentes/ucULA/ucULA.circ" name="17"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -418,13 +418,13 @@
       <a name="negate1" val="true"/>
       <a name="size" val="30"/>
     </comp>
-    <comp lib="10" loc="(510,750)" name="ucDesvio"/>
-    <comp lib="11" loc="(350,380)" name="contadorCiclos"/>
-    <comp lib="12" loc="(1060,510)" name="bancoRegistradores"/>
-    <comp lib="13" loc="(500,540)" name="memInstr"/>
-    <comp lib="15" loc="(910,220)" name="ucPrincipal"/>
-    <comp lib="16" loc="(1690,560)" name="memDados"/>
-    <comp lib="17" loc="(1530,830)" name="ucEnderecamento"/>
+    <comp lib="10" loc="(1530,830)" name="ucEnderecamento"/>
+    <comp lib="12" loc="(500,540)" name="memInstr"/>
+    <comp lib="13" loc="(1060,510)" name="bancoRegistradores"/>
+    <comp lib="14" loc="(350,380)" name="contadorCiclos"/>
+    <comp lib="15" loc="(510,750)" name="ucDesvio"/>
+    <comp lib="16" loc="(910,220)" name="ucPrincipal"/>
+    <comp lib="17" loc="(980,800)" name="ucULA"/>
     <comp lib="2" loc="(1260,510)" name="Multiplexer">
       <a name="selloc" val="tr"/>
       <a name="width" val="32"/>
@@ -477,8 +477,8 @@
       <a name="text" val="rd"/>
     </comp>
     <comp lib="7" loc="(620,620)" name="decodificador"/>
-    <comp lib="8" loc="(1420,540)" name="ULA"/>
-    <comp lib="9" loc="(980,800)" name="ucULA"/>
+    <comp lib="8" loc="(1690,560)" name="memDados"/>
+    <comp lib="9" loc="(1420,540)" name="ULA"/>
     <wire from="(100,530)" to="(110,530)"/>
     <wire from="(1020,770)" to="(1400,770)"/>
     <wire from="(1040,630)" to="(1050,630)"/>
