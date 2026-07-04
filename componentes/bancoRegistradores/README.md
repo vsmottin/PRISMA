@@ -2,15 +2,7 @@
 
 O Banco de Registradores é o componente que armazena os 32 registradores de uso geral (`x0` a `x31`) da arquitetura RISC-V, cada um com 32 bits. Ele disponibiliza **duas portas de leitura** independentes e assíncronas (para alimentar os operandos da ULA) e **uma porta de escrita** síncrona (controlada pelo clock), permitindo que o processador leia dois registradores e escreva em um terceiro dentro do mesmo ciclo.
 
-Como o circuito é extenso, sua visualização foi dividida em duas partes:
-
-**Parte 1 — Escrita e leitura**
-
-![Circuito do Banco de Registradores (parte 1)](bancoRegistradores_imagem1.png)
-
-**Parte 2 — Clock e habilitação de escrita**
-
-![Circuito do Banco de Registradores (parte 2)](bancoRegistradores_imagem2.png)
+![Circuito do Banco de Registradores](bancoRegistradores_imagem.png)
 
 <br>
 
