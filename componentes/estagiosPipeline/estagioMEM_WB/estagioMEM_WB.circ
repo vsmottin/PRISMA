@@ -90,13 +90,13 @@
       <circ-port dir="in" pin="290,450" x="110" y="450"/>
       <circ-port dir="in" pin="290,610" x="110" y="100"/>
       <circ-port dir="in" pin="290,770" x="110" y="80"/>
-      <circ-port dir="out" pin="1530,320" x="170" y="120"/>
+      <circ-port dir="out" pin="1530,320" x="170" y="80"/>
       <circ-port dir="out" pin="1530,480" x="170" y="660"/>
-      <circ-port dir="out" pin="1530,640" x="170" y="140"/>
+      <circ-port dir="out" pin="1530,640" x="170" y="750"/>
       <circ-port dir="out" pin="590,290" x="170" y="500"/>
       <circ-port dir="out" pin="590,450" x="170" y="450"/>
-      <circ-port dir="out" pin="590,610" x="170" y="100"/>
-      <circ-port dir="out" pin="590,770" x="170" y="80"/>
+      <circ-port dir="out" pin="590,610" x="170" y="60"/>
+      <circ-port dir="out" pin="590,770" x="170" y="710"/>
     </appear>
     <comp lib="0" loc="(1230,320)" name="Pin">
       <a name="appearance" val="classic"/>
