@@ -105,28 +105,28 @@
       <circ-port dir="in" pin="910,620" x="330" y="800"/>
       <circ-port dir="in" pin="910,780" x="330" y="820"/>
       <circ-port dir="in" pin="910,940" x="330" y="840"/>
-      <circ-port dir="out" pin="1200,1100" x="390" y="590"/>
+      <circ-port dir="out" pin="1200,1100" x="390" y="860"/>
       <circ-port dir="out" pin="1200,160" x="390" y="660"/>
       <circ-port dir="out" pin="1200,310" x="390" y="420"/>
       <circ-port dir="out" pin="1200,460" x="390" y="500"/>
       <circ-port dir="out" pin="1200,620" x="390" y="800"/>
-      <circ-port dir="out" pin="1200,780" x="390" y="680"/>
-      <circ-port dir="out" pin="1200,940" x="390" y="700"/>
-      <circ-port dir="out" pin="1850,1100" x="390" y="270"/>
-      <circ-port dir="out" pin="1850,160" x="390" y="70"/>
-      <circ-port dir="out" pin="1850,310" x="390" y="620"/>
+      <circ-port dir="out" pin="1200,780" x="390" y="820"/>
+      <circ-port dir="out" pin="1200,940" x="390" y="840"/>
+      <circ-port dir="out" pin="1850,1100" x="390" y="110"/>
+      <circ-port dir="out" pin="1850,160" x="390" y="210"/>
+      <circ-port dir="out" pin="1850,310" x="390" y="230"/>
       <circ-port dir="out" pin="1850,460" x="390" y="150"/>
       <circ-port dir="out" pin="1850,620" x="390" y="170"/>
-      <circ-port dir="out" pin="1850,780" x="390" y="190"/>
-      <circ-port dir="out" pin="1850,940" x="390" y="780"/>
-      <circ-port dir="out" pin="2490,620" x="390" y="130"/>
-      <circ-port dir="out" pin="2500,310" x="390" y="90"/>
-      <circ-port dir="out" pin="2510,160" x="390" y="250"/>
-      <circ-port dir="out" pin="2510,460" x="390" y="110"/>
-      <circ-port dir="out" pin="2510,780" x="390" y="210"/>
+      <circ-port dir="out" pin="1850,780" x="390" y="330"/>
+      <circ-port dir="out" pin="1850,940" x="390" y="190"/>
+      <circ-port dir="out" pin="2490,620" x="390" y="290"/>
+      <circ-port dir="out" pin="2500,310" x="390" y="250"/>
+      <circ-port dir="out" pin="2510,160" x="390" y="130"/>
+      <circ-port dir="out" pin="2510,460" x="390" y="270"/>
+      <circ-port dir="out" pin="2510,780" x="390" y="310"/>
       <circ-port dir="out" pin="2510,940" x="390" y="880"/>
-      <circ-port dir="out" pin="510,160" x="390" y="230"/>
-      <circ-port dir="out" pin="510,310" x="390" y="440"/>
+      <circ-port dir="out" pin="510,160" x="390" y="90"/>
+      <circ-port dir="out" pin="510,310" x="390" y="70"/>
     </appear>
     <comp lib="0" loc="(1030,1120)" name="Tunnel">
       <a name="facing" val="east"/>
