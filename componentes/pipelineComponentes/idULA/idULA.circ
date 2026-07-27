@@ -89,6 +89,9 @@
       <polyline fill="none" points="190,185 190,115" stroke="#000000"/>
       <polyline fill="none" points="140,85 190,115" stroke="#000000"/>
       <polyline fill="none" points="140,85 140,140" stroke="#000000"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="11" text-anchor="middle" x="151" y="119">A</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="11" text-anchor="middle" x="149" y="180">B</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="11" text-anchor="middle" x="161" y="192">f3</text>
       <circ-anchor facing="east" x="190" y="150"/>
       <circ-port dir="in" pin="270,200" x="140" y="120"/>
       <circ-port dir="in" pin="360,200" x="140" y="180"/>
