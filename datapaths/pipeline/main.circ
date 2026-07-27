@@ -17,7 +17,6 @@
       <a name="radix" val="16"/>
     </tool>
     <tool name="Tunnel">
-      <a name="facing" val="north"/>
       <a name="width" val="16"/>
     </tool>
     <tool name="Pull Resistor">
@@ -45,21 +44,22 @@
   <lib desc="#Memory" name="4"/>
   <lib desc="#I/O" name="5"/>
   <lib desc="#Base" name="6"/>
-  <lib desc="file#../../componentes/ucPrincipal/ucPrincipal.circ" name="7"/>
-  <lib desc="file#../../componentes/ucDesvio/ucDesvio.circ" name="8"/>
-  <lib desc="file#../../componentes/bancoRegistradores/bancoRegistradores.circ" name="9"/>
-  <lib desc="file#../../componentes/estagiosPipeline/estagioEX_MEM/estagioEX_MEM.circ" name="10"/>
-  <lib desc="file#../../componentes/memInstrucoes/memInstr.circ" name="11"/>
-  <lib desc="file#../../componentes/contadorCiclos/contadorCiclos.circ" name="12"/>
-  <lib desc="file#../../componentes/estagiosPipeline/estagioID_EX/estagioID_EX.circ" name="13"/>
-  <lib desc="file#../../componentes/ULA/ULA.circ" name="14"/>
+  <lib desc="file#../../componentes/zero/zero.circ" name="7"/>
+  <lib desc="file#../../componentes/memDados/memDados.circ" name="8"/>
+  <lib desc="file#../../componentes/ULA/ULA.circ" name="9"/>
+  <lib desc="file#../../componentes/ucDesvio/ucDesvio.circ" name="10"/>
+  <lib desc="file#../../componentes/decodificador/decodificador.circ" name="11"/>
+  <lib desc="file#../../componentes/bancoRegistradores/bancoRegistradores.circ" name="12"/>
+  <lib desc="file#../../componentes/estagiosPipeline/estagioIF_ID/estagioIF_ID.circ" name="13"/>
+  <lib desc="file#../../componentes/estagiosPipeline/estagioEX_MEM/estagioEX_MEM.circ" name="14"/>
   <lib desc="file#../../componentes/ucEnderecamento/ucEnderecamento.circ" name="15"/>
-  <lib desc="file#../../componentes/memDados/memDados.circ" name="16"/>
-  <lib desc="file#../../componentes/estagiosPipeline/estagioIF_ID/estagioIF_ID.circ" name="17"/>
-  <lib desc="file#../../componentes/estagiosPipeline/estagioMEM_WB/estagioMEM_WB.circ" name="18"/>
-  <lib desc="file#../../componentes/decodificador/decodificador.circ" name="19"/>
-  <lib desc="file#../../componentes/zero/zero.circ" name="20"/>
-  <lib desc="file#../../componentes/ucULA/ucULA.circ" name="21"/>
+  <lib desc="file#../../componentes/ucULA/ucULA.circ" name="16"/>
+  <lib desc="file#../../componentes/memInstrucoes/memInstr.circ" name="17"/>
+  <lib desc="file#../../componentes/estagiosPipeline/estagioID_EX/estagioID_EX.circ" name="18"/>
+  <lib desc="file#../../componentes/estagiosPipeline/estagioMEM_WB/estagioMEM_WB.circ" name="19"/>
+  <lib desc="file#../../componentes/ucPrincipal/ucPrincipal.circ" name="20"/>
+  <lib desc="file#../../componentes/contadorCiclos/contadorCiclos.circ" name="21"/>
+  <lib desc="file#../../componentes/pipelineComponentes/idULA/idULA.circ" name="22"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -110,6 +110,13 @@
       <a name="facing" val="north"/>
       <a name="label" val="RegWrite_WB"/>
     </comp>
+    <comp lib="0" loc="(1280,840)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Zero"/>
+    </comp>
+    <comp lib="0" loc="(1330,660)" name="Tunnel">
+      <a name="label" val="Zero"/>
+    </comp>
     <comp lib="0" loc="(1370,810)" name="Tunnel">
       <a name="label" val="BranchSrc"/>
     </comp>
@@ -127,9 +134,6 @@
     </comp>
     <comp lib="0" loc="(1560,420)" name="Tunnel">
       <a name="label" val="Jalr_EX"/>
-    </comp>
-    <comp lib="0" loc="(1560,960)" name="Tunnel">
-      <a name="label" val="BranchSrc"/>
     </comp>
     <comp lib="0" loc="(180,570)" name="Tunnel">
       <a name="facing" val="north"/>
@@ -342,16 +346,16 @@
       <a name="negate1" val="true"/>
       <a name="size" val="30"/>
     </comp>
-    <comp lib="10" loc="(2360,630)" name="estagioEX_MEM"/>
-    <comp lib="11" loc="(500,540)" name="memInstr"/>
-    <comp lib="12" loc="(350,380)" name="contadorCiclos"/>
-    <comp lib="13" loc="(1510,630)" name="estagioID_EX"/>
-    <comp lib="14" loc="(2070,540)" name="ULA"/>
+    <comp lib="10" loc="(1320,840)" name="ucDesvio"/>
+    <comp lib="11" loc="(740,620)" name="decodificador"/>
+    <comp lib="12" loc="(1130,510)" name="bancoRegistradores"/>
+    <comp lib="13" loc="(640,560)" name="estagioIF_ID"/>
+    <comp lib="14" loc="(2360,630)" name="estagioEX_MEM"/>
     <comp lib="15" loc="(2650,800)" name="ucEnderecamento"/>
-    <comp lib="16" loc="(2880,540)" name="memDados"/>
-    <comp lib="17" loc="(640,560)" name="estagioIF_ID"/>
-    <comp lib="18" loc="(3170,630)" name="estagioMEM_WB"/>
-    <comp lib="19" loc="(740,620)" name="decodificador"/>
+    <comp lib="16" loc="(1920,800)" name="ucULA"/>
+    <comp lib="17" loc="(500,540)" name="memInstr"/>
+    <comp lib="18" loc="(1510,630)" name="estagioID_EX"/>
+    <comp lib="19" loc="(3170,630)" name="estagioMEM_WB"/>
     <comp lib="2" loc="(1810,510)" name="Multiplexer">
       <a name="selloc" val="tr"/>
       <a name="width" val="32"/>
@@ -375,7 +379,9 @@
     <comp lib="2" loc="(3580,580)" name="Multiplexer">
       <a name="width" val="32"/>
     </comp>
-    <comp lib="21" loc="(1920,800)" name="ucULA"/>
+    <comp lib="20" loc="(1070,270)" name="ucPrincipal"/>
+    <comp lib="21" loc="(350,380)" name="contadorCiclos"/>
+    <comp lib="22" loc="(1320,660)" name="idULA"/>
     <comp lib="3" loc="(1830,590)" name="Adder">
       <a name="width" val="32"/>
     </comp>
@@ -493,9 +499,8 @@
     <comp lib="6" loc="(3245,740)" name="Text">
       <a name="text" val="memToReg"/>
     </comp>
-    <comp lib="7" loc="(1070,270)" name="ucPrincipal"/>
-    <comp lib="8" loc="(1320,840)" name="ucDesvio"/>
-    <comp lib="9" loc="(1130,510)" name="bancoRegistradores"/>
+    <comp lib="8" loc="(2880,540)" name="memDados"/>
+    <comp lib="9" loc="(2070,540)" name="ULA"/>
     <wire from="(1000,310)" to="(1020,310)"/>
     <wire from="(1000,330)" to="(1000,470)"/>
     <wire from="(1000,330)" to="(1020,330)"/>
@@ -521,9 +526,24 @@
     <wire from="(1120,350)" to="(1480,350)"/>
     <wire from="(1120,610)" to="(1120,640)"/>
     <wire from="(1140,610)" to="(1140,680)"/>
-    <wire from="(1200,500)" to="(1480,500)"/>
-    <wire from="(1200,580)" to="(1480,580)"/>
+    <wire from="(1200,500)" to="(1250,500)"/>
+    <wire from="(1200,580)" to="(1220,580)"/>
+    <wire from="(1220,580)" to="(1220,690)"/>
+    <wire from="(1220,580)" to="(1480,580)"/>
+    <wire from="(1220,690)" to="(1270,690)"/>
+    <wire from="(1240,760)" to="(1240,770)"/>
+    <wire from="(1240,760)" to="(1290,760)"/>
+    <wire from="(1240,770)" to="(1240,780)"/>
+    <wire from="(1240,780)" to="(1290,780)"/>
+    <wire from="(1250,500)" to="(1250,630)"/>
+    <wire from="(1250,500)" to="(1480,500)"/>
+    <wire from="(1250,630)" to="(1270,630)"/>
+    <wire from="(1280,840)" to="(1290,840)"/>
+    <wire from="(1290,710)" to="(1290,760)"/>
+    <wire from="(1320,660)" to="(1330,660)"/>
     <wire from="(1360,810)" to="(1370,810)"/>
+    <wire from="(1440,960)" to="(1440,1000)"/>
+    <wire from="(1440,960)" to="(1480,960)"/>
     <wire from="(150,540)" to="(170,540)"/>
     <wire from="(1510,120)" to="(1510,130)"/>
     <wire from="(1510,140)" to="(1510,150)"/>
@@ -547,9 +567,10 @@
     <wire from="(1540,900)" to="(1780,900)"/>
     <wire from="(1540,920)" to="(1800,920)"/>
     <wire from="(1540,940)" to="(1730,940)"/>
-    <wire from="(1540,960)" to="(1560,960)"/>
+    <wire from="(1540,960)" to="(1580,960)"/>
     <wire from="(1550,410)" to="(1550,420)"/>
     <wire from="(1550,420)" to="(1560,420)"/>
+    <wire from="(1580,960)" to="(1580,1000)"/>
     <wire from="(160,450)" to="(160,520)"/>
     <wire from="(160,450)" to="(530,450)"/>
     <wire from="(160,520)" to="(170,520)"/>
@@ -717,7 +738,9 @@
     <wire from="(840,940)" to="(1480,940)"/>
     <wire from="(860,620)" to="(860,920)"/>
     <wire from="(860,920)" to="(1480,920)"/>
-    <wire from="(880,590)" to="(880,900)"/>
+    <wire from="(880,590)" to="(880,770)"/>
+    <wire from="(880,770)" to="(1240,770)"/>
+    <wire from="(880,770)" to="(880,900)"/>
     <wire from="(880,900)" to="(1480,900)"/>
     <wire from="(900,560)" to="(900,880)"/>
     <wire from="(900,880)" to="(1480,880)"/>

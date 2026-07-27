@@ -4,40 +4,8 @@
 
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
-      <a name="appear" val="center"/>
-      <a name="bit1" val="0"/>
-      <a name="bit10" val="0"/>
-      <a name="bit11" val="1"/>
-      <a name="bit12" val="1"/>
-      <a name="bit13" val="1"/>
-      <a name="bit14" val="1"/>
-      <a name="bit15" val="1"/>
-      <a name="bit16" val="1"/>
-      <a name="bit17" val="1"/>
-      <a name="bit18" val="1"/>
-      <a name="bit19" val="1"/>
-      <a name="bit2" val="0"/>
-      <a name="bit20" val="1"/>
-      <a name="bit21" val="1"/>
-      <a name="bit22" val="2"/>
-      <a name="bit23" val="2"/>
-      <a name="bit24" val="2"/>
-      <a name="bit25" val="2"/>
-      <a name="bit26" val="2"/>
-      <a name="bit27" val="2"/>
-      <a name="bit28" val="2"/>
-      <a name="bit29" val="2"/>
-      <a name="bit3" val="0"/>
-      <a name="bit30" val="2"/>
-      <a name="bit31" val="2"/>
-      <a name="bit4" val="0"/>
-      <a name="bit5" val="0"/>
-      <a name="bit6" val="0"/>
-      <a name="bit7" val="0"/>
-      <a name="bit8" val="0"/>
-      <a name="bit9" val="0"/>
-      <a name="facing" val="north"/>
-      <a name="fanout" val="3"/>
+      <a name="facing" val="west"/>
+      <a name="fanout" val="32"/>
       <a name="incoming" val="32"/>
     </tool>
     <tool name="Pin">
@@ -75,7 +43,7 @@
   <lib desc="#BFH-Praktika" name="10"/>
   <lib desc="#Input/Output-Extra" name="11"/>
   <lib desc="#Soc" name="12"/>
-  <main name="main"/>
+  <main name="idULA"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -108,11 +76,25 @@
     <tool lib="5" name="D Flip-Flop"/>
     <tool lib="5" name="Register"/>
   </toolbar>
-  <circuit name="main">
-    <a name="appearance" val="logisim_evolution"/>
-    <a name="circuit" val="main"/>
+  <circuit name="idULA">
+    <a name="appearance" val="custom"/>
+    <a name="circuit" val="idULA"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="32.0"/>
+    <appear>
+      <polyline fill="none" points="140,140 150,150" stroke="#000000"/>
+      <polyline fill="none" points="150,150 140,160" stroke="#000000"/>
+      <polyline fill="none" points="140,160 140,216" stroke="#000000"/>
+      <polyline fill="none" points="140,216 190,185" stroke="#000000"/>
+      <polyline fill="none" points="190,185 190,115" stroke="#000000"/>
+      <polyline fill="none" points="140,85 190,115" stroke="#000000"/>
+      <polyline fill="none" points="140,85 140,140" stroke="#000000"/>
+      <circ-anchor facing="east" x="190" y="150"/>
+      <circ-port dir="in" pin="270,200" x="140" y="120"/>
+      <circ-port dir="in" pin="360,200" x="140" y="180"/>
+      <circ-port dir="in" pin="720,390" x="160" y="200"/>
+      <circ-port dir="out" pin="770,280" x="190" y="150"/>
+    </appear>
     <comp lib="0" loc="(270,200)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="south"/>
@@ -161,15 +143,15 @@
     <comp lib="3" loc="(470,300)" name="Comparator">
       <a name="width" val="32"/>
     </comp>
-    <comp lib="9" loc="(605,236)" name="Text">
+    <comp lib="9" loc="(605,235)" name="Text">
       <a name="font" val="SansSerif bold 14"/>
       <a name="text" val="EQ"/>
     </comp>
-    <comp lib="9" loc="(606,266)" name="Text">
+    <comp lib="9" loc="(605,265)" name="Text">
       <a name="font" val="SansSerif bold 14"/>
       <a name="text" val="!LT"/>
     </comp>
-    <comp lib="9" loc="(606,296)" name="Text">
+    <comp lib="9" loc="(605,295)" name="Text">
       <a name="font" val="SansSerif bold 14"/>
       <a name="text" val="!LTU"/>
     </comp>
