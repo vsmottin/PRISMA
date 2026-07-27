@@ -45,22 +45,22 @@
   <lib desc="#Memory" name="4"/>
   <lib desc="#I/O" name="5"/>
   <lib desc="#Base" name="6"/>
-  <lib desc="file#../../componentes/ucPrincipal/ucPrincipal.circ" name="7"/>
-  <lib desc="file#../../componentes/zero/zero.circ" name="8"/>
-  <lib desc="file#../../componentes/bancoRegistradores/bancoRegistradores.circ" name="9"/>
-  <lib desc="file#../../componentes/memInstrucoes/memInstr.circ" name="10"/>
+  <lib desc="file#../../componentes/ucEnderecamento/ucEnderecamento.circ" name="7"/>
+  <lib desc="file#../../componentes/estagiosPipeline/estagioMEM_WB/estagioMEM_WB.circ" name="8"/>
+  <lib desc="file#../../componentes/contadorCiclos/contadorCiclos.circ" name="9"/>
+  <lib desc="file#../../componentes/ucULA/ucULA.circ" name="10"/>
   <lib desc="file#../../componentes/estagiosPipeline/estagioIF_ID/estagioIF_ID.circ" name="11"/>
-  <lib desc="file#../../componentes/ucULA/ucULA.circ" name="12"/>
-  <lib desc="file#../../componentes/ULA/ULA.circ" name="13"/>
-  <lib desc="file#../../componentes/estagiosPipeline/estagioMEM_WB/estagioMEM_WB.circ" name="14"/>
-  <lib desc="file#../../componentes/pipelineComponentes/idULA/idULA.circ" name="15"/>
+  <lib desc="file#../../componentes/pipelineComponentes/idULA/idULA.circ" name="12"/>
+  <lib desc="file#../../componentes/ucPrincipal/ucPrincipal.circ" name="13"/>
+  <lib desc="file#../../componentes/bancoRegistradores/bancoRegistradores.circ" name="14"/>
+  <lib desc="file#../../componentes/memDados/memDados.circ" name="15"/>
   <lib desc="file#../../componentes/estagiosPipeline/estagioEX_MEM/estagioEX_MEM.circ" name="16"/>
-  <lib desc="file#../../componentes/estagiosPipeline/estagioID_EX/estagioID_EX.circ" name="17"/>
-  <lib desc="file#../../componentes/memDados/memDados.circ" name="18"/>
-  <lib desc="file#../../componentes/ucDesvio/ucDesvio.circ" name="19"/>
-  <lib desc="file#../../componentes/ucEnderecamento/ucEnderecamento.circ" name="20"/>
-  <lib desc="file#../../componentes/contadorCiclos/contadorCiclos.circ" name="21"/>
-  <lib desc="file#../../componentes/decodificador/decodificador.circ" name="22"/>
+  <lib desc="file#../../componentes/ULA/ULA.circ" name="17"/>
+  <lib desc="file#../../componentes/decodificador/decodificador.circ" name="18"/>
+  <lib desc="file#../../componentes/memInstrucoes/memInstr.circ" name="19"/>
+  <lib desc="file#../../componentes/estagiosPipeline/estagioID_EX/estagioID_EX.circ" name="20"/>
+  <lib desc="file#../../componentes/zero/zero.circ" name="21"/>
+  <lib desc="file#../../componentes/ucDesvio/ucDesvio.circ" name="22"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -232,16 +232,16 @@
       <a name="negate1" val="true"/>
       <a name="size" val="30"/>
     </comp>
-    <comp lib="10" loc="(500,540)" name="memInstr"/>
+    <comp lib="10" loc="(1970,800)" name="ucULA"/>
     <comp lib="11" loc="(640,560)" name="estagioIF_ID"/>
-    <comp lib="12" loc="(1970,800)" name="ucULA"/>
-    <comp lib="13" loc="(2150,540)" name="ULA"/>
-    <comp lib="14" loc="(3220,630)" name="estagioMEM_WB"/>
-    <comp lib="15" loc="(1300,660)" name="idULA"/>
+    <comp lib="12" loc="(1300,660)" name="idULA"/>
+    <comp lib="13" loc="(1070,270)" name="ucPrincipal"/>
+    <comp lib="14" loc="(1130,510)" name="bancoRegistradores"/>
+    <comp lib="15" loc="(2980,560)" name="memDados"/>
     <comp lib="16" loc="(2410,630)" name="estagioEX_MEM"/>
-    <comp lib="17" loc="(1560,630)" name="estagioID_EX"/>
-    <comp lib="18" loc="(2980,560)" name="memDados"/>
-    <comp lib="19" loc="(1130,850)" name="ucDesvio"/>
+    <comp lib="17" loc="(2150,540)" name="ULA"/>
+    <comp lib="18" loc="(740,620)" name="decodificador"/>
+    <comp lib="19" loc="(500,540)" name="memInstr"/>
     <comp lib="2" loc="(1890,510)" name="Multiplexer">
       <a name="selloc" val="tr"/>
       <a name="width" val="32"/>
@@ -268,9 +268,8 @@
       <a name="selloc" val="tr"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="20" loc="(2670,830)" name="ucEnderecamento"/>
-    <comp lib="21" loc="(350,380)" name="contadorCiclos"/>
-    <comp lib="22" loc="(740,620)" name="decodificador"/>
+    <comp lib="20" loc="(1560,630)" name="estagioID_EX"/>
+    <comp lib="22" loc="(1130,850)" name="ucDesvio"/>
     <comp lib="3" loc="(1490,660)" name="Adder">
       <a name="width" val="32"/>
     </comp>
@@ -293,35 +292,35 @@
     <comp lib="6" loc="(1600,145)" name="Text">
       <a name="text" val="PC"/>
     </comp>
-    <comp lib="6" loc="(1600,205)" name="Text">
-      <a name="text" val="LUI"/>
-    </comp>
     <comp lib="6" loc="(1600,875)" name="Text">
       <a name="text" val="rd"/>
     </comp>
     <comp lib="6" loc="(1600,896)" name="Text">
       <a name="text" val="f3"/>
     </comp>
-    <comp lib="6" loc="(1600,917)" name="Text">
+    <comp lib="6" loc="(1600,916)" name="Text">
       <a name="text" val="f7"/>
     </comp>
-    <comp lib="6" loc="(1602,736)" name="Text">
+    <comp lib="6" loc="(1601,735)" name="Text">
       <a name="text" val="OP"/>
     </comp>
-    <comp lib="6" loc="(1607,937)" name="Text">
+    <comp lib="6" loc="(1603,208)" name="Text">
+      <a name="text" val="LUI"/>
+    </comp>
+    <comp lib="6" loc="(1608,937)" name="Text">
       <a name="text" val="IMM"/>
-    </comp>
-    <comp lib="6" loc="(1610,245)" name="Text">
-      <a name="text" val="Jump"/>
-    </comp>
-    <comp lib="6" loc="(1615,165)" name="Text">
-      <a name="text" val="PC + 4"/>
     </comp>
     <comp lib="6" loc="(1615,185)" name="Text">
       <a name="text" val="AUIPC"/>
     </comp>
-    <comp lib="6" loc="(1615,265)" name="Text">
+    <comp lib="6" loc="(1616,245)" name="Text">
+      <a name="text" val="Jump"/>
+    </comp>
+    <comp lib="6" loc="(1617,267)" name="Text">
       <a name="text" val="AluOP"/>
+    </comp>
+    <comp lib="6" loc="(1618,167)" name="Text">
+      <a name="text" val="PC + 4"/>
     </comp>
     <comp lib="6" loc="(1620,495)" name="Text">
       <a name="text" val="ID1_EX"/>
@@ -329,35 +328,35 @@
     <comp lib="6" loc="(1620,575)" name="Text">
       <a name="text" val="ID2_EX"/>
     </comp>
-    <comp lib="6" loc="(1625,285)" name="Text">
-      <a name="text" val="RegWrite"/>
+    <comp lib="6" loc="(1628,286)" name="Text">
+      <a name="text" val="regWrite"/>
     </comp>
-    <comp lib="6" loc="(1630,305)" name="Text">
+    <comp lib="6" loc="(1630,307)" name="Text">
       <a name="text" val="ALUSrc_B"/>
     </comp>
-    <comp lib="6" loc="(1630,345)" name="Text">
-      <a name="text" val="MemRead"/>
-    </comp>
     <comp lib="6" loc="(1630,365)" name="Text">
-      <a name="text" val="MemWrite"/>
+      <a name="text" val="memWrite"/>
     </comp>
-    <comp lib="6" loc="(1635,325)" name="Text">
-      <a name="text" val="MemToReg"/>
+    <comp lib="6" loc="(1631,347)" name="Text">
+      <a name="text" val="memRead"/>
+    </comp>
+    <comp lib="6" loc="(1637,326)" name="Text">
+      <a name="text" val="memToReg"/>
     </comp>
     <comp lib="6" loc="(180,500)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="PCSrc"/>
     </comp>
-    <comp lib="6" loc="(2450,435)" name="Text">
-      <a name="text" val="ID2"/>
-    </comp>
     <comp lib="6" loc="(2450,835)" name="Text">
       <a name="text" val="f3"/>
     </comp>
-    <comp lib="6" loc="(2450,875)" name="Text">
+    <comp lib="6" loc="(2453,877)" name="Text">
       <a name="text" val="RD"/>
     </comp>
-    <comp lib="6" loc="(2455,585)" name="Text">
+    <comp lib="6" loc="(2455,436)" name="Text">
+      <a name="text" val="ID2"/>
+    </comp>
+    <comp lib="6" loc="(2459,586)" name="Text">
       <a name="text" val="ALU"/>
     </comp>
     <comp lib="6" loc="(2460,165)" name="Text">
@@ -386,33 +385,34 @@
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="Jalr"/>
     </comp>
-    <comp lib="6" loc="(3260,605)" name="Text">
+    <comp lib="6" loc="(3265,606)" name="Text">
       <a name="text" val="LD"/>
-    </comp>
-    <comp lib="6" loc="(3265,535)" name="Text">
-      <a name="text" val="ALU"/>
     </comp>
     <comp lib="6" loc="(3265,870)" name="Text">
       <a name="text" val="RD"/>
     </comp>
+    <comp lib="6" loc="(3267,535)" name="Text">
+      <a name="text" val="ALU"/>
+    </comp>
     <comp lib="6" loc="(3270,165)" name="Text">
       <a name="text" val="Pc+4"/>
     </comp>
-    <comp lib="6" loc="(3270,240)" name="Text">
+    <comp lib="6" loc="(3274,246)" name="Text">
       <a name="text" val="Jump"/>
     </comp>
-    <comp lib="6" loc="(3295,325)" name="Text">
+    <comp lib="6" loc="(3297,326)" name="Text">
       <a name="text" val="memToReg"/>
     </comp>
-    <comp lib="7" loc="(1070,270)" name="ucPrincipal"/>
-    <comp lib="9" loc="(1130,510)" name="bancoRegistradores"/>
+    <comp lib="7" loc="(2670,830)" name="ucEnderecamento"/>
+    <comp lib="8" loc="(3220,630)" name="estagioMEM_WB"/>
+    <comp lib="9" loc="(350,380)" name="contadorCiclos"/>
     <wire from="(1000,1210)" to="(3620,1210)"/>
     <wire from="(1000,310)" to="(1020,310)"/>
     <wire from="(1000,330)" to="(1000,470)"/>
     <wire from="(1000,330)" to="(1020,330)"/>
     <wire from="(1000,590)" to="(1000,1210)"/>
     <wire from="(1000,590)" to="(1060,590)"/>
-    <wire from="(1030,1180)" to="(3340,1180)"/>
+    <wire from="(1030,1180)" to="(3350,1180)"/>
     <wire from="(1030,700)" to="(1030,1180)"/>
     <wire from="(1030,700)" to="(1140,700)"/>
     <wire from="(1040,190)" to="(1040,270)"/>
@@ -573,7 +573,7 @@
     <wire from="(3220,120)" to="(3220,130)"/>
     <wire from="(3250,170)" to="(3510,170)"/>
     <wire from="(3250,250)" to="(3560,250)"/>
-    <wire from="(3250,290)" to="(3340,290)"/>
+    <wire from="(3250,290)" to="(3350,290)"/>
     <wire from="(3250,330)" to="(3470,330)"/>
     <wire from="(3250,540)" to="(3450,540)"/>
     <wire from="(3250,610)" to="(3450,610)"/>
@@ -582,7 +582,7 @@
     <wire from="(330,640)" to="(330,710)"/>
     <wire from="(330,710)" to="(360,710)"/>
     <wire from="(3310,880)" to="(3310,1240)"/>
-    <wire from="(3340,290)" to="(3340,1180)"/>
+    <wire from="(3350,290)" to="(3350,1180)"/>
     <wire from="(340,560)" to="(340,580)"/>
     <wire from="(340,560)" to="(350,560)"/>
     <wire from="(340,580)" to="(340,610)"/>
