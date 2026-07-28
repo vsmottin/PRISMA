@@ -95,7 +95,7 @@
       <circ-anchor facing="east" x="190" y="150"/>
       <circ-port dir="in" pin="270,200" x="140" y="120"/>
       <circ-port dir="in" pin="360,200" x="140" y="180"/>
-      <circ-port dir="in" pin="720,390" x="160" y="200"/>
+      <circ-port dir="in" pin="730,390" x="160" y="200"/>
       <circ-port dir="out" pin="770,280" x="190" y="150"/>
     </appear>
     <comp lib="0" loc="(270,200)" name="Pin">
@@ -112,22 +112,22 @@
       <a name="labelloc" val="north"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(720,380)" name="Splitter">
+    <comp lib="0" loc="(730,340)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(730,380)" name="Splitter">
       <a name="appear" val="center"/>
       <a name="facing" val="north"/>
       <a name="fanout" val="3"/>
       <a name="incoming" val="3"/>
     </comp>
-    <comp lib="0" loc="(720,390)" name="Pin">
+    <comp lib="0" loc="(730,390)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="facing" val="north"/>
       <a name="label" val="funct3"/>
       <a name="labelloc" val="south"/>
       <a name="width" val="3"/>
-    </comp>
-    <comp lib="0" loc="(730,340)" name="Splitter">
-      <a name="appear" val="center"/>
-      <a name="facing" val="south"/>
     </comp>
     <comp lib="0" loc="(770,280)" name="Pin">
       <a name="appearance" val="classic"/>
@@ -144,6 +144,7 @@
       <a name="width" val="32"/>
     </comp>
     <comp lib="3" loc="(470,300)" name="Comparator">
+      <a name="mode" val="unsigned"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="9" loc="(605,235)" name="Text">
@@ -181,8 +182,8 @@
     <wire from="(640,290)" to="(710,290)"/>
     <wire from="(670,240)" to="(670,260)"/>
     <wire from="(670,260)" to="(710,260)"/>
-    <wire from="(720,380)" to="(720,390)"/>
     <wire from="(730,300)" to="(730,340)"/>
+    <wire from="(730,380)" to="(730,390)"/>
     <wire from="(750,280)" to="(770,280)"/>
   </circuit>
 </project>

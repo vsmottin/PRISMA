@@ -28,8 +28,7 @@
       <a name="facing" val="north"/>
     </tool>
     <tool name="Constant">
-      <a name="value" val="0x0"/>
-      <a name="width" val="32"/>
+      <a name="facing" val="south"/>
     </tool>
   </lib>
   <lib desc="#Gates" name="1">
@@ -314,6 +313,134 @@
     <comp lib="5" loc="(930,1990)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
       <a name="width" val="32"/>
+    </comp>
+    <comp lib="7" loc="(940,1710)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x11"/>
+    </comp>
+    <comp lib="7" loc="(945,2690)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x18"/>
+    </comp>
+    <comp lib="7" loc="(945,2980)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x20"/>
+    </comp>
+    <comp lib="7" loc="(945,3130)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x21"/>
+    </comp>
+    <comp lib="7" loc="(945,3290)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x22"/>
+    </comp>
+    <comp lib="7" loc="(945,3430)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x23"/>
+    </comp>
+    <comp lib="7" loc="(945,3705)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x25"/>
+    </comp>
+    <comp lib="7" loc="(945,3860)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x26"/>
+    </comp>
+    <comp lib="7" loc="(945,4430)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x30"/>
+    </comp>
+    <comp lib="7" loc="(950,1000)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x6"/>
+    </comp>
+    <comp lib="7" loc="(950,1135)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x7"/>
+    </comp>
+    <comp lib="7" loc="(950,1285)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x8"/>
+    </comp>
+    <comp lib="7" loc="(950,1430)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x9"/>
+    </comp>
+    <comp lib="7" loc="(950,145)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x0"/>
+    </comp>
+    <comp lib="7" loc="(950,1570)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x10"/>
+    </comp>
+    <comp lib="7" loc="(950,1850)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x12"/>
+    </comp>
+    <comp lib="7" loc="(950,2130)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x14"/>
+    </comp>
+    <comp lib="7" loc="(950,2270)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x15"/>
+    </comp>
+    <comp lib="7" loc="(950,2410)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x16"/>
+    </comp>
+    <comp lib="7" loc="(950,2550)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x17"/>
+    </comp>
+    <comp lib="7" loc="(950,2840)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x19"/>
+    </comp>
+    <comp lib="7" loc="(950,290)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x1"/>
+    </comp>
+    <comp lib="7" loc="(950,3570)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x24"/>
+    </comp>
+    <comp lib="7" loc="(950,4000)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x27"/>
+    </comp>
+    <comp lib="7" loc="(950,4145)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x28"/>
+    </comp>
+    <comp lib="7" loc="(950,4290)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x29"/>
+    </comp>
+    <comp lib="7" loc="(950,430)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x2"/>
+    </comp>
+    <comp lib="7" loc="(950,4570)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x31"/>
+    </comp>
+    <comp lib="7" loc="(950,570)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x3"/>
+    </comp>
+    <comp lib="7" loc="(950,710)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x4"/>
+    </comp>
+    <comp lib="7" loc="(950,850)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x5"/>
+    </comp>
+    <comp lib="7" loc="(955,1990)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="x13"/>
     </comp>
     <wire from="(1010,4680)" to="(1010,5010)"/>
     <wire from="(1010,5010)" to="(1350,5010)"/>
@@ -846,7 +973,6 @@
     <wire from="(920,2040)" to="(930,2040)"/>
     <wire from="(920,2110)" to="(1190,2110)"/>
     <wire from="(920,3780)" to="(930,3780)"/>
-    <wire from="(960,3740)" to="(970,3740)"/>
     <wire from="(970,1740)" to="(1430,1740)"/>
     <wire from="(980,1030)" to="(1480,1030)"/>
     <wire from="(980,1170)" to="(1470,1170)"/>
