@@ -77,30 +77,30 @@
     <a name="simulationFrequency" val="8.0"/>
     <appear>
       <rect fill="#d6ffcc" height="900" stroke="#000000" width="40" x="120" y="50"/>
-      <rect fill="none" height="920" rx="3" ry="3" stroke="#000000" width="59" x="110" y="47"/>
+      <rect fill="none" height="920" rx="3" ry="3" stroke="#000000" width="59" x="110" y="40"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" font-weight="bold" text-anchor="middle" x="139" y="523">EX/MEM</text>
       <circ-anchor facing="east" x="140" y="540"/>
-      <circ-port dir="in" pin="1140,370" x="110" y="100"/>
-      <circ-port dir="in" pin="1140,530" x="110" y="120"/>
+      <circ-port dir="in" pin="1140,370" x="110" y="260"/>
+      <circ-port dir="in" pin="1140,530" x="110" y="280"/>
       <circ-port dir="in" pin="150,60" x="140" y="40"/>
-      <circ-port dir="in" pin="1950,330" x="110" y="60"/>
-      <circ-port dir="in" pin="1950,490" x="110" y="80"/>
+      <circ-port dir="in" pin="1950,330" x="110" y="200"/>
+      <circ-port dir="in" pin="1950,490" x="110" y="240"/>
       <circ-port dir="in" pin="1950,650" x="110" y="160"/>
       <circ-port dir="in" pin="290,290" x="110" y="500"/>
       <circ-port dir="in" pin="290,450" x="110" y="350"/>
       <circ-port dir="in" pin="290,610" x="110" y="790"/>
-      <circ-port dir="in" pin="290,770" x="110" y="220"/>
+      <circ-port dir="in" pin="290,770" x="110" y="80"/>
       <circ-port dir="in" pin="290,930" x="110" y="750"/>
-      <circ-port dir="out" pin="1440,370" x="170" y="310"/>
-      <circ-port dir="out" pin="1440,530" x="170" y="680"/>
-      <circ-port dir="out" pin="2250,330" x="170" y="120"/>
-      <circ-port dir="out" pin="2250,490" x="170" y="60"/>
-      <circ-port dir="out" pin="2250,650" x="170" y="140"/>
-      <circ-port dir="out" pin="590,290" x="170" y="480"/>
-      <circ-port dir="out" pin="590,450" x="170" y="520"/>
-      <circ-port dir="out" pin="590,610" x="170" y="100"/>
+      <circ-port dir="out" pin="1440,370" x="170" y="260"/>
+      <circ-port dir="out" pin="1440,530" x="170" y="280"/>
+      <circ-port dir="out" pin="2250,330" x="170" y="200"/>
+      <circ-port dir="out" pin="2250,490" x="170" y="240"/>
+      <circ-port dir="out" pin="2250,650" x="170" y="160"/>
+      <circ-port dir="out" pin="590,290" x="170" y="500"/>
+      <circ-port dir="out" pin="590,450" x="170" y="350"/>
+      <circ-port dir="out" pin="590,610" x="170" y="790"/>
       <circ-port dir="out" pin="590,770" x="170" y="80"/>
-      <circ-port dir="out" pin="590,930" x="170" y="720"/>
+      <circ-port dir="out" pin="590,930" x="170" y="750"/>
     </appear>
     <comp lib="0" loc="(1140,370)" name="Pin">
       <a name="appearance" val="classic"/>
