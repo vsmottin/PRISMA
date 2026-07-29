@@ -1,5 +1,4 @@
 # Convenções do projeto
-
 Este arquivo relata as regras de montagem e documentação dos circuitos.
 
 O objetivo dessas regras é padronizar nomes e circuitos o suficiente de modo que qualquer pessoa consiga abrir um componente desconhecido e entendê-lo sem precisar rastrear fio por fio.
@@ -7,7 +6,6 @@ O objetivo dessas regras é padronizar nomes e circuitos o suficiente de modo qu
 <br>
 
 ## 1. Nomenclatura de arquivos e diretórios
-
 - **lowerCamelCase**, em português e sem acentuação, com exceção de siglas (como `ULA`).
 - O `.circ` tem o **mesmo nome** do diretório que o contém: `componentes/ULA/ULA.circ`.
 - A imagem do circuito segue o padrão `<nomeDoDiretorio>_imagem.png`. Quando um diretório tem várias imagens, elas ficam em uma subpasta `imagens/`.
@@ -27,7 +25,6 @@ O `<tipo>` do extensor é `Sinal` (extensão de sinal) ou `Zero` (extensão de z
 <br>
 
 ## 2. Posição dos pinos
-
 ### Regra
 
 - **Pinos de entrada ficam à esquerda.**
@@ -41,17 +38,14 @@ O fluxo do dado deve ser sempre da esquerda para a direita, igual aos diagramas 
 | No design do componente | Em `Project` &rarr; `Edit Circuit Appearance`, arraste as portas de entrada para a borda esquerda e as de saída para a borda direita da forma. |
 
 ### Exceção: constantes e _clock_
-
 Entradas de **_clock_** ou constantes podem ficar na borda **superior** ou **inferior**, como nos quatro registradores de estágio (borda superior).
 
 <br>
 
 ## 3. Túneis (_tunnels_)
-
 Um túnel liga todos os túneis de mesmo rótulo dentro do mesmo circuito.
 
 ### Quando usar fio direto
-
 Use **fio**, e não túnel, sempre que a ligação for **curta e visível**:
 
 - Entre dois componentes vizinhos.
@@ -61,7 +55,6 @@ Use **fio**, e não túnel, sempre que a ligação for **curta e visível**:
 
 
 ### Quando usar túnel
-
 Use **túnel** quando o fio prejudicaria a leitura:
 
 | Situação | Exemplo no repositório |
@@ -72,7 +65,6 @@ Use **túnel** quando o fio prejudicaria a leitura:
 | Reaproveitamento de um valor intermediário em pontos afastados | `imm_12`, `imm_20` no [decodificador](componentes/decodificador/) |
 
 ### Regras obrigatórias
-
 1.  **Todo túnel tem rótulo.** Túnel sem `label` liga-se a todos os outros sem rótulo do circuito.
 2.  **Mínimo de dois túneis por rótulo.** Um rótulo usado uma única vez é um fio morto: ou falta o par, ou é resto de uma edição anterior.
 3.  **Uma única fonte por rótulo.** Vários túneis de mesmo nome recebendo sinal de saídas diferentes provocam conflito (fio vermelho).
@@ -80,7 +72,6 @@ Use **túnel** quando o fio prejudicaria a leitura:
 5.  **Uso único.** Nunca reaproveite um nome para outro sinal no mesmo circuito.
 
 ### Nomeação
-
 O túnel usa **exatamente** o nome do sinal que ele transporta, sem acento e sem espaço:
 
 | Categoria | Estilo | Exemplos |
@@ -93,7 +84,6 @@ O túnel usa **exatamente** o nome do sinal que ele transporta, sem acento e sem
 <br>
 
 ## 4. Documentação
-
 Todo diretório tem um `README.md`. Os de **componente** seguem esta ordem:
 
 1.  `# Título`: nome por extenso, com a sigla entre parênteses quando houver.
@@ -106,7 +96,6 @@ Todo diretório tem um `README.md`. Os de **componente** seguem esta ordem:
 Os de diretório mais geralizados (como [`componentes/`](componentes/) e [`datapaths/`](datapaths/)) trazem uma tabela do que há dentro e links para os manuais individuais.
 
 ### Formatação
-
 - Palavras em inglês em _itálico_: `_datapath_`, `_clock_`, `_branch_`, `_pipeline_`.
 - Ênfase em **negrito**: `**RISC-V**`, `**nunca**`.
 - Nomes de sinais, pinos, arquivos e valores em `código`.
