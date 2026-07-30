@@ -87,4 +87,4 @@ A `idULA` é construída pelos seguintes blocos:
 - **Splitter** — separa o `funct3` de 3 bits para montar o seletor do mux.
 
 > [!NOTE]
-> Com a igualdade (`EQ`) resolvida pela `idULA`, a **ULA principal do EX não precisa mais da saída `sZero`** nem do subcomponente `zero`. Essa é a "ULA específica do pipeline" mencionada na issue de reorganização da Unidade de Controle de Desvio.
+> Com a igualdade (`EQ`) resolvida pela `idULA`, a **ULA principal do EX não precisa mais da saída `sZero`** nem do subcomponente `zero`.
