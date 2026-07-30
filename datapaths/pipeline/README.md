@@ -12,10 +12,9 @@ Os cinco estágios são separados por **registradores de estágio** (as barreira
 verdes no circuito), que capturam, na subida do _clock_, os dados e sinais de
 controle de um estágio e os entregam de forma estável ao estágio seguinte.
 
-> **Reorganização da Unidade de Controle de Desvio (issue #82):** os desvios
-> condicionais (`beq`, `bne`, `blt`, `bge`, `bltu`, `bgeu`) são resolvidos já no
-> estágio **ID**, operando diretamente sobre as saídas do banco de
-> registradores. Isso reduz a penalidade de desvio para **1 bolha**.
+Os desvios condicionais (`beq`, `bne`, `blt`, `bge`, `bltu`, `bgeu`) são resolvidos já no 
+estágio **ID**, operando diretamente sobre as saídas do banco de
+registradores. Isso reduz a penalidade de desvio para **1 bolha**.
 
 <br>
 
