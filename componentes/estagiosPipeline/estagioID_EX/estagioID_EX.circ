@@ -88,6 +88,7 @@
       <circ-port dir="in" pin="1560,470" x="330" y="170"/>
       <circ-port dir="in" pin="1570,620" x="330" y="190"/>
       <circ-port dir="in" pin="1570,780" x="330" y="110"/>
+      <circ-port dir="in" pin="1570,940" x="330" y="330"/>
       <circ-port dir="in" pin="220,160" x="330" y="90"/>
       <circ-port dir="in" pin="220,310" x="330" y="70"/>
       <circ-port dir="in" pin="2200,160" x="330" y="130"/>
@@ -113,6 +114,7 @@
       <circ-port dir="out" pin="1850,470" x="390" y="170"/>
       <circ-port dir="out" pin="1860,620" x="390" y="190"/>
       <circ-port dir="out" pin="1860,780" x="390" y="110"/>
+      <circ-port dir="out" pin="1860,940" x="390" y="330"/>
       <circ-port dir="out" pin="2490,620" x="390" y="290"/>
       <circ-port dir="out" pin="2500,310" x="390" y="250"/>
       <circ-port dir="out" pin="2510,160" x="390" y="130"/>
@@ -239,6 +241,10 @@
       <a name="facing" val="east"/>
       <a name="label" val="Clear"/>
     </comp>
+    <comp lib="0" loc="(1570,1010)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Clear"/>
+    </comp>
     <comp lib="0" loc="(1570,620)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="ALUOp_ID"/>
@@ -257,6 +263,11 @@
     <comp lib="0" loc="(1570,850)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Clear"/>
+    </comp>
+    <comp lib="0" loc="(1570,940)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="Jalr_ID"/>
+      <a name="labelfont" val="SansSerif bold 14"/>
     </comp>
     <comp lib="0" loc="(1610,200)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -278,6 +289,10 @@
       <a name="facing" val="east"/>
       <a name="label" val="CLK"/>
     </comp>
+    <comp lib="0" loc="(1620,980)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
     <comp lib="0" loc="(1680,180)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Enable"/>
@@ -295,6 +310,10 @@
       <a name="label" val="Enable"/>
     </comp>
     <comp lib="0" loc="(1690,800)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Enable"/>
+    </comp>
+    <comp lib="0" loc="(1690,960)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Enable"/>
     </comp>
@@ -340,6 +359,13 @@
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="Auipc_EX"/>
+      <a name="labelfont" val="SansSerif bold 14"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(1860,940)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Jalr_EX"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="type" val="output"/>
     </comp>
@@ -666,6 +692,13 @@
       <a name="showInTab" val="true"/>
       <a name="width" val="1"/>
     </comp>
+    <comp lib="5" loc="(1740,910)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="Jalr"/>
+      <a name="labelfont" val="SansSerif bold 14"/>
+      <a name="showInTab" val="true"/>
+      <a name="width" val="1"/>
+    </comp>
     <comp lib="5" loc="(1750,280)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
       <a name="label" val="ALUSrc"/>
@@ -759,20 +792,25 @@
     <wire from="(1560,380)" to="(1780,380)"/>
     <wire from="(1560,470)" to="(1740,470)"/>
     <wire from="(1560,540)" to="(1770,540)"/>
+    <wire from="(1570,1010)" to="(1770,1010)"/>
     <wire from="(1570,620)" to="(1740,620)"/>
     <wire from="(1570,690)" to="(1770,690)"/>
     <wire from="(1570,780)" to="(1740,780)"/>
     <wire from="(1570,850)" to="(1770,850)"/>
+    <wire from="(1570,940)" to="(1740,940)"/>
     <wire from="(1610,200)" to="(1740,200)"/>
     <wire from="(1610,350)" to="(1750,350)"/>
     <wire from="(1610,510)" to="(1740,510)"/>
     <wire from="(1620,660)" to="(1740,660)"/>
     <wire from="(1620,820)" to="(1740,820)"/>
+    <wire from="(1620,980)" to="(1740,980)"/>
     <wire from="(1680,180)" to="(1740,180)"/>
     <wire from="(1680,330)" to="(1750,330)"/>
     <wire from="(1680,490)" to="(1740,490)"/>
     <wire from="(1690,640)" to="(1740,640)"/>
     <wire from="(1690,800)" to="(1740,800)"/>
+    <wire from="(1690,960)" to="(1740,960)"/>
+    <wire from="(1770,1000)" to="(1770,1010)"/>
     <wire from="(1770,220)" to="(1770,230)"/>
     <wire from="(1770,530)" to="(1770,540)"/>
     <wire from="(1770,680)" to="(1770,690)"/>
@@ -782,6 +820,7 @@
     <wire from="(1800,470)" to="(1850,470)"/>
     <wire from="(1800,620)" to="(1860,620)"/>
     <wire from="(1800,780)" to="(1860,780)"/>
+    <wire from="(1800,940)" to="(1860,940)"/>
     <wire from="(1810,310)" to="(1850,310)"/>
     <wire from="(1910,80)" to="(2160,80)"/>
     <wire from="(220,160)" to="(400,160)"/>
