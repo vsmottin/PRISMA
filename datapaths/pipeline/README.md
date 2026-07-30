@@ -1,6 +1,6 @@
 # Datapath — Pipeline
 
-![Datapath do Pipeline](pipepline_simples.png)
+![Datapath do Pipeline](pipeline_simples.png)
 
 Implementação do processador RISC-V com **pipeline de 5 estágios**. Em vez de
 executar uma instrução por completo antes de buscar a próxima (como no
