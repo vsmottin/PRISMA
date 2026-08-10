@@ -1,16 +1,14 @@
-# risc-v
+# Projeto PRISMA
 ![Logisim_Evolution](https://img.shields.io/badge/Logisim_Evolution-006039) ![RISC-V](https://img.shields.io/badge/RISC--V-2C2C2C)
 
-Repositório criado com o propósito de implementar versões de um _datapath_ (caminho de dados) para a arquitetura **RISC-V** usando o **Logisim Evolution**.
+O Projeto PRISMA (Processador RISC-V Interativo para Simulação e Modelagem de Arquitetura) foi criado com o propósito de implementar versões de um _datapath_ (caminho de dados) para a arquitetura **RISC-V** usando a ferramenta **Logisim Evolution**.
 
-O projeto é montado de forma modular em duas camadas: cada bloco funcional (ULA, banco de registradores, memórias, unidades de controle, etc.) tem sua **própria pasta** dentro de [`componentes/`](componentes/), com o arquivo `.circ`, a imagem do circuito e um `README.md` documentando interface, funcionamento e implementação. Sobre esses blocos são construídos os **_datapaths_ completos** em [`datapaths/`](datapaths/), que os importam como bibliotecas.
-
-Projeto orientado pelo Prof. Dr. João Fabrício Filho, 2026/1.
+O projeto é montado de forma modular: cada bloco funcional (ULA, banco de registradores, unidades de controle, etc.) tem seu próprio diretório dentro de [`componentes/`](componentes/), com o arquivo `.circ`, a imagem do circuito e um `README.md` documentando interface, funcionamento e implementação. Sobre esses blocos são construídos os circuitos completos em [`datapaths/`](datapaths/), que os importam como bibliotecas.
 
 ## Estrutura
 ```
 risc-v/
-├── datapaths/                        # processadores completos
+├── datapaths/                        # processadores
 │   ├── monociclo/                    # ciclo único
 │   └── pipeline/                     # 5 estágios
 │
@@ -21,7 +19,8 @@ risc-v/
 │
 ├── codigos/                          # programas em linguagem de máquina para teste
 ├── CONVENCOES.md                     # regras de montagem e documentação dos circuitos
-├── logisim-evolution-4.1.0-all.jar   # .jar do Logisim Evolution usado
+├── LICENSE.md                        # licença para uso, cópia, modificação e distribuição
+├── logisim-evolution-4.1.0-all.jar   # versão do Logisim Evolution recomendada
 └── RISCV_CARD.pdf                    # cartão de referência da ISA RISC-V
 ```
 
@@ -35,7 +34,7 @@ Cada _datapath_ tem seu próprio manual, com os estágios, os componentes usados
 
 
 ### Componentes
-Cada componente tem seu próprio manual (clique no nome para abrir o `README` com interface, funcionamento e imagem do circuito).
+Cada componente também tem seu próprio manual, com interface, funcionamento e implementação.
 
 | Componente                                          | Função                                                       |
 | ----------------------------------------------------------- | ------------------------------------------------------------ |
@@ -46,7 +45,7 @@ Cada componente tem seu próprio manual (clique no nome para abrir o `README` co
 | [ucEnderecamento](componentes/ucEnderecamento/README.md)    | Unidade de controle de endereçamento.                        |
 | [bancoRegistradores](componentes/bancoRegistradores/README.md) | Banco de registradores.                                   |
 | [contadorCiclos](componentes/contadorCiclos/README.md)      | Contador de ciclos de _PC_.                                  |
-| [decodificador](componentes/decodificador/README.md)        | Decodificador da instrução (separa os campos).               |
+| [decodificador](componentes/decodificador/README.md)        | Decodificador da instrução.                                  |
 | [extensores](componentes/extensores/README.md)              | Extensores de sinal e de zero.                               |
 | [memInstrucoes](componentes/memInstrucoes/README.md)        | Memória de instruções.                                       |
 | [memDados](componentes/memDados/README.md)                  | Memória de dados.                                            |
@@ -76,4 +75,4 @@ java -jar logisim-evolution-4.1.0-all.jar
 > [!NOTE]
 > Os programas de [`codigos/`](codigos/) com prefixo `teste_pipeline_` já contêm as bolhas (`nop`) exigidas pelo _pipeline_, que não possui _forwarding_ nem detecção de _hazard_. Como o `nop` é uma instrução válida, esses mesmos arquivos também rodam no monociclo, apenas gastando ciclos a mais.
 
-> O arquivo `RISCV_CARD.pdf` na raiz serve como referência rápida das instruções e formatos da ISA RISC-V durante os testes.
+Este projeto está licenciado sob os termos da Licença MIT – consulte o arquivo LICENSE para obter detalhes.
