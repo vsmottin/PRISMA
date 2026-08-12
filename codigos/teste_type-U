@@ -3,10 +3,3 @@ v2.0 raw
 abcde137 
 00001197 
 00000217
-
-
-eg	Valor esperado	O que verifica
-x1	0x12345000	LUI carrega imediato nos bits [31:12]
-x2	0xABCDE000	LUI com imediato maior (bits altos)
-x3	0x00001008	AUIPC usa o PC correto (0x0008)
-x4	0x0000000C      AUIPC com imm=0 retorna o próprio PC
