@@ -75,14 +75,16 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <a name="simulationFrequency" val="32.0"/>
     <appear>
-      <ellipse cx="210" cy="120" fill="none" rx="39" ry="51" stroke="#000000"/>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="211" y="103">Controle</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="210" y="119">de</text>
-      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="211" y="134">Desvio</text>
+      <ellipse cx="212" cy="121" fill="none" rx="39" ry="51" stroke="#000000"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="214" y="104">Controle</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="213" y="119">de</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="214" y="134">Desvio</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="10" text-anchor="middle" x="190" y="90">f3</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="10" text-anchor="middle" x="195" y="151">zero</text>
       <circ-anchor facing="east" x="210" y="150"/>
-      <circ-port dir="in" pin="160,290" x="210" y="170"/>
-      <circ-port dir="in" pin="170,350" x="250" y="120"/>
-      <circ-port dir="out" pin="690,680" x="170" y="120"/>
+      <circ-port dir="in" pin="160,290" x="180" y="150"/>
+      <circ-port dir="in" pin="170,350" x="180" y="90"/>
+      <circ-port dir="out" pin="690,680" x="250" y="120"/>
     </appear>
     <comp lib="0" loc="(1060,430)" name="Tunnel">
       <a name="facing" val="south"/>

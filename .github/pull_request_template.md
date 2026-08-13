@@ -4,12 +4,13 @@
 
 - Descrição
 
+
 ## Tarefa(s) relacionada(s)
 
-> Inclua abaixo os links das tarefas relacionadas.
+> Inclua abaixo os links das issues relacionadas.
 
--  Link da tarefa
--  Link da tarefa
+-  Link da issue
+
 
 ## Notas adicionais
 
