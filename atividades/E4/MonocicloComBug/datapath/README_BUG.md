@@ -1,6 +1,6 @@
 # Caminho de Dados Monociclo com Defeito
 
-Cópia do caminho de dados monociclo na qual foi introduzido **um único defeito**, para uso na atividade [E4 — Caça ao Defeito](../guiaAtividade.md). Fora esse defeito, o circuito é idêntico ao original: mesmos componentes, mesmas ligações, mesmo conjunto de instruções.
+Cópia do caminho de dados monociclo na qual foi introduzido **um único defeito**, para uso na atividade E4 . Fora esse defeito, o circuito é idêntico ao original: mesmos componentes, mesmas ligações, mesmo conjunto de instruções.
 
 > [!IMPORTANT]
 > Este circuito é uma **cópia isolada**, com os seus próprios componentes. Nada do que se altere aqui afeta os demais caminhos de dados do projeto, e alterações feitas nos componentes originais não se refletem aqui.
@@ -13,7 +13,7 @@ Cópia do caminho de dados monociclo na qual foi introduzido **um único defeito
 Clique com o botão direito na **memória de instruções** &rarr; *Load Image* &rarr; selecione o arquivo `.txt` no formato `v2.0 raw`. Encerre o programa com a palavra `ffffffff`.
 
 ### 2. Zerar o estado
-Antes de cada execução, use *Simulate* &rarr; *Reset Simulation* (`Ctrl+R`). Um estado residual de uma execução anterior produz divergências que não têm relação com o defeito.
+Antes de cada execução, use *Simulate*; *Reset Simulation* (`Ctrl+R`). Um estado residual de uma execução anterior produz divergências que não têm relação com o defeito.
 
 ### 3. Executar
 `Ctrl+T` avança um ciclo de _clock_, ou seja, uma instrução. Confira o efeito de cada uma antes de prosseguir, acompanhando o Contador de Programa, o Banco de Registradores e a Memória de Dados.
