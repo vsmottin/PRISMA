@@ -45,8 +45,8 @@
       <a name="font" val="Dialog plain 12"/>
     </tool>
   </lib>
-  <lib desc="file#../extensores/extensoresSinal.circ" name="7"/>
-  <lib desc="file#../zero/zero.circ" name="8"/>
+  <lib desc="file#../zero/zero.circ" name="7"/>
+  <lib desc="file#../extensores/extensoresSinal.circ" name="8"/>
   <main name="ULA"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -88,6 +88,8 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="159" y="224">B</text>
       <circ-anchor facing="east" x="190" y="100"/>
       <circ-port dir="in" pin="190,190" x="150" y="220"/>
+      <circ-port dir="in" pin="570,250" x="190" y="240"/>
+      <circ-port dir="in" pin="580,750" x="210" y="220"/>
       <circ-port dir="in" pin="80,190" x="150" y="80"/>
       <circ-port dir="in" pin="920,710" x="170" y="250"/>
       <circ-port dir="out" pin="1040,630" x="230" y="150"/>
@@ -168,6 +170,16 @@
       <a name="facing" val="east"/>
       <a name="label" val="Shift"/>
       <a name="width" val="5"/>
+    </comp>
+    <comp lib="0" loc="(570,250)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="south"/>
+      <a name="label" val="subSeletor"/>
+    </comp>
+    <comp lib="0" loc="(580,750)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="south"/>
+      <a name="label" val="sraiSeletor"/>
     </comp>
     <comp lib="0" loc="(80,190)" name="Pin">
       <a name="appearance" val="classic"/>

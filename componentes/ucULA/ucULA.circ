@@ -87,9 +87,9 @@
       <circ-port dir="in" pin="510,430" x="120" y="110"/>
       <circ-port dir="in" pin="510,500" x="120" y="90"/>
       <circ-port dir="in" pin="930,420" x="120" y="120"/>
-      <circ-port dir="out" pin="610,550" x="200" y="90"/>
-      <circ-port dir="out" pin="730,680" x="200" y="110"/>
-      <circ-port dir="out" pin="980,300" x="200" y="100"/>
+      <circ-port dir="out" pin="610,550" x="200" y="110"/>
+      <circ-port dir="out" pin="730,680" x="200" y="100"/>
+      <circ-port dir="out" pin="980,300" x="200" y="90"/>
     </appear>
     <comp lib="0" loc="(510,320)" name="Pin">
       <a name="appearance" val="classic"/>
@@ -213,7 +213,7 @@
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="R-type/I-type"/>
     </comp>
-    <comp lib="6" loc="(812,252)" name="Text">
+    <comp lib="6" loc="(810,250)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="load/store"/>
     </comp>
@@ -221,11 +221,11 @@
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="B-type"/>
     </comp>
-    <comp lib="6" loc="(835,523)" name="Text">
+    <comp lib="6" loc="(835,520)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="ALUOp = 01"/>
     </comp>
-    <comp lib="6" loc="(835,539)" name="Text">
+    <comp lib="6" loc="(835,535)" name="Text">
       <a name="font" val="SansSerif bold 12"/>
       <a name="text" val="Branch"/>
     </comp>
