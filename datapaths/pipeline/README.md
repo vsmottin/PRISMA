@@ -88,7 +88,9 @@ Realiza a operação aritmética/lógica principal.
   lógicas, deslocamentos, comparações) e calcula endereços de `load`/`store` e o
   alvo do `jalr` (`rs1 + imm`).
 - **[Controle da ULA (`ucULA`)](../../componentes/ucULA/)** — decodifica `ALUOp`,
-  `funct3` e `funct7` no código exato de operação da ULA (`ALUControl`).
+  `opcode`, `funct3` e `funct7` no `ALUControl` de 3 bits (na ordem do `funct3`) e
+  nos dois seletores de desempate da ULA, `subSeletor` (`add`/`sub`) e
+  `sraiSeletor` (`srl`/`sra`).
 
 <br>
 
