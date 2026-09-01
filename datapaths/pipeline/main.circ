@@ -650,5 +650,9 @@
     <wire from="(970,1240)" to="(3310,1240)"/>
     <wire from="(970,560)" to="(1060,560)"/>
     <wire from="(970,560)" to="(970,1240)"/>
+    <comp lib="0" loc="(660,100)" name="Constant">
+      <a name="facing" val="south"/>
+    </comp>
+    <wire from="(660,100)" to="(660,130)"/>
   </circuit>
 </project>
