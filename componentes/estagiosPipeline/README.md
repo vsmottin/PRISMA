@@ -9,9 +9,9 @@ Eles são o que torna o _pipeline_ possível: como cinco instruções diferentes
 | Registrador | Fronteira | O que atravessa |
 | :--- | :---: | :--- |
 | [estagioIF_ID](estagioIF_ID/README.md) | _Fetch_ &rarr; _Decode_ | Instrução crua, `PC` e `PC + 4`. |
-| [estagioID_EX](estagioID_EX/README.md) | _Decode_ &rarr; _Execute_ | Operandos `ld1`/`ld2`, `imm`, `PC`, `PC + 4`, `rd`, `opcode`, `funct3`, `funct7` e todos os sinais de controle. |
-| [estagioEX_MEM](estagioEX_MEM/README.md) | _Execute_ &rarr; _Memory_ | Resultado da ULA, `ld2`, `rd`, `PC + 4`, `funct3` e o controle das fases MEM e WB. |
-| [estagioMEM_WB](estagioMEM_WB/README.md) | _Memory_ &rarr; _Write-Back_ | Dado lido da memória, resultado da ULA, `rd`, `PC + 4` e o controle da fase WB. |
+| [estagioID_EX](estagioID_EX/README.md) | _Decode_ &rarr; _Execute_ | Instrução, operandos `ld1`/`ld2`, `imm`, `PC`, `PC + 4`, `rd`, `opcode`, `funct3`, `funct7` e todos os sinais de controle. |
+| [estagioEX_MEM](estagioEX_MEM/README.md) | _Execute_ &rarr; _Memory_ | Instrução, resultado da ULA, `ld2`, `rd`, `PC + 4`, `funct3` e o controle das fases MEM e WB. |
+| [estagioMEM_WB](estagioMEM_WB/README.md) | _Memory_ &rarr; _Write-Back_ | Instrução, dado lido da memória, resultado da ULA, `rd`, `PC + 4` e o controle da fase WB. |
 
 <br>
 
@@ -21,6 +21,8 @@ O comportamento é idêntico nos quatro, mudando apenas **quantos** e **quais** 
 1. Durante o ciclo, as entradas (`*_<estagioAnterior>`) recebem valores combinacionais do estágio anterior, que podem oscilar livremente.
 2. Na **borda de subida do `CLK`**, cada registrador interno grava o valor presente na sua entrada.
 3.  A partir daí, as saídas (`*_<estagioSeguinte>`) mantêm esse valor **fixo** pelo ciclo inteiro, dando ao próximo estágio uma entrada estável para trabalhar.
+
+Além dos sinais consumidos pelo _datapath_, os quatro registradores carregam a **instrução** de 32 bits (`Instrucao_<estagioAnterior>` &rarr; `Instrucao_<estagioSeguinte>`). Nenhum componente a consome depois do ID: ela existe para que se saiba, a cada ciclo, qual instrução ocupa cada estágio do _pipeline_.
 
 <br>
 
