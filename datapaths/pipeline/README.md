@@ -160,12 +160,47 @@ Cada barreira propaga apenas o que os estágios seguintes ainda vão consumir:
 | Registrador | Dados propagados | Controle propagado |
 | :--- | :--- | :--- |
 | **[IF/ID](../../componentes/estagiosPipeline/estagioIF_ID/)** | instrução, `PC`, `PC+4` | — |
-| **[ID/EX](../../componentes/estagiosPipeline/estagioID_EX/)** | `rs1`, `rs2`, `imm`, `PC`, `PC+4`, `rd`, `funct3`, `funct7` | `ALUOp`, `ALUSrcB`, `Auipc`, `Lui`, `Jump`, `RegWrite`, `MemToReg`, `MemRead`, `MemWrite` |
-| **[EX/MEM](../../componentes/estagiosPipeline/estagioEX_MEM/)** | resultado da ULA, `rs2`, `rd`, `PC+4`, `funct3` | `MemRead`, `MemWrite`, `RegWrite`, `MemToReg`, `Jump` |
-| **[MEM/WB](../../componentes/estagiosPipeline/estagioMEM_WB/)** | dado da memória (`LD`), resultado da ULA, `rd`, `PC+4` | `RegWrite`, `MemToReg`, `Jump` |
+| **[ID/EX](../../componentes/estagiosPipeline/estagioID_EX/)** | instrução, `rs1`, `rs2`, `imm`, `PC`, `PC+4`, `rd`, `funct3`, `funct7` | `ALUOp`, `ALUSrcB`, `Auipc`, `Lui`, `Jump`, `RegWrite`, `MemToReg`, `MemRead`, `MemWrite` |
+| **[EX/MEM](../../componentes/estagiosPipeline/estagioEX_MEM/)** | instrução, resultado da ULA, `rs2`, `rd`, `PC+4`, `funct3` | `MemRead`, `MemWrite`, `RegWrite`, `MemToReg`, `Jump` |
+| **[MEM/WB](../../componentes/estagiosPipeline/estagioMEM_WB/)** | instrução, dado da memória (`LD`), resultado da ULA, `rd`, `PC+4` | `RegWrite`, `MemToReg`, `Jump` |
 
 Os sinais resolvidos no EX (`ALUSrcB`, `ALUOp`, `Auipc`, `Lui`, `Jalr`,
 `BranchSrc`) **não** atravessam o `EX/MEM` — são consumidos antes.
+
+<br>
+
+## Instrução em cada estágio
+
+Os quatro registradores de estágio carregam também a **instrução** de 32 bits,
+que avança uma barreira por ciclo junto com os seus dados e sinais de controle.
+Ela não é consumida por nenhum componente depois do ID: serve para identificar
+qual instrução ocupa cada estágio em um dado ciclo.
+
+| Túnel | Origem |
+| :--- | :--- |
+| `Instrucao_IF` | saída da memória de instruções |
+| `Instrucao_ID` | saída do `IF/ID` |
+| `Instrucao_EX` | saída do `ID/EX` |
+| `Instrucao_MEM` | saída do `EX/MEM` |
+| `Instrucao_WB` | saída do `MEM/WB` |
+
+No topo do circuito, acima de cada estágio, uma sonda (_probe_) em hexadecimal
+ligada ao túnel `Instrucao_<estagio>` mostra a instrução presente nele. Ao avançar o _clock_, cada instrução aparece uma sonda à direita. Exemplo
+com o início de [`teste_pipeline_reto`](../../codigos/teste_pipeline_reto)
+(`00000013` é o `nop`):
+
+| Ciclo | IF | ID | EX | MEM | WB |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| 0 | `00500093` | `00000000` | `00000000` | `00000000` | `00000000` |
+| 1 | `00300113` | `00500093` | `00000000` | `00000000` | `00000000` |
+| 2 | `00000013` | `00300113` | `00500093` | `00000000` | `00000000` |
+| 3 | `00000013` | `00000013` | `00300113` | `00500093` | `00000000` |
+| 4 | `00000013` | `00000013` | `00000013` | `00300113` | `00500093` |
+| 5 | `002081b3` | `00000013` | `00000013` | `00000013` | `00300113` |
+
+> [!NOTE]
+> Enquanto a primeira instrução não chega a um estágio, sua sonda mostra
+> `00000000`, o valor inicial dos registradores de estágio.
 
 <br>
 
