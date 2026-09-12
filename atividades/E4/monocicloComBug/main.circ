@@ -393,9 +393,6 @@
     <comp lib="0" loc="(980,300)" name="Tunnel">
       <a name="label" val="MemRead"/>
     </comp>
-    <comp lib="0" loc="(980,340)" name="Tunnel">
-      <a name="label" val="Branch"/>
-    </comp>
     <comp lib="0" loc="(980,380)" name="Tunnel">
       <a name="label" val="Stop"/>
     </comp>
@@ -625,7 +622,6 @@
     <wire from="(920,360)" to="(1050,360)"/>
     <wire from="(930,580)" to="(940,580)"/>
     <wire from="(940,220)" to="(980,220)"/>
-    <wire from="(940,340)" to="(980,340)"/>
     <wire from="(950,240)" to="(1060,240)"/>
     <wire from="(950,320)" to="(1070,320)"/>
     <wire from="(950,610)" to="(950,620)"/>
