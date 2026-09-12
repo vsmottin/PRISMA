@@ -89,7 +89,6 @@
       <circ-port dir="out" pin="1040,640" x="290" y="130"/>
       <circ-port dir="out" pin="1130,640" x="280" y="150"/>
       <circ-port dir="out" pin="1140,400" x="250" y="40"/>
-      <circ-port dir="out" pin="1210,640" x="270" y="170"/>
       <circ-port dir="out" pin="1290,400" x="250" y="180"/>
       <circ-port dir="out" pin="660,400" x="280" y="70"/>
       <circ-port dir="out" pin="670,640" x="270" y="50"/>
@@ -157,17 +156,6 @@
     </comp>
     <comp lib="0" loc="(1170,380)" name="Tunnel">
       <a name="label" val="Jump"/>
-    </comp>
-    <comp lib="0" loc="(1210,620)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="label" val="Btype"/>
-    </comp>
-    <comp lib="0" loc="(1210,640)" name="Pin">
-      <a name="appearance" val="classic"/>
-      <a name="facing" val="north"/>
-      <a name="label" val="Branch"/>
-      <a name="labelloc" val="south"/>
-      <a name="type" val="output"/>
     </comp>
     <comp lib="0" loc="(1290,380)" name="Tunnel">
       <a name="facing" val="south"/>
@@ -571,7 +559,6 @@
     <wire from="(1140,380)" to="(1140,400)"/>
     <wire from="(1140,380)" to="(1170,380)"/>
     <wire from="(1150,290)" to="(1150,330)"/>
-    <wire from="(1210,620)" to="(1210,640)"/>
     <wire from="(1290,380)" to="(1290,400)"/>
     <wire from="(150,1000)" to="(150,1090)"/>
     <wire from="(150,1000)" to="(300,1000)"/>
