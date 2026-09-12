@@ -648,6 +648,7 @@
       <a name="label" val="funct7"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="5" loc="(1090,1070)" name="Register">
@@ -655,6 +656,7 @@
       <a name="label" val="imm"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(1090,130)" name="Register">
@@ -662,6 +664,7 @@
       <a name="label" val="opcode"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="5" loc="(1090,430)" name="Register">
@@ -669,6 +672,7 @@
       <a name="label" val="ld2"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(1090,590)" name="Register">
@@ -676,6 +680,7 @@
       <a name="label" val="rd"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="5" loc="(1090,750)" name="Register">
@@ -683,6 +688,7 @@
       <a name="label" val="funct3"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="3"/>
     </comp>
     <comp lib="5" loc="(1100,280)" name="Register">
@@ -690,6 +696,7 @@
       <a name="label" val="ld1"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(1740,130)" name="Register">
@@ -697,6 +704,7 @@
       <a name="label" val="RegWrite"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(1740,440)" name="Register">
@@ -704,6 +712,7 @@
       <a name="label" val="Jump"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(1740,590)" name="Register">
@@ -711,6 +720,7 @@
       <a name="label" val="ALUOp"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="2"/>
     </comp>
     <comp lib="5" loc="(1740,750)" name="Register">
@@ -718,6 +728,7 @@
       <a name="label" val="Auipc"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(1740,910)" name="Register">
@@ -725,6 +736,7 @@
       <a name="label" val="Jalr"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(1750,280)" name="Register">
@@ -732,6 +744,7 @@
       <a name="label" val="ALUSrc"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(2390,430)" name="Register">
@@ -739,6 +752,7 @@
       <a name="label" val="MemRead"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(2400,130)" name="Register">
@@ -746,6 +760,7 @@
       <a name="label" val="Lui"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(2400,280)" name="Register">
@@ -753,6 +768,7 @@
       <a name="label" val="MemToReg"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(2400,590)" name="Register">
@@ -760,6 +776,7 @@
       <a name="label" val="MemWrite"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(400,130)" name="Register">
@@ -767,6 +784,7 @@
       <a name="label" val="PCplus4"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(400,280)" name="Register">
@@ -774,6 +792,7 @@
       <a name="label" val="PC"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(400,600)" name="Register">
@@ -781,6 +800,7 @@
       <a name="label" val="Instrucao"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="7" loc="(1030,55)" name="Text">
