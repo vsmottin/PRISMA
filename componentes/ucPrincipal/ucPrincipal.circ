@@ -89,13 +89,13 @@
       <circ-port dir="out" pin="1040,640" x="290" y="130"/>
       <circ-port dir="out" pin="1130,640" x="280" y="150"/>
       <circ-port dir="out" pin="1140,400" x="250" y="40"/>
-      <circ-port dir="out" pin="1290,400" x="250" y="180"/>
+      <circ-port dir="out" pin="1290,400" x="270" y="170"/>
       <circ-port dir="out" pin="660,400" x="280" y="70"/>
       <circ-port dir="out" pin="670,640" x="270" y="50"/>
       <circ-port dir="out" pin="770,640" x="210" y="50"/>
       <circ-port dir="out" pin="840,400" x="290" y="90"/>
       <circ-port dir="out" pin="850,640" x="230" y="40"/>
-      <circ-port dir="out" pin="920,960" x="240" y="180"/>
+      <circ-port dir="out" pin="920,960" x="250" y="180"/>
       <circ-port dir="out" pin="940,640" x="290" y="110"/>
       <circ-port dir="out" pin="980,400" x="240" y="40"/>
     </appear>
