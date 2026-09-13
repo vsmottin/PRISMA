@@ -187,6 +187,7 @@
       <a name="label" val="PCplus4"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(470,620)" name="Register">
@@ -194,6 +195,7 @@
       <a name="label" val="PC"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(480,240)" name="Register">
@@ -201,6 +203,7 @@
       <a name="label" val="Instrucao"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <wire from="(230,130)" to="(260,130)"/>

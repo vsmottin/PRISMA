@@ -316,6 +316,7 @@
       <a name="label" val="RegWrite"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(1410,450)" name="Register">
@@ -323,6 +324,7 @@
       <a name="label" val="MemToReg"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(1410,610)" name="Register">
@@ -330,6 +332,7 @@
       <a name="label" val="Jump"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(470,260)" name="Register">
@@ -337,6 +340,7 @@
       <a name="label" val="MemData"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(470,420)" name="Register">
@@ -344,6 +348,7 @@
       <a name="label" val="ALUResult"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(470,580)" name="Register">
@@ -351,6 +356,7 @@
       <a name="label" val="rd"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="5" loc="(470,740)" name="Register">
@@ -358,6 +364,7 @@
       <a name="label" val="PCplus4"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(470,900)" name="Register">
@@ -365,6 +372,7 @@
       <a name="label" val="Instrucao"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="7" loc="(1355,150)" name="Text">

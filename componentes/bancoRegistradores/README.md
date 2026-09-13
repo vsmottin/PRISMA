@@ -41,6 +41,9 @@ A escrita ocorre apenas na borda de subida do `clk` e somente quando `RegWrite =
 
 Dessa forma, na borda de clock, somente o registrador cuja entrada `WE` foi ativada captura o valor de `WD`; todos os demais permanecem com seu valor anterior.
 
+> [!IMPORTANT]
+> No [_datapath_ com _pipeline_](../../datapaths/pipeline/), os [registradores de estágio](../estagiosPipeline/) gravam na borda de **descida**, inversa à do banco. A escrita feita pelo WB ocorre, então, no meio do ciclo, e a instrução que está no ID nesse mesmo ciclo já lê o valor atualizado.
+
 > [!NOTE]
 > O registrador `x0` é fixo em zero, conforme a especificação RISC-V. Qualquer leitura desse endereço retorna `0` e tentativas de escrita nele não têm efeito, pois seu valor é mantido constante.
 

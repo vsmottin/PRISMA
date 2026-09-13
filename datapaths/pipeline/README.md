@@ -9,8 +9,10 @@ executar uma instrução por completo antes de buscar a próxima (como no
 aumenta a vazão (instruções concluídas por unidade de tempo).
 
 Os cinco estágios são separados por **registradores de estágio** (as barreiras
-verdes no circuito), que capturam, na subida do _clock_, os dados e sinais de
-controle de um estágio e os entregam de forma estável ao estágio seguinte.
+verdes no circuito), que capturam, na **descida** do _clock_, os dados e sinais de
+controle de um estágio e os entregam de forma estável ao estágio seguinte. O banco
+de registradores e a memória de dados gravam na borda **inversa** (subida) — ver
+[Bordas de _clock_](#bordas-de-clock).
 
 Os desvios condicionais (`beq`, `bne`, `blt`, `bge`, `bltu`, `bgeu`) são resolvidos já no 
 estágio **ID**, operando diretamente sobre as saídas do banco de
@@ -37,7 +39,8 @@ próxima.
 
 - **Registrador `PC`** — guarda o endereço da instrução atual. Sua atualização é
   condicionada pelo sinal `Stop`: quando `Stop = 1` (opcode inválido), o `PC`
-  **congela** e a execução para.
+  **congela** e a execução para. Grava na borda de descida, junto com os
+  registradores de estágio.
 - **Somador `PC + 4`** — soma a constante `4` ao `PC` para obter o endereço
   sequencial da próxima instrução ([`Adder`](../../componentes/)).
 - **[Memória de instruções](../../componentes/memInstrucoes/)** — ROM que devolve
@@ -64,7 +67,7 @@ desvios.
   `Jump`, `ALUOp`, `RegWrite`, `ALUSrcB`, `MemToReg`, `MemRead`, `MemWrite`,
   `Auipc`, `Lui`, `Jalr`, **`PCSrc`** e `Stop`.
 - **[Banco de Registradores](../../componentes/bancoRegistradores/)** — lê `rs1`
-  e `rs2` (saídas `ld1`/`ld2`) e escreve `rd` na fase WB (borda de _clock_).
+  e `rs2` (saídas `ld1`/`ld2`) e escreve `rd` na fase WB, na borda de subida (meio do ciclo).
 - **[Mini-ULA de desvio (`idULA`)](../../componentes/pipelineComponentes/idULA/)**
   — recebe `A = rs1`, `B = rs2` e `funct3`; faz as comparações necessárias e
   entrega o sinal **`Zero`**. Substitui, para os desvios, o par `ucULA + ULA` do
@@ -151,6 +154,20 @@ palavra `0xFFFFFFFF` que marca o fim do programa). O `Stop` **congela o `PC`** e
 interrompe o _clock_ da memória de dados e do contador de ciclos, encerrando a
 execução de forma limpa.
 
+Como cada componente dispara em uma borda, o bloqueio também muda:
+
+| Destino | Borda | _Clock_ bloqueado | Por quê |
+| :--- | :---: | :--- | :--- |
+| `PC` | descida | `CLK OR Stop` | Com `Stop = 1` o _clock_ fica preso em `1` e nunca desce. |
+| Memória de dados e contador de ciclos | subida | `CLK AND NOT Stop` | Com `Stop = 1` o _clock_ fica preso em `0` e nunca sobe. |
+
+> [!NOTE]
+> O `Stop` também vale `1` no início da simulação, quando o `IF/ID` ainda guarda
+> `00000000`. Com o `OR`, assim que a primeira instrução chega ao ID o `Stop` cai
+> e o _clock_ do `PC` desce na mesma hora, avançando o `PC` sem executar a
+> instrução 0 duas vezes. O `Enable` do `PC` fica desligado (sempre habilitado),
+> pois é o _clock_ bloqueado que controla a gravação.
+
 <br>
 
 ## Registradores de estágio
@@ -204,13 +221,70 @@ com o início de [`teste_pipeline_reto`](../../codigos/teste_pipeline_reto)
 
 <br>
 
+## Bordas de _clock_
+
+Os registradores de estágio e o `PC` gravam na borda de **descida**; o banco de
+registradores e a memória de dados, na de **subida**. Essa inversão existe para
+resolver um conflito de tempo entre o WB e o ID.
+
+### O problema: banco e estágios na mesma borda
+Considere uma instrução que escreve `x1` e outra, três posições atrás (com duas
+instruções entre elas), que lê `x1`. Quando a primeira está no **WB**, a segunda
+está no **ID**. O valor de `x1` só é gravado no banco na próxima borda, mas o
+`ID/EX` também captura o que foi lido do banco **nessa mesma borda**, ainda com o
+valor antigo. A escrita e a leitura empatam, e a leitura perde: a instrução
+leitora precisa ficar mais uma posição para trás (3 NOPs em vez de 2).
+
+### A solução: bordas inversas
+Com o banco disparando na borda oposta, a escrita cai no **meio** do ciclo:
+
+```
+             ciclo N (WB escreve x1, ID lê x1)
+        |<---------------------------------------->|
+CLK  ‾‾‾|__________________|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|____
+        ▲                  ▲                       ▲
+     descida             subida                 descida
+  estágios avançam:    banco grava x1         ID/EX captura
+  WB põe x1 na         (1ª metade)            ld1/ld2 já com
+  entrada do banco                            o x1 novo (2ª metade)
+```
+
+| Instante | Evento |
+| :--- | :--- |
+| descida | registradores de estágio e `PC` avançam; a instrução do WB coloca `rd`/`wd` na entrada do banco |
+| subida | o banco grava `rd` (e a memória de dados grava, se `MemWrite = 1`) |
+| próxima descida | o `ID/EX` captura `ld1`/`ld2`, que já refletem a escrita |
+
+É o comportamento descrito por Patterson e Hennessy: o banco de registradores é
+**escrito na primeira metade do ciclo e lido na segunda**. Uma instrução no WB e
+outra no ID, no mesmo ciclo, deixam de ser um conflito, o que economiza uma
+bolha em cada dependência (de 3 para **2 NOPs**).
+
+> [!NOTE]
+> A inversão foi feita nos registradores de estágio e no `PC`, e não no banco,
+> porque o [banco](../../componentes/bancoRegistradores/) é o mesmo arquivo usado
+> pelo [monociclo](../monociclo/). Lá, com o banco na descida, a instrução 0
+> perderia sua escrita: a simulação começa com uma borda de subida, que já avança
+> o `PC` antes de qualquer descida.
+>
+> A [memória de dados](../../componentes/memDados/), também compartilhada com o
+> monociclo, **mudou** da descida para a subida. Antes ela
+> já era oposta aos estágios, que gravavam na subida; quando eles passaram para a
+> descida, ela precisou ir para a subida para continuar oposta a eles, junto com o
+> banco. Com isso, o monociclo fica todo na mesma borda.
+
+<br>
+
 ## Conflitos e bolhas
 
 Este _datapath_ **não** possui _forwarding_ nem detecção de _hazard_ em hardware.
 A resolução de conflitos de dados é feita por **bolhas manuais** (`nop`)
-inseridas no código: são necessários **3 NOPs** entre uma instrução que escreve
-um registrador e outra que o lê. Os programas de teste em
-[`codigos/`](../../codigos/) seguem essa convenção.
+inseridas no código: são necessários **2 NOPs** entre uma instrução que escreve
+um registrador e outra que o lê (distância mínima de 3 instruções), graças às
+[bordas inversas](#bordas-de-clock). Os programas de teste em
+[`codigos/`](../../codigos/) foram escritos com 3 NOPs, regra de quando todos os
+registradores gravavam na mesma borda, e continuam funcionando: um NOP a mais só
+custa um ciclo.
 
 <br>
 

@@ -1,7 +1,7 @@
 # Estágios do _Pipeline_
 Este diretório agrupa os quatro **registradores de estágio**, usados nos _datapaths_ com _pipeline_ de 5 estágios.
 
-Eles são o que torna o _pipeline_ possível: como cinco instruções diferentes ocupam o circuito ao mesmo tempo, cada etapa precisa de um "congelador" na sua saída. A cada borda de subida do _clock_, o registrador captura os dados e sinais de controle produzidos por um estágio e os mantém estáveis durante todo o ciclo seguinte, enquanto o estágio anterior já trabalha na próxima instrução.
+Eles são o que torna o _pipeline_ possível: como cinco instruções diferentes ocupam o circuito ao mesmo tempo, cada etapa precisa de um "congelador" na sua saída. A cada borda de **descida** do _clock_, o registrador captura os dados e sinais de controle produzidos por um estágio e os mantém estáveis durante todo o ciclo seguinte, enquanto o estágio anterior já trabalha na próxima instrução.
 
 <br>
 
@@ -19,8 +19,11 @@ Eles são o que torna o _pipeline_ possível: como cinco instruções diferentes
 O comportamento é idêntico nos quatro, mudando apenas **quantos** e **quais** sinais são transportados:
 
 1. Durante o ciclo, as entradas (`*_<estagioAnterior>`) recebem valores combinacionais do estágio anterior, que podem oscilar livremente.
-2. Na **borda de subida do `CLK`**, cada registrador interno grava o valor presente na sua entrada.
+2. Na **borda de descida do `CLK`**, cada registrador interno grava o valor presente na sua entrada.
 3.  A partir daí, as saídas (`*_<estagioSeguinte>`) mantêm esse valor **fixo** pelo ciclo inteiro, dando ao próximo estágio uma entrada estável para trabalhar.
+
+> [!IMPORTANT]
+> A borda de descida é **inversa** à do [banco de registradores](../bancoRegistradores/) e da [memória de dados](../memDados/), que gravam na subida. Assim, a escrita no banco acontece no **meio** do ciclo definido pelos registradores de estágio: como no livro de Patterson e Hennessy, o registrador é escrito na primeira metade do ciclo e lido na segunda. Uma instrução no WB e outra no ID, no mesmo ciclo, já enxergam o valor novo. Veja [Bordas de _clock_](../../datapaths/pipeline/README.md#bordas-de-clock).
 
 Além dos sinais consumidos pelo _datapath_, os quatro registradores carregam a **instrução** de 32 bits (`Instrucao_<estagioAnterior>` &rarr; `Instrucao_<estagioSeguinte>`). Nenhum componente a consome depois do ID: ela existe para que se saiba, a cada ciclo, qual instrução ocupa cada estágio do _pipeline_.
 
