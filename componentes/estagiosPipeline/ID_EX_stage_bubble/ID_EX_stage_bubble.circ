@@ -39,7 +39,7 @@
   <lib desc="#I/O" name="6"/>
   <lib desc="#Base" name="7"/>
   <lib desc="#Input/Output-Extra" name="8"/>
-  <main name="estagioID_EX"/>
+  <main name="ID_EX_stage"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -72,9 +72,9 @@
     <tool lib="5" name="D Flip-Flop"/>
     <tool lib="5" name="Register"/>
   </toolbar>
-  <circuit name="estagioID_EX">
+  <circuit name="ID_EX_stage">
     <a name="appearance" val="custom"/>
-    <a name="circuit" val="estagioID_EX"/>
+    <a name="circuit" val="ID_EX_stage"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="8.0"/>
     <appear>
