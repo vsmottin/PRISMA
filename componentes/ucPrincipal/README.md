@@ -20,7 +20,6 @@ Por ser puramente combinacional, ela não depende do clock: assim que o `opcode`
 | `MemRead` | Saída | 1 bit | Habilita a leitura da memória de dados. |
 | `MemWrite` | Saída | 1 bit | Habilita a escrita na memória de dados. |
 | `MemToReg` | Saída | 1 bit | Seleciona a origem do dado escrito no registrador (`0` = ULA, `1` = memória). |
-| `Branch` | Saída | 1 bit | Indica uma instrução de desvio condicional (*branch*). |
 | `PCSrc` | Saída | 1 bit | Seleciona a origem do próximo PC (ativo em branch tomado ou salto). |
 | `Jump` | Saída | 1 bit | Indica um salto incondicional (`jal`/`jalr`). |
 | `S_Jalr` | Saída | 1 bit | Seleciona o comportamento específico do `jalr`. |
@@ -65,7 +64,6 @@ Cada sinal de saída é formado por uma porta `OR` que combina os tipos de instr
 *   **`ALUOp`** — formado por dois bits: `Rtype`/`Itype` selecionam `10` (lógico-aritmética) e `Btype` seleciona `01` (desvio); para `Load`/`Stype` permanece `00` (soma de endereço).
 *   **`MemRead`** e **`MemToReg`** — ativos apenas para `Load`.
 *   **`MemWrite`** — ativo apenas para `Stype`.
-*   **`Branch`** — ativo para `Btype` (identifica a instrução como um desvio condicional).
 *   **`PCSrc`** — ativo quando o próximo PC não é sequencial: ou em um **salto** (`Jal`/`Jalr`), ou em um **branch tomado**. Para o branch, uma porta `AND` combina `Btype` com a entrada `BranchSrc`, de modo que o desvio só altera o PC quando a condição avaliada externamente é verdadeira.
 *   **`Jump`** = `Jal` OU `Jalr`; **`S_Jalr`** = `Jalr`.
 *   **`Auipc_uc`** e **`Lui_uc`** — ativos exclusivamente para `Auipc` e `Lui`, respectivamente.

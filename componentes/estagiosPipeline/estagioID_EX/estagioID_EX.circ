@@ -91,6 +91,7 @@
       <circ-port dir="in" pin="1570,940" x="330" y="330"/>
       <circ-port dir="in" pin="220,160" x="330" y="90"/>
       <circ-port dir="in" pin="220,310" x="330" y="70"/>
+      <circ-port dir="in" pin="220,630" x="330" y="940"/>
       <circ-port dir="in" pin="2200,160" x="330" y="130"/>
       <circ-port dir="in" pin="2210,310" x="330" y="250"/>
       <circ-port dir="in" pin="2220,460" x="330" y="270"/>
@@ -121,6 +122,7 @@
       <circ-port dir="out" pin="2510,460" x="390" y="270"/>
       <circ-port dir="out" pin="510,160" x="390" y="90"/>
       <circ-port dir="out" pin="510,310" x="390" y="70"/>
+      <circ-port dir="out" pin="510,630" x="390" y="940"/>
     </appear>
     <comp lib="0" loc="(1030,1120)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -389,6 +391,16 @@
       <a name="facing" val="east"/>
       <a name="label" val="Clear"/>
     </comp>
+    <comp lib="0" loc="(220,630)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="Instrucao_ID"/>
+      <a name="labelfont" val="SansSerif bold 14"/>
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(220,700)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Clear"/>
+    </comp>
     <comp lib="0" loc="(2200,160)" name="Pin">
       <a name="appearance" val="classic"/>
       <a name="label" val="Lui_ID"/>
@@ -493,11 +505,19 @@
       <a name="facing" val="east"/>
       <a name="label" val="CLK"/>
     </comp>
+    <comp lib="0" loc="(270,670)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
     <comp lib="0" loc="(340,180)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Enable"/>
     </comp>
     <comp lib="0" loc="(340,330)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Enable"/>
+    </comp>
+    <comp lib="0" loc="(340,650)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Enable"/>
     </comp>
@@ -513,6 +533,14 @@
       <a name="appearance" val="classic"/>
       <a name="facing" val="west"/>
       <a name="label" val="PC_EX"/>
+      <a name="labelfont" val="SansSerif bold 14"/>
+      <a name="type" val="output"/>
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(510,630)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Instrucao_EX"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="type" val="output"/>
       <a name="width" val="32"/>
@@ -620,6 +648,7 @@
       <a name="label" val="funct7"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="5" loc="(1090,1070)" name="Register">
@@ -627,6 +656,7 @@
       <a name="label" val="imm"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(1090,130)" name="Register">
@@ -634,6 +664,7 @@
       <a name="label" val="opcode"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="7"/>
     </comp>
     <comp lib="5" loc="(1090,430)" name="Register">
@@ -641,6 +672,7 @@
       <a name="label" val="ld2"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(1090,590)" name="Register">
@@ -648,6 +680,7 @@
       <a name="label" val="rd"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="5" loc="(1090,750)" name="Register">
@@ -655,6 +688,7 @@
       <a name="label" val="funct3"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="3"/>
     </comp>
     <comp lib="5" loc="(1100,280)" name="Register">
@@ -662,6 +696,7 @@
       <a name="label" val="ld1"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(1740,130)" name="Register">
@@ -669,6 +704,7 @@
       <a name="label" val="RegWrite"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(1740,440)" name="Register">
@@ -676,6 +712,7 @@
       <a name="label" val="Jump"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(1740,590)" name="Register">
@@ -683,6 +720,7 @@
       <a name="label" val="ALUOp"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="2"/>
     </comp>
     <comp lib="5" loc="(1740,750)" name="Register">
@@ -690,6 +728,7 @@
       <a name="label" val="Auipc"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(1740,910)" name="Register">
@@ -697,6 +736,7 @@
       <a name="label" val="Jalr"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(1750,280)" name="Register">
@@ -704,6 +744,7 @@
       <a name="label" val="ALUSrc"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(2390,430)" name="Register">
@@ -711,6 +752,7 @@
       <a name="label" val="MemRead"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(2400,130)" name="Register">
@@ -718,6 +760,7 @@
       <a name="label" val="Lui"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(2400,280)" name="Register">
@@ -725,6 +768,7 @@
       <a name="label" val="MemToReg"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(2400,590)" name="Register">
@@ -732,6 +776,7 @@
       <a name="label" val="MemWrite"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="1"/>
     </comp>
     <comp lib="5" loc="(400,130)" name="Register">
@@ -739,6 +784,7 @@
       <a name="label" val="PCplus4"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="5" loc="(400,280)" name="Register">
@@ -746,6 +792,15 @@
       <a name="label" val="PC"/>
       <a name="labelfont" val="SansSerif bold 14"/>
       <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="5" loc="(400,600)" name="Register">
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="label" val="Instrucao"/>
+      <a name="labelfont" val="SansSerif bold 14"/>
+      <a name="showInTab" val="true"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="7" loc="(1030,55)" name="Text">
@@ -755,6 +810,10 @@
     <comp lib="7" loc="(2025,60)" name="Text">
       <a name="font" val="SansSerif bold 20"/>
       <a name="text" val="ucPrincipal e ucDesvio"/>
+    </comp>
+    <comp lib="7" loc="(350,545)" name="Text">
+      <a name="font" val="SansSerif bold 20"/>
+      <a name="text" val="Instrução"/>
     </comp>
     <comp lib="7" loc="(350,75)" name="Text">
       <a name="font" val="SansSerif bold 20"/>
@@ -827,6 +886,8 @@
     <wire from="(220,230)" to="(430,230)"/>
     <wire from="(220,310)" to="(400,310)"/>
     <wire from="(220,380)" to="(430,380)"/>
+    <wire from="(220,630)" to="(400,630)"/>
+    <wire from="(220,700)" to="(430,700)"/>
     <wire from="(2200,160)" to="(2400,160)"/>
     <wire from="(2210,310)" to="(2400,310)"/>
     <wire from="(2220,230)" to="(2430,230)"/>
@@ -851,16 +912,21 @@
     <wire from="(2460,160)" to="(2510,160)"/>
     <wire from="(2460,310)" to="(2500,310)"/>
     <wire from="(2460,620)" to="(2490,620)"/>
+    <wire from="(250,560)" to="(450,560)"/>
     <wire from="(250,90)" to="(450,90)"/>
     <wire from="(270,200)" to="(400,200)"/>
     <wire from="(270,350)" to="(400,350)"/>
+    <wire from="(270,670)" to="(400,670)"/>
     <wire from="(30,480)" to="(700,480)"/>
     <wire from="(340,180)" to="(400,180)"/>
     <wire from="(340,330)" to="(400,330)"/>
+    <wire from="(340,650)" to="(400,650)"/>
     <wire from="(430,220)" to="(430,230)"/>
     <wire from="(430,370)" to="(430,380)"/>
+    <wire from="(430,690)" to="(430,700)"/>
     <wire from="(460,160)" to="(510,160)"/>
     <wire from="(460,310)" to="(510,310)"/>
+    <wire from="(460,630)" to="(510,630)"/>
     <wire from="(700,1230)" to="(1360,1230)"/>
     <wire from="(700,480)" to="(700,1230)"/>
     <wire from="(700,70)" to="(700,480)"/>
