@@ -22,7 +22,7 @@ Cada verificação compara o resultado com o esperado sem desvio (`xori` + `slti
 
 | # | `diag` | O que é verificado |
 | :---: | :---: | :--- |
-| 1 | `256` | `rs2` vindo do `EX/MEM` (`ForwardB = 10`) e `rs1` do `MEM/WB` (`ForwardA = 01`). |
+| 1 | `256` | `rs2` vindo do `EX/MEM` (`ForwardB_EX = 10`) e `rs1` do `MEM/WB` (`ForwardA_EX = 01`). |
 | 2 | `260` | `rs1` vindo do `EX/MEM` e `rs2` do `MEM/WB`. |
 | 3 | `264` | Prioridade: o mesmo registrador escrito no MEM e no WB, vale o mais recente. |
 | 4 | `268` | Cadeia de `add` em que cada instrução usa a anterior. |

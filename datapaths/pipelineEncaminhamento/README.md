@@ -12,14 +12,13 @@ No pipeline simples, uma instrução que lê um registrador escrito por uma das 
 
 | Acréscimo | Estágio | Função |
 | :--- | :---: | :--- |
-| [`ucEncaminhamento`](../../componentes/pipelineComponentes/ucEncaminhamento/) (EX) | EX | Gera `ForwardA_EX`/`ForwardB_EX` a partir de `rs1_EX`, `rs2_EX` e do `rd` das instruções no MEM e no WB. |
+| [`ucEncaminhamento`](../../componentes/pipelineComponentes/ucEncaminhamento/) | ID e EX | Gera os quatro seletores (`ForwardA_ID`, `ForwardB_ID`, `ForwardA_EX`, `ForwardB_EX`) a partir de `rs1`/`rs2` do ID e do EX e do `rd` das instruções no MEM e no WB. |
 | MUXes `ForwardA_EX` e `ForwardB_EX` | EX | Escolhem os operandos da ULA e o dado do _store_. |
-| [`ucEncaminhamento`](../../componentes/pipelineComponentes/ucEncaminhamento/) (ID) | ID | Gera `ForwardA_ID`/`ForwardB_ID` a partir de `rs1_ID` e `rs2_ID`. |
 | MUXes `ForwardA_ID` e `ForwardB_ID` | ID | Escolhem os operandos da `idULA`, que decide os desvios. |
 | MUX `wd_MEM` | MEM | Monta o valor que a instrução no MEM vai escrever: resultado da ULA ou `PC + 4`. |
 | `rs1` e `rs2` no [`ID/EX`](../../componentes/estagiosPipeline/estagioID_EX/) | ID &rarr; EX | Levam ao EX os números dos registradores lidos. |
 
-As duas unidades são o **mesmo** componente: ele não sabe em qual estágio está, só compara os registradores lidos com o `rd` das instruções no MEM e no WB.
+Há uma **única** unidade de encaminhamento para os dois estágios: ela compara os quatro registradores lidos (`rs1`/`rs2` do ID e do EX) com o `rd` das instruções no MEM e no WB e gera um seletor para cada MUX.
 
 <br>
 
@@ -71,7 +70,7 @@ ld2_EX ─► MUX ForwardB_EX ─┬─► MUX ALUSrcB ────────�
 
 ## Encaminhamento no ID
 
-Os desvios são resolvidos no ID pela [`idULA`](../../componentes/pipelineComponentes/idULA/), que compara os valores lidos do banco. Patterson e Hennessy observam que antecipar o desvio para o ID exige uma **nova** lógica de encaminhamento para essa comparação, com valores vindos do `EX/MEM` e do `MEM/WB`. Por isso a unidade é instanciada uma segunda vez, com `rs1_ID` e `rs2_ID`.
+Os desvios são resolvidos no ID pela [`idULA`](../../componentes/pipelineComponentes/idULA/), que compara os valores lidos do banco. Patterson e Hennessy observam que antecipar o desvio para o ID exige uma **nova** lógica de encaminhamento para essa comparação, com valores vindos do `EX/MEM` e do `MEM/WB`. Por isso a unidade também recebe `rs1_ID` e `rs2_ID` e gera `ForwardA_ID` e `ForwardB_ID`, com a mesma regra usada no EX.
 
 Os MUXes `ForwardA_ID` e `ForwardB_ID` ficam na **saída do banco**, então o valor escolhido alimenta a `idULA` e também o `ID/EX`:
 
@@ -82,10 +81,10 @@ ld2 (banco) ─► MUX ForwardB_ID ─┬─► idULA (B)
                                 └─► ID/EX
 ```
 
-Mandar o valor encaminhado para o `ID/EX` não muda nenhum resultado: se ele estiver desatualizado (por exemplo, o endereço de um _load_), a unidade do EX corrige no ciclo seguinte, quando a mesma instrução estiver no `MEM/WB`.
+Mandar o valor encaminhado para o `ID/EX` não muda nenhum resultado: se ele estiver desatualizado (por exemplo, o endereço de um _load_), o encaminhamento do EX corrige no ciclo seguinte, quando a mesma instrução estiver no `MEM/WB`.
 
 > [!NOTE]
-> A entrada `01` (`wd_WB`) no ID devolve o mesmo valor que o banco já entregaria, porque o banco grava na primeira metade do ciclo. Ela existe só porque a unidade é a mesma nos dois estágios.
+> A entrada `01` (`wd_WB`) no ID devolve o mesmo valor que o banco já entregaria, porque o banco grava na primeira metade do ciclo. Ela existe só porque a unidade aplica a mesma regra aos dois estágios.
 
 <br>
 
@@ -93,17 +92,17 @@ Mandar o valor encaminhado para o `ID/EX` não muda nenhum resultado: se ele est
 
 | Túnel | Largura | Origem | Destino |
 | :--- | :---: | :--- | :--- |
-| `rs1_ID`, `rs2_ID` | 5 bits | Saídas `rs1`/`rs2` do decodificador | `ID/EX` e unidade do ID |
-| `rs1_EX`, `rs2_EX` | 5 bits | Saídas do `ID/EX` | Unidade do EX |
-| `rd_MEM`, `RegWrite_MEM` | 5 / 1 bits | Saídas do `EX/MEM` | As duas unidades |
-| `rd_WB`, `RegWrite_WB` | 5 / 1 bits | Saídas do `MEM/WB` | As duas unidades |
+| `rs1_ID`, `rs2_ID` | 5 bits | Saídas `rs1`/`rs2` do decodificador | `ID/EX` e unidade de encaminhamento |
+| `rs1_EX`, `rs2_EX` | 5 bits | Saídas do `ID/EX` | Unidade de encaminhamento |
+| `rd_MEM`, `RegWrite_MEM` | 5 / 1 bits | Saídas do `EX/MEM` | Unidade de encaminhamento |
+| `rd_WB`, `RegWrite_WB` | 5 / 1 bits | Saídas do `MEM/WB` | Unidade de encaminhamento |
 | `ALUResult_MEM` | 32 bits | Resultado da ULA na saída do `EX/MEM` | MUX `wd_MEM` |
 | `wd_MEM` | 32 bits | MUX `wd_MEM` | Entrada 2 dos quatro MUXes de encaminhamento |
 | `wd_WB` | 32 bits | MUX `Jump` do WB (entrada `wd` do banco) | Entrada 1 dos quatro MUXes de encaminhamento |
-| `ForwardA_ID`, `ForwardB_ID` | 2 bits | Unidade do ID | MUXes na saída do banco |
-| `ForwardA_EX`, `ForwardB_EX` | 2 bits | Unidade do EX | MUXes na saída do `ID/EX` |
+| `ForwardA_ID`, `ForwardB_ID` | 2 bits | Unidade de encaminhamento | MUXes na saída do banco |
+| `ForwardA_EX`, `ForwardB_EX` | 2 bits | Unidade de encaminhamento | MUXes na saída do `ID/EX` |
 
-As duas unidades ficam na parte de baixo do circuito, abaixo dos estágios que protegem, ligadas só por túneis.
+A unidade fica na parte de baixo do circuito, entre os estágios ID e EX, ligada só por túneis.
 
 <br>
 
