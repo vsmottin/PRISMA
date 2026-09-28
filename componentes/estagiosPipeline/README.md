@@ -9,7 +9,7 @@ Eles são o que torna o _pipeline_ possível: como cinco instruções diferentes
 | Registrador | Fronteira | O que atravessa |
 | :--- | :---: | :--- |
 | [estagioIF_ID](estagioIF_ID/README.md) | _Fetch_ &rarr; _Decode_ | Instrução crua, `PC` e `PC + 4`. |
-| [estagioID_EX](estagioID_EX/README.md) | _Decode_ &rarr; _Execute_ | Instrução, operandos `ld1`/`ld2`, `imm`, `PC`, `PC + 4`, `rd`, `opcode`, `funct3`, `funct7` e todos os sinais de controle. |
+| [estagioID_EX](estagioID_EX/README.md) | _Decode_ &rarr; _Execute_ | Instrução, operandos `ld1`/`ld2`, `imm`, `PC`, `PC + 4`, `rd`, `rs1`, `rs2`, `opcode`, `funct3`, `funct7` e todos os sinais de controle. |
 | [estagioEX_MEM](estagioEX_MEM/README.md) | _Execute_ &rarr; _Memory_ | Instrução, resultado da ULA, `ld2`, `rd`, `PC + 4`, `funct3` e o controle das fases MEM e WB. |
 | [estagioMEM_WB](estagioMEM_WB/README.md) | _Memory_ &rarr; _Write-Back_ | Instrução, dado lido da memória, resultado da ULA, `rd`, `PC + 4` e o controle da fase WB. |
 
@@ -30,7 +30,7 @@ Além dos sinais consumidos pelo _datapath_, os quatro registradores carregam a 
 <br>
 
 ## Implementação
-Cada sinal transportado tem seu **próprio registrador**, com a largura em bits do sinal correspondente: 32 bits para dados, 5 bits para `rd`, 3 bits para `funct3`, 1 bit para os sinais de controle, e assim por diante.
+Cada sinal transportado tem seu **próprio registrador**, com a largura em bits do sinal correspondente: 32 bits para dados, 5 bits para `rd`, `rs1` e `rs2`, 3 bits para `funct3`, 1 bit para os sinais de controle, e assim por diante.
 
 Todos os registradores de um mesmo estágio compartilham:
 *   O pino **`CLK`**.

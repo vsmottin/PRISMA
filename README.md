@@ -10,7 +10,8 @@ O projeto é montado de forma modular: cada bloco funcional (ULA, banco de regis
 risc-v/
 ├── datapaths/                        # processadores
 │   ├── monociclo/                    # ciclo único
-│   └── pipeline/                     # 5 estágios
+│   ├── pipeline/                     # 5 estágios
+│   └── pipelineEncaminhamento/       # 5 estágios com encaminhamento
 │
 ├── componentes/                      # um diretório por bloco funcional
 │   └── <componente>/
@@ -31,6 +32,7 @@ Cada _datapath_ tem seu próprio manual, com os estágios, os componentes usados
 | :--- | :--- |
 | [monociclo](datapaths/monociclo/README.md) | Cada instrução é buscada, executada e finalizada em **um** ciclo de _clock_. É a versão mais simples e a base do _pipeline_. |
 | [pipeline](datapaths/pipeline/README.md) | Execução dividida em **5 estágios** simultâneos. |
+| [pipelineEncaminhamento](datapaths/pipelineEncaminhamento/README.md) | _Pipeline_ com **encaminhamento** (_forwarding_) dos conflitos de dados. |
 
 
 ### Componentes
@@ -52,6 +54,7 @@ Cada componente também tem seu próprio manual, com interface, funcionamento e 
 | [zero](componentes/zero/README.md)                          | Flag de resultado zero da ULA.                               |
 | [estagiosPipeline](componentes/estagiosPipeline/README.md)  | Os quatro registradores de estágio (`IF/ID`, `ID/EX`, `EX/MEM`, `MEM/WB`). |
 | [idULA](componentes/pipelineComponentes/idULA/README.md)    | Mini-ULA que resolve os desvios no estágio de decodificação. |
+| [ucEncaminhamento](componentes/pipelineComponentes/ucEncaminhamento/README.md) | Unidade de encaminhamento (_forwarding_) do _pipeline_. |
 
 ## Convenções
 As regras de montagem e documentação dos circuitos: **nomenclatura**, **posição dos pinos**, **uso e nomeação de túneis** e **padrão dos READMEs** estão reunidas em **[`CONVENCOES.md`](CONVENCOES.md)**.
@@ -73,6 +76,6 @@ java -jar logisim-evolution-4.1.0-all.jar
 4. Use a ferramenta **`Poke`** (ícone da mãozinha) ou ative o **Clock** para acompanhar a execução das instruções pelo _datapath_.
 
 > [!NOTE]
-> Os programas de [`codigos/`](codigos/) com prefixo `teste_pipeline_` já contêm as bolhas (`nop`) exigidas pelo _pipeline_, que não possui _forwarding_ nem detecção de _hazard_. Como o `nop` é uma instrução válida, esses mesmos arquivos também rodam no monociclo, apenas gastando ciclos a mais.
+> Os programas de [`codigos/`](codigos/) com prefixo `teste_pipeline_` já contêm as bolhas (`nop`) exigidas pelo _pipeline_, que não possui _forwarding_ nem detecção de _hazard_. Como o `nop` é uma instrução válida, esses mesmos arquivos também rodam no monociclo e no _pipeline_ com encaminhamento, apenas gastando ciclos a mais.
 
 Este projeto está licenciado sob os termos da Licença MIT – consulte o arquivo LICENSE para obter detalhes.

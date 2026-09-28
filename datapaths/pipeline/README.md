@@ -139,11 +139,16 @@ rs1, rs2 ─► idULA (+ funct3) ─► Zero ─► ucDesvio (+ funct3) ─► B
   `PCSrc`, que no IF seleciona `PC + Imm` como próximo `PC`.
 
 Como tudo isso acontece no **ID**, o desvio é decidido um estágio antes do que
-seria no EX — reduzindo a penalidade para **1 bolha** (a instrução buscada logo
-atrás do desvio é descartada quando ele é tomado).
+seria no EX — reduzindo a penalidade para **1 bolha**. Essa bolha fica a cargo
+do programa: nenhuma instrução é descartada. A instrução buscada logo atrás do
+desvio já está no IF quando ele é decidido e é **executada** mesmo quando o
+desvio é tomado; por isso os programas colocam um `nop` logo depois de cada
+desvio (e de cada `jal`, que também é decidido no ID).
 
 > O **`jalr`** é a exceção: seu alvo (`rs1 + imm`) depende da ULA, então é
-> resolvido no **EX** e realimentado ao `PC` pelo MUX `Jalr` (`ALU_EX`).
+> resolvido no **EX** e realimentado ao `PC` pelo MUX `Jalr` (`ALU_EX`). Quando o
+> salto acontece, as **duas** instruções seguintes ao `jalr` também são
+> executadas, então ele precisa de 2 `nop`.
 
 <br>
 
@@ -183,6 +188,11 @@ Cada barreira propaga apenas o que os estágios seguintes ainda vão consumir:
 
 Os sinais resolvidos no EX (`ALUSrcB`, `ALUOp`, `Auipc`, `Lui`, `Jalr`,
 `BranchSrc`) **não** atravessam o `EX/MEM` — são consumidos antes.
+
+> [!NOTE]
+> O `ID/EX` também tem entradas para os números `rs1` e `rs2`, usados pela unidade de
+> encaminhamento do [pipeline com encaminhamento](../pipelineEncaminhamento/). Neste
+> _datapath_ elas ficam desconectadas.
 
 <br>
 
@@ -285,6 +295,9 @@ um registrador e outra que o lê (distância mínima de 3 instruções), graças
 [`codigos/`](../../codigos/) foram escritos com 3 NOPs, regra de quando todos os
 registradores gravavam na mesma borda, e continuam funcionando: um NOP a mais só
 custa um ciclo.
+
+O [pipeline com encaminhamento](../pipelineEncaminhamento/) resolve essas dependências em
+hardware e dispensa a maior parte desses NOPs.
 
 <br>
 
