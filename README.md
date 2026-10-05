@@ -71,7 +71,7 @@ java -jar logisim-evolution-4.1.0-all.jar
    
    - Clique no componente **Memória de Instruções**, próximo ao PC.
    - Ao aparecer um círculo rosa ao redor do componente, clique duas vezes na **Lupa** mostrada sobre ele.
-   - Clique com o mouse direito sobre a **`Memória RAM`** que está dentro da memória de instruções.
+   - Clique com o mouse direito sobre a **`Memória ROM`** que está dentro da memória de instruções.
    - Selecione a opção **`Carregar imagem...`**.
    - Escolha um dos arquivos de teste da pasta [`codigos/`](codigos/) e feche a janela.
      
