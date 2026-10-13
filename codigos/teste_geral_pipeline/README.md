@@ -18,8 +18,8 @@ Os **12 branches** também ficam visíveis individualmente em `x18`–`x29` (cad
 também pra memória de dados (`mem[0..72]`) para inspeção.
 
 ## Como rodar
-1. Carregue `teste_geral_pipeline.txt` na memória de instruções (*Load Image*).
-2. Reset e rode até o `Stop` (**≈ 935 ciclos**).
+1. Carregue `teste_geral_pipeline.txt` na memória de instruções.
+2. Reset e rode até o `Stop` (**≈ 800 ciclos**).
 3. **Olhe `x31`:** `1` = tudo certo.
 
 > Loads/stores sub-palavra assumem **little-endian** (padrão RISC-V).
