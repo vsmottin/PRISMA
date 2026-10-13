@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Datapath - Pipeline com bolhas automáticas
 
 ![Datapath do pipeline com bolhas automáticas](pipeline_bubble_imagem.png)
