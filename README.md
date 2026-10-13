@@ -10,7 +10,8 @@ O projeto é montado de forma modular: cada bloco funcional (ULA, banco de regis
 risc-v/
 ├── datapaths/                        # processadores
 │   ├── monociclo/                    # ciclo único
-│   └── pipeline/                     # 5 estágios
+│   ├── pipeline/                     # 5 estágios
+│   └── pipeline_bubble/              # 5 estágios com bolhas automáticas
 │
 ├── componentes/                      # um diretório por bloco funcional
 │   └── <componente>/
@@ -31,6 +32,7 @@ Cada _datapath_ tem seu próprio manual, com os estágios, os componentes usados
 | :--- | :--- |
 | [monociclo](datapaths/monociclo/README.md) | Cada instrução é buscada, executada e finalizada em **um** ciclo de _clock_. É a versão mais simples e a base do _pipeline_. |
 | [pipeline](datapaths/pipeline/README.md) | Execução dividida em **5 estágios** simultâneos. |
+| [pipeline_bubble](datapaths/pipeline_bubble/README.md) | **5 estágios** com detecção de dependências e bolhas automáticas, sem _forwarding_. |
 
 
 ### Componentes
