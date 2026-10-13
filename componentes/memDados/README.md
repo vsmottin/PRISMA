@@ -51,7 +51,7 @@ A leitura é combinacional e habilitada por `MemRead`. Os quatro bancos entregam
 
 O circuito é montado a partir dos seguintes blocos do Logisim:
 
-- **Memórias RAM:** quatro blocos `RAM 16M x 8` (8 bits de dado, 24 bits de endereço, gravação na borda de descida do clock), cada um representando um banco de byte da palavra de 32 bits.
+- **Memórias RAM:** quatro blocos `RAM 16M x 8` (8 bits de dado, 24 bits de endereço, gravação na borda de subida do clock), cada um representando um banco de byte da palavra de 32 bits.
 - **Distribuidores (*splitters*):** fatiam o endereço de entrada (separando o endereço de palavra do `offset`) e quebram/recombinam o dado de 32 bits em seus quatro bytes individuais.
 - **Multiplexadores:** alinham o dado de escrita conforme o `offset` e, na leitura, selecionam o trecho correto (`offset`), a extensão desejada (`sUnsigned`) e o tamanho final do acesso (`size`).
 - **Extensores:** módulos `extensorSinal_8`, `extensorZero_8`, `extensorSinal_16` e `extensorZero_16`, importados de `../Extensores/extensoresSinal.circ`, responsáveis por expandir bytes e meias-palavras para 32 bits.

@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeto PRISMA - Menu</title>
+  <meta name="description"
+    content="Índice de navegação do Projeto PRISMA: processador RISC-V RV32I implementado em Logisim Evolution.">
+  <style>
+    :root {
+      color-scheme: light;
+      --fundo: #fdfdfc;
+      --texto: #16181c;
+      --secundario: #4a4d53;
+      --terciario: #6b6e75;
+      --tenue: #85888f;
+      --linha: #16181c;
+      --regua: #d9d9d4;
+      --regua-fraca: #e9e9e4;
+      --codigo: #f1f1ec;
+      --link: #14428a;
+      --brilho-img: 1;
+
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --mono: "SF Mono", Consolas, "DejaVu Sans Mono", monospace;
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --fundo: #131519;
+      --texto: #e7e5e1;
+      --secundario: #b0aca5;
+      --terciario: #918d86;
+      --tenue: #7d7973;
+      --linha: #e7e5e1;
+      --regua: #32363c;
+      --regua-fraca: #23262b;
+      --codigo: #22252a;
+      --link: #8fb3e6;
+      --brilho-img: .82;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --fundo: #131519;
+        --texto: #e7e5e1;
+        --secundario: #b0aca5;
+        --terciario: #918d86;
+        --tenue: #7d7973;
+        --linha: #e7e5e1;
+        --regua: #32363c;
+        --regua-fraca: #23262b;
+        --codigo: #22252a;
+        --link: #8fb3e6;
+        --brilho-img: .82;
+      }
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      max-width: 47em;
+      margin: 4.5em auto 6em;
+      padding: 0 1.6em;
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--texto);
+      background: var(--fundo);
+      -webkit-font-smoothing: antialiased
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      text-underline-offset: .18em;
+      text-decoration-thickness: 1px;
+      transition: color .15s ease
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 3px;
+      border-radius: 2px
+    }
+
+    code {
+      font-family: var(--mono);
+      font-size: .82em;
+      background: var(--codigo);
+      padding: .1em .3em
+    }
+
+    /* índice lateral: só aparece quando sobra margem */
+    .indice {
+      display: none
+    }
+
+    @media (min-width: 80rem) {
+      .indice {
+        display: block;
+        position: fixed;
+        top: 5.5rem;
+        left: max(2.25rem, calc(50% - 40rem));
+        width: 11rem;
+        font-size: .8rem;
+        line-height: 1.35
+      }
+    }
+
+    .indice ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid var(--regua-fraca)
+    }
+
+    .indice a {
+      display: block;
+      padding: .4em .9em;
+      margin-left: -1px;
+      color: var(--tenue);
+      border-left: 1px solid transparent
+    }
+
+    .indice a:hover {
+      color: var(--texto);
+      text-decoration: none
+    }
+
+    .indice a.atual {
+      color: var(--texto);
+      border-left-color: var(--texto)
+    }
+
+    /* cabeçalho e barra de preferências */
+    header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.1em 2em;
+      border-bottom: 1px solid var(--linha);
+      padding-bottom: 1.3em
+    }
+
+    .marca-linha {
+      display: flex;
+      align-items: center;
+      gap: .55em
+    }
+
+    /* prisma: o feixe entra reto e sai desviado */
+    .marca-icone {
+      flex: none;
+      height: 1.4em;
+      width: auto;
+      color: var(--texto)
+    }
+
+    h1 {
+      font-size: 1.7em;
+      font-weight: normal;
+      letter-spacing: .1em;
+      margin: 0 0 .2em
+    }
+
+    header p {
+      margin: 0;
+      max-width: 26em;
+      color: var(--terciario);
+      font-size: .93em;
+      font-style: italic;
+      line-height: 1.45
+    }
+
+    .barra {
+      display: flex;
+      gap: 1.4em;
+      font-family: var(--sans);
+      font-size: .74em;
+      color: var(--tenue)
+    }
+
+    .barra label {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: .5em
+    }
+
+    /* seta do seletor, desenhada com duas bordas */
+    .barra label::after {
+      content: "";
+      position: absolute;
+      right: .3em;
+      top: 50%;
+      width: .34em;
+      height: .34em;
+      border-right: 1px solid var(--tenue);
+      border-bottom: 1px solid var(--tenue);
+      transform: translateY(-75%) rotate(45deg);
+      pointer-events: none
+    }
+
+    .barra label:hover::after {
+      border-color: var(--texto)
+    }
+
+    .barra select {
+      font-family: var(--sans);
+      font-size: 1.05em;
+      letter-spacing: .02em;
+      color: var(--secundario);
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--regua);
+      padding: .15em 1.2em .15em .1em;
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      transition: border-color .15s ease, color .15s ease
+    }
+
+    .barra select:hover {
+      color: var(--texto);
+      border-bottom-color: var(--texto)
+    }
+
+    .barra select:focus-visible {
+      outline: 2px solid var(--link);
+      outline-offset: 3px
+    }
+
+    .entrada {
+      font-size: 1.06em;
+      max-width: 33em;
+      margin: 2em 0 3.6em;
+      text-wrap: pretty
+    }
+
+    section {
+      scroll-margin-top: 2.5rem;
+      margin: 0 0 3.6em
+    }
+
+    h2 {
+      font-size: 1.05em;
+      font-weight: bold;
+      color: var(--texto);
+      margin: 0;
+      padding-bottom: .4em;
+      border-bottom: 1px solid var(--regua)
+    }
+
+    .nota-secao {
+      font-size: .92em;
+      color: var(--terciario);
+      max-width: 36em;
+      margin: 1em 0 1.6em;
+      text-wrap: pretty
+    }
+
+    /* listas de itens */
+    ul.menu {
+      list-style: none;
+      margin: 1.4em 0 0;
+      padding: 0
+    }
+
+    ul.menu li {
+      position: relative;
+      padding: .8em .8em;
+      margin: 0 -.8em;
+      border-bottom: 1px solid var(--regua-fraca)
+    }
+
+    ul.menu li:last-child {
+      border-bottom: 0
+    }
+
+    .item .nome {
+      font-size: 1em
+    }
+
+    .item .desc {
+      color: var(--terciario);
+      font-size: .88em;
+      line-height: 1.5
+    }
+
+    /* planos de aula: a linha inteira é clicável */
+    ul.planos .item {
+      display: grid;
+      grid-template-columns: 3.1em 1fr;
+      align-items: baseline
+    }
+
+    ul.planos .codigo {
+      font-family: var(--mono);
+      font-size: .76em;
+      letter-spacing: .1em;
+      color: var(--tenue);
+      border-right: 1px solid var(--regua);
+      padding-right: .9em;
+      margin-right: .9em
+    }
+
+    ul.planos .nome a::after {
+      content: "";
+      position: absolute;
+      inset: 0
+    }
+
+    /* material de referência: nome e descrição em colunas */
+    ul.referencias .item {
+      display: grid;
+      grid-template-columns: minmax(11em, 14em) 1fr;
+      gap: .3em 1.6em;
+      align-items: baseline
+    }
+
+    @media (max-width:36em) {
+
+      ul.planos .item,
+      ul.referencias .item {
+        grid-template-columns: 1fr
+      }
+
+      ul.planos .codigo {
+        border-right: 0;
+        padding-right: 0;
+        margin: 0 0 .2em
+      }
+    }
+
+    /* os dois processadores */
+    .processadores {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+      gap: 1.7em;
+      margin-top: 1.5em
+    }
+
+    .processador img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--regua);
+      filter: brightness(var(--brilho-img))
+    }
+
+    .processador a:hover img {
+      filter: none
+    }
+
+    .processador h3 {
+      font-size: 1.05em;
+      font-weight: normal;
+      margin: 0 0 .3em
+    }
+
+    .processador p {
+      font-size: .88em;
+      color: var(--terciario);
+      margin: 0;
+      line-height: 1.5
+    }
+
+    .processador-texto {
+      padding: .7em 0 0
+    }
+
+    /* grupos em grade */
+    .colunas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(17em, 1fr));
+      gap: 1.9em 2.6em;
+      margin-top: 1.5em
+    }
+
+    .grupo h3 {
+      font-size: .95em;
+      font-weight: normal;
+      font-style: italic;
+      color: var(--texto);
+      margin: 0 0 .7em;
+      padding-bottom: .5em;
+      border-bottom: 1px solid var(--regua-fraca)
+    }
+
+    .grupo ul {
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    .grupo li {
+      margin: 0 0 .45em;
+      line-height: 1.45
+    }
+
+    .grupo li a {
+      font-family: var(--mono);
+      font-size: .84em
+    }
+
+    .grupo li span {
+      color: var(--tenue);
+      font-size: .87em
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: .4em 1.5em;
+      border-top: 1px solid var(--regua);
+      padding-top: 1.3em;
+      font-size: .84em;
+      color: var(--terciario)
+    }
+
+    footer p {
+      margin: 0
+    }
+
+    footer a {
+      font-family: var(--mono);
+      font-size: .92em;
+      color: var(--tenue)
+    }
+
+    footer a:hover {
+      color: var(--link)
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="marca">
+      <div class="marca-linha">
+        <h1 data-i18n="cabecalho.titulo">Projeto PRISMA</h1>
+      </div>
+      <p data-i18n="cabecalho.lema">Processador RISC-V Interativo para Simulação e Modelagem de Arquitetura</p>
+    </div>
+    <div class="barra">
+      <label>
+        <span data-i18n="ui.tema">Tema</span>
+        <select id="sel-tema">
+          <option value="sistema" data-i18n="ui.tema.sistema">Sistema</option>
+          <option value="claro" data-i18n="ui.tema.claro">Claro</option>
+          <option value="escuro" data-i18n="ui.tema.escuro">Escuro</option>
+        </select>
+      </label>
+      <label>
+        <span data-i18n="ui.idioma">Idioma</span>
+        <select id="sel-idioma">
+          <option value="pt">Português</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+        </select>
+      </label>
+    </div>
+  </header>
+
+  <p class="entrada" data-i18n="entrada">
+    O projeto PRISMA traz implementações de um processador <strong>RISC-V RV32I</strong> que usam o <strong>Logisim
+      Evolution</strong> como base.
+  </p>
+
+  <section>
+    <h2 data-i18n="proc.titulo">Os processadores</h2>
+    <p class="nota-secao" data-i18n="proc.nota">Derivações de modelo do mesmo conjunto de instruções.</p>
+    <div class="processadores">
+      <div class="processador">
+        <a href="https://github.com/vsmottin/PRISMA/blob/main/datapaths/monociclo/README.md">
+          <img src="imagens/monociclo_imagem.png" alt="Caminho de dados monociclo">
+        </a>
+        <div class="processador-texto">
+          <h3>
+            <a href="https://github.com/vsmottin/PRISMA/blob/main/datapaths/monociclo/README.md"
+              data-i18n="proc.mono.nome">Monociclo</a>
+          </h3>
+          <p data-i18n="proc.mono.desc">Uma instrução executada por ciclo de <em>clock</em>.</p>
+        </div>
+      </div>
+      <div class="processador">
+        <a href="https://github.com/vsmottin/PRISMA/blob/main/datapaths/pipeline/README.md">
+          <img src="imagens/pipeline_simples.png" alt="Caminho de dados em pipeline">
+        </a>
+        <div class="processador-texto">
+          <h3>
+            <a href="https://github.com/vsmottin/PRISMA/blob/main/datapaths/pipeline/README.md"
+              data-i18n="proc.pipe.nome">Pipeline</a>
+          </h3>
+          <p data-i18n="proc.pipe.desc">Cinco estágios, separados por bancos de registradores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="blocos.titulo">Os blocos funcionais</h2>
+    <p class="nota-secao" data-i18n="blocos.nota">Cada bloco é um circuito independente, com manual próprio, importado
+      como biblioteca pelos processadores.</p>
+
+    <div class="colunas">
+      <div class="grupo">
+        <h3 data-i18n="blocos.controle">Controle</h3>
+        <ul>
+          <li><a href="https://github.com/vsmottin/PRISMA/blob/main/componentes/ucPrincipal/README.md">ucPrincipal</a>
+            <span data-i18n="blocos.ucPrincipal">- gera os sinais de controle</span>
+          </li>
+          <li><a href="https://github.com/vsmottin/PRISMA/blob/main/componentes/ucULA/README.md">ucULA</a>
+            <span data-i18n="blocos.ucULA">- define a operação da ULA</span>
+          </li>
+          <li><a href="https://github.com/vsmottin/PRISMA/blob/main/componentes/ucDesvio/README.md">ucDesvio</a>
+            <span data-i18n="blocos.ucDesvio">- decide os desvios condicionais</span>
+          </li>
+          <li><a
+              href="https://github.com/vsmottin/PRISMA/blob/main/componentes/ucEnderecamento/README.md">ucEnderecamento</a>
+            <span data-i18n="blocos.ucEnderecamento">- controla o endereçamento</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="grupo">
+        <h3 data-i18n="blocos.calculo">Cálculo e dados</h3>
+        <ul>
+          <li><a href="https://github.com/vsmottin/PRISMA/blob/main/componentes/ULA/README.md">ULA</a>
+            <span data-i18n="blocos.ULA">- realiza as operações lógicas e aritméticas</span>
+          </li>
+          <li><a
+              href="https://github.com/vsmottin/PRISMA/blob/main/componentes/bancoRegistradores/README.md">bancoRegistradores</a>
+            <span data-i18n="blocos.banco">- os 32 registradores</span>
+          </li>
+          <li><a
+              href="https://github.com/vsmottin/PRISMA/blob/main/componentes/decodificador/README.md">decodificador</a>
+            <span data-i18n="blocos.decodificador">- fatia a instrução em campos</span>
+          </li>
+          <li><a href="https://github.com/vsmottin/PRISMA/blob/main/componentes/extensores/README.md">extensores</a>
+            <span data-i18n="blocos.extensores">- extensão de sinal e de zero</span>
+          </li>
+          <li><a href="https://github.com/vsmottin/PRISMA/blob/main/componentes/zero/README.md">zero</a>
+            <span data-i18n="blocos.zero">- indica resultado nulo da ULA</span>
+          </li>
+          <li><a
+              href="https://github.com/vsmottin/PRISMA/blob/main/componentes/contadorCiclos/README.md">contadorCiclos</a>
+            <span data-i18n="blocos.contador">- conta os ciclos executados</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="grupo">
+        <h3 data-i18n="blocos.memorias">Memórias</h3>
+        <ul>
+          <li><a
+              href="https://github.com/vsmottin/PRISMA/blob/main/componentes/memInstrucoes/README.md">memInstrucoes</a>
+            <span data-i18n="blocos.memInstrucoes">- guarda o programa</span>
+          </li>
+          <li><a href="https://github.com/vsmottin/PRISMA/blob/main/componentes/memDados/README.md">memDados</a>
+            <span data-i18n="blocos.memDados">- faz leitura e escrita de dados</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="grupo">
+        <h3 data-i18n="blocos.pipeline">Pipeline</h3>
+        <ul>
+          <li><a
+              href="https://github.com/vsmottin/PRISMA/blob/main/componentes/estagiosPipeline/README.md">estagiosPipeline</a>
+            <span data-i18n="blocos.estagios">- as quatro barreiras entre estágios</span>
+          </li>
+          <li><a
+              href="https://github.com/vsmottin/PRISMA/blob/main/componentes/pipelineComponentes/idULA/README.md">idULA</a>
+            <span data-i18n="blocos.idULA">- resolve desvios antes da execução</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="programas.titulo">Programas para executar</h2>
+    <p class="nota-secao" data-i18n="programas.nota">Arquivos em linguagem de máquina, prontos para carregar na memória
+      de instruções. Os do grupo <em>pipeline</em> já trazem as bolhas (<code>nop</code>) necessárias
+      e também rodam no monociclo.</p>
+
+    <div class="colunas">
+      <div class="grupo">
+        <h3 data-i18n="programas.algoritmos">Algoritmos</h3>
+        <ul>
+          <li><a href="https://github.com/vsmottin/PRISMA/tree/main/codigos/fatorial">fatorial</a></li>
+          <li><a href="https://github.com/vsmottin/PRISMA/tree/main/codigos/soma_vetor">soma_vetor</a></li>
+        </ul>
+      </div>
+
+      <div class="grupo">
+        <h3 data-i18n="programas.instrucoes">Testes de instruções</h3>
+        <ul>
+          <li><a href="https://github.com/vsmottin/PRISMA/tree/main/codigos/teste_loads_stores">teste_loads_stores</a>
+          </li>
+          <li><a href="https://github.com/vsmottin/PRISMA/tree/main/codigos/teste_jumps-shifts">teste_jumps-shifts</a>
+          </li>
+          <li><a href="https://github.com/vsmottin/PRISMA/tree/main/codigos/teste_type-U">teste_type-U</a></li>
+        </ul>
+      </div>
+
+      <div class="grupo">
+        <h3 data-i18n="programas.pipeline">Testes de Pipeline</h3>
+        <ul>
+          <li><a href="https://github.com/vsmottin/PRISMA/tree/main/codigos/teste_pipeline_reto">teste_pipeline_reto</a>
+          </li>
+          <li><a
+              href="https://github.com/vsmottin/PRISMA/tree/main/codigos/teste_pipeline_branch">teste_pipeline_branch</a>
+          </li>
+          <li><a href="https://github.com/vsmottin/PRISMA/tree/main/codigos/teste_pipeline_jump">teste_pipeline_jump</a>
+          </li>
+          <li><a
+              href="https://github.com/vsmottin/PRISMA/tree/main/codigos/teste_pipeline_loadstore">teste_pipeline_loadstore</a>
+          </li>
+          <li><a
+              href="https://github.com/vsmottin/PRISMA/tree/main/codigos/teste_geral_pipeline">teste_geral_pipeline</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="planos.titulo">Planos de aula</h2>
+    <p class="nota-secao" data-i18n="planos.nota">Quatro atividades práticas de laboratório, cada uma com plano de aula
+      e guia do aluno.</p>
+
+    <ul class="menu planos">
+      <li>
+        <div class="item">
+          <span class="codigo">E1</span>
+          <span class="nome"><a href="https://github.com/vsmottin/PRISMA/blob/main/atividades/E1/plano-de-aula.pdf"
+              data-i18n="planos.e1.nome">Compreensão da mudança de estado no processador</a></span>
+        </div>
+      </li>
+      <li>
+        <div class="item">
+          <span class="codigo">E2</span>
+          <span class="nome"><a href="https://github.com/vsmottin/PRISMA/blob/main/atividades/E2/plano-de-aula.pdf"
+              data-i18n="planos.e2.nome">Geração manual dos sinais de controle</a></span>
+        </div>
+      </li>
+      <li>
+        <div class="item">
+          <span class="codigo">E3</span>
+          <span class="nome"><a href="https://github.com/vsmottin/PRISMA/blob/main/atividades/E3/plano-de-aula.pdf"
+              data-i18n="planos.e3.nome">Dedução de <em>hazards</em> e redução de bolhas</a></span>
+        </div>
+      </li>
+      <li>
+        <div class="item">
+          <span class="codigo">E4</span>
+          <span class="nome"><a href="https://github.com/vsmottin/PRISMA/blob/main/atividades/E4/plano-de-aula.pdf"
+              data-i18n="planos.e4.nome">Diagnóstico de falha no caminho de dados</a></span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 data-i18n="ref.titulo">Material de referência</h2>
+    <ul class="menu referencias">
+      <li>
+        <div class="item">
+          <span class="nome"><a href="https://github.com/vsmottin/PRISMA/blob/main/CONVENCOES.md"
+              data-i18n="ref.convencoes.nome">Convenções do projeto</a></span>
+          <span class="desc" data-i18n="ref.convencoes.desc">Nomenclatura, posição dos pinos, uso de túneis e padrão dos
+            manuais.</span>
+        </div>
+      </li>
+      <li>
+        <div class="item">
+          <span class="nome"><a href="https://github.com/vsmottin/PRISMA/blob/main/RISCV_CARD.pdf"
+              data-i18n="ref.cartao.nome">Cartão da ISA RISC-V</a></span>
+          <span class="desc" data-i18n="ref.cartao.desc">Referência das instruções e dos formatos de codificação.</span>
+        </div>
+      </li>
+      <li>
+        <div class="item">
+          <span class="nome"><a href="https://github.com/vsmottin/PRISMA/tree/main/atividades"
+              data-i18n="ref.atividades.nome">Atividades</a></span>
+          <span class="desc" data-i18n="ref.atividades.desc">Versões do processador usadas em exercícios, inclusive uma
+            com defeito proposital.</span>
+        </div>
+      </li>
+      <li>
+        <div class="item">
+          <span class="nome"><a href="https://github.com/vsmottin/PRISMA" data-i18n="ref.repo.nome">Repositório
+              completo</a></span>
+          <span class="desc" data-i18n="ref.repo.desc">Código-fonte, circuitos e documentação. Licença MIT.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p data-i18n="rodape">Projeto PRISMA · 2026</p>
+    <a href="https://github.com/vsmottin/PRISMA">github.com/vsmottin/PRISMA</a>
+  </footer>
+
+  <script>
+    (function () {
+      var raiz = document.documentElement;
+      var CHAVE_TEMA = 'prisma-tema', CHAVE_IDIOMA = 'prisma-idioma';
+
+      function guarda(k, v) {try {localStorage.setItem(k, v);} catch (e) { } }
+      function le(k) {try {return localStorage.getItem(k);} catch (e) {return null;} }
+
+      // tema: sistema (padrão), claro ou escuro
+      var selTema = document.getElementById('sel-tema');
+
+      function aplicaTema(t) {
+        if (t === 'claro') raiz.setAttribute('data-theme', 'light');
+        else if (t === 'escuro') raiz.setAttribute('data-theme', 'dark');
+        else raiz.removeAttribute('data-theme');
+      }
+
+      var tema = le(CHAVE_TEMA);
+      if (tema !== 'claro' && tema !== 'escuro') tema = 'sistema';
+      selTema.value = tema;
+      aplicaTema(tema);
+      selTema.addEventListener('change', function () {
+        aplicaTema(this.value);
+        guarda(CHAVE_TEMA, this.value);
+      });
+
+      // idioma: português (original), inglês, espanhol
+      var TRADUCOES = {
+        en: {
+          'ui.tema': 'Theme', 'ui.tema.sistema': 'System', 'ui.tema.claro': 'Light', 'ui.tema.escuro': 'Dark',
+          'ui.idioma': 'Language',
+          'cabecalho.titulo': 'PRISMA Project',
+          'cabecalho.lema': 'Interactive RISC-V Processor for Simulation and Architecture Modeling',
+          'entrada': 'The PRISMA project provides implementations of a <strong>RISC-V RV32I</strong> processor built on top of <strong>Logisim Evolution</strong>.',
+          'proc.titulo': 'The processors',
+          'proc.nota': 'Model derivations of the same instruction set.',
+          'proc.mono.nome': 'Single-cycle',
+          'proc.mono.desc': 'One instruction executed per <em>clock</em> cycle.',
+          'proc.pipe.nome': 'Pipeline',
+          'proc.pipe.desc': 'Five stages, separated by register barriers.',
+          'blocos.titulo': 'The functional blocks',
+          'blocos.nota': 'Each block is a standalone circuit, with its own manual, imported as a library by the processors.',
+          'blocos.controle': 'Control',
+          'blocos.ucPrincipal': '- generates the control signals',
+          'blocos.ucULA': '- sets the ALU operation',
+          'blocos.ucDesvio': '- decides the conditional branches',
+          'blocos.ucEnderecamento': '- controls addressing',
+          'blocos.calculo': 'Computation and data',
+          'blocos.ULA': '- performs the logic and arithmetic operations',
+          'blocos.banco': '- the 32 registers',
+          'blocos.decodificador': '- slices the instruction into fields',
+          'blocos.extensores': '- sign and zero extension',
+          'blocos.zero': '- flags a zero result from the ALU',
+          'blocos.contador': '- counts the executed cycles',
+          'blocos.memorias': 'Memories',
+          'blocos.memInstrucoes': '- holds the program',
+          'blocos.memDados': '- reads and writes data',
+          'blocos.pipeline': 'Pipeline',
+          'blocos.estagios': '- the four inter-stage barriers',
+          'blocos.idULA': '- resolves branches before execution',
+          'programas.titulo': 'Programs to run',
+          'programas.nota': 'Machine-language files, ready to load into the instruction memory. Those in the <em>pipeline</em> group already carry the required bubbles (<code>nop</code>) and also run on the single-cycle processor.',
+          'programas.algoritmos': 'Algorithms',
+          'programas.instrucoes': 'Instruction tests',
+          'programas.pipeline': 'Pipeline tests',
+          'planos.titulo': 'Lesson plans',
+          'planos.nota': 'Four hands-on lab activities, each with a lesson plan and a student guide.',
+          'planos.e1.nome': 'Understanding state change in the processor',
+          'planos.e2.nome': 'Manual generation of the control signals',
+          'planos.e3.nome': 'Deducing <em>hazards</em> and reducing bubbles',
+          'planos.e4.nome': 'Diagnosing a fault in the datapath',
+          'ref.titulo': 'Reference material',
+          'ref.convencoes.nome': 'Project conventions',
+          'ref.convencoes.desc': 'Naming, pin placement, use of tunnels and the manual template.',
+          'ref.cartao.nome': 'RISC-V ISA card',
+          'ref.cartao.desc': 'Reference for the instructions and the encoding formats.',
+          'ref.atividades.nome': 'Activities',
+          'ref.atividades.desc': 'Processor versions used in exercises, including one with a deliberate defect.',
+          'ref.repo.nome': 'Full repository',
+          'ref.repo.desc': 'Source code, circuits and documentation. MIT license.',
+          'rodape': 'PRISMA Project · 2026'
+        },
+        es: {
+          'ui.tema': 'Tema', 'ui.tema.sistema': 'Sistema', 'ui.tema.claro': 'Claro', 'ui.tema.escuro': 'Oscuro',
+          'ui.idioma': 'Idioma',
+          'cabecalho.titulo': 'Proyecto PRISMA',
+          'cabecalho.lema': 'Procesador RISC-V Interactivo para Simulación y Modelado de Arquitectura',
+          'entrada': 'El proyecto PRISMA reúne implementaciones de un procesador <strong>RISC-V RV32I</strong> construidas sobre <strong>Logisim Evolution</strong>.',
+          'proc.titulo': 'Los procesadores',
+          'proc.nota': 'Derivaciones de modelo del mismo conjunto de instrucciones.',
+          'proc.mono.nome': 'Monociclo',
+          'proc.mono.desc': 'Una instrucción ejecutada por ciclo de <em>reloj</em>.',
+          'proc.pipe.nome': 'Pipeline',
+          'proc.pipe.desc': 'Cinco etapas, separadas por bancos de registros.',
+          'blocos.titulo': 'Los bloques funcionales',
+          'blocos.nota': 'Cada bloque es un circuito independiente, con manual propio, importado como biblioteca por los procesadores.',
+          'blocos.controle': 'Control',
+          'blocos.ucPrincipal': '- genera las señales de control',
+          'blocos.ucULA': '- define la operación de la ALU',
+          'blocos.ucDesvio': '- decide los saltos condicionales',
+          'blocos.ucEnderecamento': '- controla el direccionamiento',
+          'blocos.calculo': 'Cálculo y datos',
+          'blocos.ULA': '- realiza las operaciones lógicas y aritméticas',
+          'blocos.banco': '- los 32 registros',
+          'blocos.decodificador': '- divide la instrucción en campos',
+          'blocos.extensores': '- extensión de signo y de cero',
+          'blocos.zero': '- indica resultado nulo de la ALU',
+          'blocos.contador': '- cuenta los ciclos ejecutados',
+          'blocos.memorias': 'Memorias',
+          'blocos.memInstrucoes': '- guarda el programa',
+          'blocos.memDados': '- lee y escribe datos',
+          'blocos.pipeline': 'Pipeline',
+          'blocos.estagios': '- las cuatro barreras entre etapas',
+          'blocos.idULA': '- resuelve los saltos antes de la ejecución',
+          'programas.titulo': 'Programas para ejecutar',
+          'programas.nota': 'Archivos en lenguaje de máquina, listos para cargar en la memoria de instrucciones. Los del grupo <em>pipeline</em> ya traen las burbujas (<code>nop</code>) necesarias y también funcionan en el monociclo.',
+          'programas.algoritmos': 'Algoritmos',
+          'programas.instrucoes': 'Pruebas de instrucciones',
+          'programas.pipeline': 'Pruebas de pipeline',
+          'planos.titulo': 'Planes de clase',
+          'planos.nota': 'Cuatro actividades prácticas de laboratorio, cada una con plan de clase y guía del alumno.',
+          'planos.e1.nome': 'Comprensión del cambio de estado en el procesador',
+          'planos.e2.nome': 'Generación manual de las señales de control',
+          'planos.e3.nome': 'Deducción de <em>hazards</em> y reducción de burbujas',
+          'planos.e4.nome': 'Diagnóstico de fallo en el camino de datos',
+          'ref.titulo': 'Material de referencia',
+          'ref.convencoes.nome': 'Convenciones del proyecto',
+          'ref.convencoes.desc': 'Nomenclatura, posición de los pines, uso de túneles y patrón de los manuales.',
+          'ref.cartao.nome': 'Tarjeta de la ISA RISC-V',
+          'ref.cartao.desc': 'Referencia de las instrucciones y de los formatos de codificación.',
+          'ref.atividades.nome': 'Actividades',
+          'ref.atividades.desc': 'Versiones del procesador usadas en ejercicios, incluida una con un defecto intencional.',
+          'ref.repo.nome': 'Repositorio completo',
+          'ref.repo.desc': 'Código fuente, circuitos y documentación. Licencia MIT.',
+          'rodape': 'Proyecto PRISMA · 2026'
+        }
+      };
+
+      var TITULOS = {pt: 'Projeto PRISMA - Menu', en: 'PRISMA Project - Menu', es: 'Proyecto PRISMA - Menú'};
+      var ETIQUETAS = {pt: 'pt-BR', en: 'en', es: 'es'};
+
+      // índice lateral, montado a partir dos títulos das seções
+      var secoes = document.querySelectorAll('body > section');
+      var indice = document.createElement('nav');
+      indice.className = 'indice';
+      var lista = document.createElement('ol');
+
+      for (var s = 0; s < secoes.length; s++) {
+        var titulo = secoes[s].querySelector('h2');
+        if (!titulo) continue;
+        secoes[s].id = 'secao-' + (s + 1);
+        var item = document.createElement('li');
+        var atalho = document.createElement('a');
+        atalho.href = '#' + secoes[s].id;
+        atalho.innerHTML = titulo.innerHTML;
+        atalho.setAttribute('data-i18n', titulo.getAttribute('data-i18n'));
+        item.appendChild(atalho);
+        lista.appendChild(item);
+      }
+
+      indice.appendChild(lista);
+      document.body.insertBefore(indice, document.body.firstChild);
+
+      // marca no índice a seção que está sendo lida
+      if (window.IntersectionObserver) {
+        var atalhos = lista.querySelectorAll('a');
+        var observador = new IntersectionObserver(function (entradas) {
+          for (var e = 0; e < entradas.length; e++) {
+            if (!entradas[e].isIntersecting) continue;
+            var alvo = '#' + entradas[e].target.id;
+            for (var a = 0; a < atalhos.length; a++) {
+              atalhos[a].classList.toggle('atual', atalhos[a].getAttribute('href') === alvo);
+            }
+          }
+        }, {rootMargin: '-12% 0px -70% 0px'});
+        for (var o = 0; o < secoes.length; o++) observador.observe(secoes[o]);
+      }
+
+      var nos = document.querySelectorAll('[data-i18n]');
+      var original = {};
+      for (var i = 0; i < nos.length; i++) original[nos[i].getAttribute('data-i18n')] = nos[i].innerHTML;
+
+      function aplicaIdioma(l) {
+        var d = TRADUCOES[l] || {};
+        for (var i = 0; i < nos.length; i++) {
+          var k = nos[i].getAttribute('data-i18n');
+          nos[i].innerHTML = (d[k] != null) ? d[k] : original[k];
+        }
+        raiz.setAttribute('lang', ETIQUETAS[l] || ETIQUETAS.pt);
+        document.title = TITULOS[l] || TITULOS.pt;
+      }
+
+      var selIdioma = document.getElementById('sel-idioma');
+      var idioma = le(CHAVE_IDIOMA);
+      if (idioma !== 'pt' && idioma !== 'en' && idioma !== 'es') {
+        var nav = (navigator.language || 'pt').slice(0, 2).toLowerCase();
+        idioma = (nav === 'en' || nav === 'es') ? nav : 'pt';
+      }
+      selIdioma.value = idioma;
+      aplicaIdioma(idioma);
+      selIdioma.addEventListener('change', function () {
+        aplicaIdioma(this.value);
+        guarda(CHAVE_IDIOMA, this.value);
+      });
+    })();
+  </script>
+</body>
+
+</html>

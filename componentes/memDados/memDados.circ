@@ -493,23 +493,19 @@
     <comp lib="4" loc="(1270,420)" name="RAM">
       <a name="addrWidth" val="24"/>
       <a name="appearance" val="logisim_evolution"/>
-      <a name="trigger" val="falling"/>
     </comp>
     <comp lib="4" loc="(1640,430)" name="RAM">
       <a name="addrWidth" val="24"/>
       <a name="appearance" val="logisim_evolution"/>
-      <a name="trigger" val="falling"/>
     </comp>
     <comp lib="4" loc="(560,410)" name="RAM">
       <a name="addrWidth" val="24"/>
       <a name="appearance" val="logisim_evolution"/>
       <a name="label" val="banco0"/>
-      <a name="trigger" val="falling"/>
     </comp>
     <comp lib="4" loc="(920,420)" name="RAM">
       <a name="addrWidth" val="24"/>
       <a name="appearance" val="logisim_evolution"/>
-      <a name="trigger" val="falling"/>
     </comp>
     <comp lib="7" loc="(1070,870)" name="extensorSinal_16"/>
     <comp lib="7" loc="(1070,950)" name="extensorZero_16"/>

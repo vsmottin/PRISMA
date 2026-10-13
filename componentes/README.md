@@ -22,7 +22,7 @@ componentes/
 | Componente | Função |
 | :--- | :--- |
 | [ULA](ULA/README.md) | Unidade Lógica e Aritmética: soma, subtração, lógicas, deslocamentos e comparações. |
-| [ucULA](ucULA/README.md) | Unidade de controle da ULA: traduz `ALUOp` + `funct3`/`funct7` no código da operação. |
+| [ucULA](ucULA/README.md) | Unidade de controle da ULA: traduz `ALUOp` + `opcode`/`funct3`/`funct7` no `ALUControl` (ordem `funct3`) e nos seletores `subSeletor`/`sraiSeletor`. |
 | [ucPrincipal](ucPrincipal/README.md) | Unidade de controle principal: gera os sinais de controle a partir do `opcode`. |
 | [ucDesvio](ucDesvio/README.md) | Unidade de controle de desvios (_branches_): decide se o desvio é tomado. |
 | [ucEnderecamento](ucEnderecamento/README.md) | Unidade de controle de endereçamento: define tamanho e alinhamento dos acessos à memória. |
