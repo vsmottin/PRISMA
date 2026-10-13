@@ -64,15 +64,22 @@ java -jar logisim-evolution-4.1.0-all.jar
 ```
 
 ### Dentro do Logisim
-1. Com o Logisim aberto, clique em **`File` → `Open...`**.
-2. Selecione o circuito do _datapath_ desejado. Os componentes em `componentes/` são carregados automaticamente como bibliotecas.
-3. Para testar o processador, carregue um programa na memória:
-   - Clique com o botão direito sobre o componente da **Memória de Instruções**.
-   - Selecione **`Load Image...`**.
-   - Escolha um dos arquivos de teste da pasta [`codigos/`](codigos/).
-4. Use a ferramenta **`Poke`** (ícone da mãozinha) ou ative o **Clock** para acompanhar a execução das instruções pelo _datapath_.
+1. Com o Logisim aberto, clique em **`Arquivo` &rarr; `Abrir...`**.
+2. Selecione o circuito `main.circ` do _datapath_ desejado.
+3. Se já não estiver selecionado, escolha a ferramenta **Alterar valores no circuito** (ícone da mãozinha) no topo esquerdo (`Ctrl-1`).
+4. Para testar o processador, carregue um programa na memória:
+   
+   - Clique no componente **Memória de Instruções**, próximo ao PC.
+   - Ao aparecer um círculo rosa ao redor do componente, clique duas vezes na **Lupa** mostrada sobre ele.
+   - Clique com o mouse direito sobre a **`Memória ROM`** que está dentro da memória de instruções.
+   - Selecione a opção **`Carregar imagem...`**.
+   - Escolha um dos arquivos de teste da pasta [`codigos/`](codigos/) e feche a janela.
+     
+      - Alternativamente, você pode selecionar a opção **`Editar conteúdos...`** e colocar o código de máquina que preferir.
+        
+6. Ative o **Clock** ou a simulação (**`Simular` &rarr; `Habilitar simulação...`**, `Alt+E`) para acompanhar a execução das instruções pelo _datapath_.
 
 > [!NOTE]
-> Os programas de [`codigos/`](codigos/) com prefixo `teste_pipeline_` já contêm as bolhas (`nop`) exigidas pelo _pipeline_, que não possui _forwarding_ nem detecção de _hazard_. Como o `nop` é uma instrução válida, esses mesmos arquivos também rodam no monociclo, apenas gastando ciclos a mais.
+> Os programas de [`codigos/`](codigos/) com prefixo `teste_pipeline_` já contêm as bolhas (`nop`) exigidas pelo _pipeline_ simples, que não possui _forwarding_ nem detecção de _hazard_. Como o `nop` é uma instrução válida, esses mesmos arquivos também rodam no monociclo, apenas gastando ciclos a mais.
 
 Este projeto está licenciado sob os termos da Licença MIT – consulte o arquivo LICENSE para obter detalhes.

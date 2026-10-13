@@ -8,6 +8,16 @@ Por ser uma memória somente de leitura (*ROM*), seu conteúdo é fixo durante a
 
 <br>
 
+## Como carregar instruções?
+1. Clique na **Memória de Instruções** presente no circuito completo do _datapath_ escolhido.
+2. Ao aparecer um círculo rosa ao redor dela, clique duas vezes na **Lupa** mostrada sobre a memória.
+3. Clique com o mouse direito sobre a **`Memória ROM`**.
+4. Selecione a opção **`Carregar imagem...`**.
+5. Escolha um dos arquivos de teste da pasta [`codigos/`](codigos/) e feche a janela. 
+6. Alternativamente, selecione a opção **`Editar conteúdos...`** e coloque o código de máquina com as instruções que preferir.
+
+<br>
+
 ## Interface
 
 | Pino | Direção | Largura | Descrição |
