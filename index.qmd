@@ -1,0 +1,7 @@
+---
+title: PRISMA
+include-after-body:
+  - text: '<script>window.PRISMA_I18N={language:null};</script><script src="scripts/site-language.js"></script>'
+---
+
+[Português](pt/index.html) · [Español](es/index.html) · [English](en/index.html)
