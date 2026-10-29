@@ -1,4 +1,4 @@
-# Projeto PRISMA
+# [Projeto PRISMA](https://vsmottin.github.io/PRISMA/)
 ![Logisim_Evolution](https://img.shields.io/badge/Logisim_Evolution-006039) ![RISC-V](https://img.shields.io/badge/RISC--V-2C2C2C)
 
 O Projeto PRISMA (Processador RISC-V Interativo para Simulação e Modelagem de Arquitetura) foi criado com o propósito de implementar versões de um _datapath_ (caminho de dados) para a arquitetura **RISC-V** usando a ferramenta **Logisim Evolution**.

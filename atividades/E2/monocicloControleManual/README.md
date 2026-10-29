@@ -68,7 +68,7 @@ O `BranchSrc` é a peça que torna o exercício correto. Ele era **entrada** da 
    - Ao aparecer um círculo rosa ao redor do componente, clique duas vezes na **Lupa** mostrada sobre ele.
    - Clique com o mouse direito sobre a **`Memória ROM`** que está dentro da memória de instruções.
    - Selecione a opção **`Carregar imagem...`**.
-   - Escolha um dos arquivos de teste da pasta [`codigos/`](codigos/) e feche a janela.
+   - Escolha um dos arquivos de teste da pasta [`codigos/`](../../../codigos/) e feche a janela.
      
       - Alternativamente, você pode selecionar a opção **`Editar conteúdos...`** e colocar o código de máquina que preferir.
 
