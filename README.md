@@ -58,6 +58,9 @@ Cada componente também tem seu próprio manual, com interface, funcionamento e 
 ## Convenções
 As regras de montagem e documentação dos circuitos: **nomenclatura**, **posição dos pinos**, **uso e nomeação de túneis** e **padrão dos READMEs** estão reunidas em **[`CONVENCOES.md`](CONVENCOES.md)**.
 
+## Tutorial em Video
+[![Projeto PRISMA tutorial - Primeiros Passos](https://img.youtube.com/vi/2wUBxHrwu9g/0.jpg)](https://www.youtube.com/watch?v=2wUBxHrwu9g)
+
 ## Execução
 O `.jar` do Logisim Evolution já está incluso na raiz do repositório. É necessário ter o **Java (JRE/JDK)** instalado. Abra o terminal na raiz do projeto e execute:
 
