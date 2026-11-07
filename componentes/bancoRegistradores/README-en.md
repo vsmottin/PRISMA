@@ -1,3 +1,5 @@
+[Português](README.md) | Español (Coming soon) | English
+
 # Register bank
 
 The Register Bank is the component that stores the 32 general-use registers (`x0` to `x31`) of the RISC-V architecture, each 32 bits wide. It provides **two independent, asynchronous read ports** (to feed the ALU operands) and **one synchronous write port** (controlled by the clock), allowing the processor to read two registers and write to a third one within the same cycle.
@@ -46,7 +48,7 @@ Writing occurs only on the rising edge of the `clk` and only when `RegWrite = 1`
 This way, on the clock edge, only the register whose `WE` input was activated captures the `WD` value; all others keep their previous values.
 
 > [!IMPORTANT]
-> In the [pipeline datapath](https://www.google.com/search?q=../../datapaths/pipeline/), the [stage registers](https://www.google.com/search?q=../pipelineStages/) write on the **falling** edge, inverse to the bank's edge. The write performed by the WB occurs, therefore, in the middle of the cycle, and the instruction that is in the ID in that same cycle already reads the updated value.
+> In the [pipeline datapath](../../datapaths/pipeline/), the [stage registers](../estagiosPipeline/) write on the **falling** edge, inverse to the bank's edge. The write performed by the WB occurs, therefore, in the middle of the cycle, and the instruction that is in the ID in that same cycle already reads the updated value.
 
 > [!NOTE]
 > Register `x0` is hardwired to zero, according to the RISC-V specification. Any read from this address returns `0`, and write attempts to it have no effect, as its value is kept constant.

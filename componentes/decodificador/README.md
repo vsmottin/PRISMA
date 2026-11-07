@@ -1,3 +1,5 @@
+Português | Español (Em breve) | [English](README-en.md)
+
 # Decodificador de Instruções
 
 ![Circuito do Decodificador](decodificador_imagem.png)

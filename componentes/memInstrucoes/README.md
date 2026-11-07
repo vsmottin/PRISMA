@@ -1,3 +1,5 @@
+Português | Español (Em breve) | [English](README-en.md)
+
 # Memória de Instruções
 
 ![Circuito da Memória de Instruções](memInstr_imagem.png)

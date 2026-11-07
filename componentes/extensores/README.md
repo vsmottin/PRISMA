@@ -1,3 +1,5 @@
+Português | Español (Em breve) | [English](README-en.md)
+
 # Extensores de sinal e de zero
 
 Em uma arquitetura de 32 bits (como a do RISC-V), os registradores internos e a Unidade Lógica e Aritmética (ULA) operam exclusivamente com barramentos de dados de 32 bits. No entanto, muitas instruções contêm valores imediatos menores (de 1, 12, 13, 20 ou 21 bits) ou manipulam dados vindos da memória em porções menores (bytes de 8 bits ou meias-palavras de 16 bits).

@@ -1,3 +1,5 @@
+Português | Español (Em breve) | [English](README-en.md)
+
 # Unidade de Controle de Desvio
 
 ![Circuito da Unidade de Controle de Desvio](ucDesvio_imagem.png)

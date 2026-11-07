@@ -1,3 +1,5 @@
+Português | Español (Em breve) | [English](README-en.md)
+
 # Contador de Ciclos
 
 ![Circuito do Contador de Ciclos](contadorCiclos_imagem.png)

@@ -1,3 +1,5 @@
+Português | Español (Em breve) | [English](README-en.md)
+
 # Unidade de Controle de Endereçamento
 
 ![Circuito da Unidade de Controle de Endereçamento](ucEnderecamento_imagem.png)

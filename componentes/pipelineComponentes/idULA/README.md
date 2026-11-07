@@ -1,3 +1,5 @@
+Português | Español (Em breve) | [English](README-en.md)
+
 # Mini-ULA de Desvio (idULA)
 
 ![Circuito da idULA](idULA_imagem.png)

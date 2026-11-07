@@ -1,3 +1,5 @@
+Português | Español (Em breve) | [English](README-en.md)
+
 # Memória de Dados
 
 ![Circuito da Memória de Dados](memDados_imagem.png)

@@ -1,8 +1,10 @@
-# Instruction Decoder
+[Português](README.md) | Español (Coming soon) | English
+
+# Instruction decoder
 
 ![Decoder Circuit](decodificador_imagem.png)
 
-The instruction decoder is the combinational component in charge of interpreting the 32-bit instruction coming from the instruction memory (`memInstr`), separating it into its constituent fields and reconstructing the immediates necessary for execution in the *datapath*.
+The instruction decoder is the combinational component in charge of interpreting the 32-bit instruction coming from the instruction memory (`memInstrucoes`), separating it into its constituent fields and reconstructing the immediates necessary for execution in the *datapath*.
 
 ## Interface
 
@@ -35,11 +37,11 @@ Each instruction format places the immediate bits in different locations, so the
 
 | Format | Instruction bits | Treatment and alignment | Extender |
 | :---: | :--- | :--- | :---: |
-| **Type I** | `[31:20]` | Direct sign extension from 12 to 32 bits. | `signExtender_12` |
-| **Type S** | `[31:25]`, `[11:7]` | Direct sign extension from 12 to 32 bits. | `signExtender_12` |
-| **Type B** | `[31]`, `[7]`, `[30:25]`, `[11:8]` | Sign extension to 13 bits (implicit bit 0 at `0` for 2-byte alignment). | `signExtender_13` |
-| **Type U** | `[31:12]` | Keeps the 20 bits in the upper part and fills the lower 12 bits with `0`. | `zeroExtender_20_typeU` |
-| **Type J** | `[31]`, `[19:12]`, `[20]`, `[30:21]` | Sign extension to 21 bits (implicit bit 0 at `0` for 2-byte alignment). | `signExtender_21` |
+| **Type I** | `[31:20]` | Direct sign extension from 12 to 32 bits. | `extensorSinal_12` |
+| **Type S** | `[31:25]`, `[11:7]` | Direct sign extension from 12 to 32 bits. | `extensorSinal_12` |
+| **Type B** | `[31]`, `[7]`, `[30:25]`, `[11:8]` | Sign extension to 13 bits (implicit bit 0 at `0` for 2-byte alignment). | `extensorSinal_13` |
+| **Type U** | `[31:12]` | Keeps the 20 bits in the upper part and fills the lower 12 bits with `0`. | `extensorZero_20_typeU` |
+| **Type J** | `[31]`, `[19:12]`, `[20]`, `[30:21]` | Sign extension to 21 bits (implicit bit 0 at `0` for 2-byte alignment). | `extensorSinal_21` |
 
 > [!NOTE]
 > For branch and jump formats (**Type B** and **Type J**), the least significant bit (bit 0) is omitted in the instruction and assumed to be `0`, since instruction addresses in memory are always half-word (2 bytes) or full-word (4 bytes) aligned.
