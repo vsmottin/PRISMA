@@ -4,3 +4,15 @@
 # macOS
 .DS_Store
 *.DS_Store
+
+# Cache e site gerados pelo Quarto
+/.quarto/
+/_site/
+**/README-site.qmd
+/materiais.qmd
+**/__pycache__/
+
+**/*.quarto_ipynb
+
+# Fontes temporárias das versões por idioma
+/_localized/

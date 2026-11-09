@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: _site
+  pre-render: python3 scripts/prepare-docs.py
+  post-render: python3 scripts/render-locales.py
+  render:
+    - index.qmd
+  resources:
+    - scripts/site-language.js
+
+website:
+  title: PRISMA
+  site-url: https://vsmottin.github.io/PRISMA/
+  search: false
+
+format:
+  html:
+    lang: pt-BR
+    theme: cosmo
+    toc: false

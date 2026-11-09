@@ -1,0 +1,10 @@
+/* Mantém imagens e tabelas dos manuais legíveis em telas pequenas. */
+main img {
+  max-width: 100%;
+  height: auto;
+}
+
+main .cell-output-display,
+main .quarto-table-container {
+  overflow-x: auto;
+}
