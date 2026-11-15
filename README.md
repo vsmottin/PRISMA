@@ -19,7 +19,7 @@ risc-v/
 │       └── README.md                 # manual: interface, funcionamento e implementação
 │
 ├── codigos/                          # programas em linguagem de máquina para teste
-├── CONVENCOES.md                     # regras de montagem e documentação dos circuitos
+├── CONVENTIONS.md                    # regras de montagem e documentação dos circuitos
 ├── LICENSE.md                        # licença para uso, cópia, modificação e distribuição
 ├── logisim-evolution-4.1.0-all.jar   # versão do Logisim Evolution recomendada
 └── RISCV_CARD.pdf                    # cartão de referência da ISA RISC-V
@@ -56,7 +56,7 @@ Cada componente também tem seu próprio manual, com interface, funcionamento e 
 | [idULA](componentes/pipelineComponentes/idULA/README.md)    | Mini-ULA que resolve os desvios no estágio de decodificação. |
 
 ## Convenções
-As regras de montagem e documentação dos circuitos: **nomenclatura**, **posição dos pinos**, **uso e nomeação de túneis** e **padrão dos READMEs** estão reunidas em **[`CONVENCOES.md`](CONVENCOES.md)**.
+As regras de montagem e documentação dos circuitos: **nomenclatura**, **posição dos pinos**, **uso e nomeação de túneis** e **padrão dos READMEs** estão reunidas em **[`CONVENTIONS.md`](CONVENTIONS.md)**.
 
 ## Tutorial em Video
 [![Projeto PRISMA tutorial - Primeiros Passos](https://img.youtube.com/vi/2wUBxHrwu9g/0.jpg)](https://www.youtube.com/watch?v=2wUBxHrwu9g)

@@ -5,7 +5,7 @@
 This directory contains all the functional blocks that make up the processor's _datapaths_. Each block is an independent circuit, built and tested in isolation, which is then imported as a library by the [_datapaths_](../datapaths/README-en.md).
 
 > [!IMPORTANT]
-> Before creating or modifying a component, consult **[`CONVENCOES.md`](../CONVENCOES.md)**.
+> Before creating or modifying a component, consult **[`CONVENTIONS.md`](../CONVENTIONS.md)**.
 
 <br>
 
