@@ -86,7 +86,7 @@ def page_text(title, body, metadata, language, key, translations):
     scripts = '<script>window.PRISMA_I18N=' + json.dumps(data, ensure_ascii=False) + ';</script>'
     scripts += '<script src="' + script_path + '"></script>'
     return (
-        '---\n' + metadata + '\n'
+        '---\n' + (metadata.rstrip() + '\n' if metadata.strip() else '')
         + 'title: ' + json.dumps(title, ensure_ascii=False) + '\n'
         + 'lang: ' + ('pt-BR' if language == 'pt' else language) + '\n'
         + 'title-block-style: none\n'
