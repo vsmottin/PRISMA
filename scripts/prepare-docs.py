@@ -80,6 +80,8 @@ def sidebar(documents, language):
 
 
 def page_text(title, body, metadata, language, key, translations):
+    # O bloco de título do Quarto substitui o primeiro título do README.
+    body = re.sub(r'^#\s+[^\n]+\n?', '', body, count=1, flags=re.M)
     depth = len(Path(key).parts) - 1
     data = {'language': language, 'root': '../' * (depth + 1), 'translations': translations.get(key, {})}
     script_path = '../' * depth + 'site-language.js'
@@ -89,7 +91,7 @@ def page_text(title, body, metadata, language, key, translations):
         '---\n' + (metadata.rstrip() + '\n' if metadata.strip() else '')
         + 'title: ' + json.dumps(title, ensure_ascii=False) + '\n'
         + 'lang: ' + ('pt-BR' if language == 'pt' else language) + '\n'
-        + 'title-block-style: none\n'
+        + 'title-block-style: default\n'
         + 'include-after-body:\n  - text: |\n      ' + scripts + '\n'
         + '---\n\n' + body
     )

@@ -15,11 +15,14 @@ class Links(HTMLParser):
         super().__init__()
         self.targets = []
         self.text = []
+        self.headings = 0
 
     def handle_data(self, data):
         self.text.append(data)
 
     def handle_starttag(self, tag, attrs):
+        if tag == 'h1':
+            self.headings += 1
         attrs = dict(attrs)
         attribute = 'href' if tag == 'a' else 'src' if tag in {'img', 'script'} else None
         if attribute and attribute in attrs:
@@ -40,6 +43,7 @@ def check():
             links = Links()
             links.feed(html)
             assert 'title-block-style: none' not in ''.join(links.text), f'Metadados visíveis: {path.relative_to(SITE)}'
+            assert links.headings == 1, f'Título ausente ou duplicado: {path.relative_to(SITE)} ({links.headings})'
             for target in links.targets:
                 url = urlsplit(target)
                 if url.scheme or url.netloc or not url.path:
