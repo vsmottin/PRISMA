@@ -14,6 +14,10 @@ class Links(HTMLParser):
     def __init__(self):
         super().__init__()
         self.targets = []
+        self.text = []
+
+    def handle_data(self, data):
+        self.text.append(data)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -35,6 +39,7 @@ def check():
             assert data and json.loads(data.group(1))['language'] == language, path
             links = Links()
             links.feed(html)
+            assert 'title-block-style: none' not in ''.join(links.text), f'Metadados visíveis: {path.relative_to(SITE)}'
             for target in links.targets:
                 url = urlsplit(target)
                 if url.scheme or url.netloc or not url.path:
