@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Registrador de Estágio IF/ID
 
 O **estagioIF_ID** é o registrador posicionado entre o estágio de Busca da Instrução (IF - _Instruction Fetch_) e a Decodificação (ID - _Instruction Decode_).

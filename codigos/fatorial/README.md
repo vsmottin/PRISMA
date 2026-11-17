@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Fatorial - `fatorial.txt` e `fatorial_pipeline.txt`
 
 Programa de teste que calcula o **fatorial** de um número. Como o processador não possui instruções de multiplicação (RV32I), a multiplicação é feita através de somas repetidas.

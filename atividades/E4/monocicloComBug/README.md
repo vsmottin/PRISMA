@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Caminho de Dados Monociclo com Defeito
 
 Cópia do [caminho de dados monociclo](../../../datapaths/monociclo/README.md) na qual foi introduzido **um único defeito**, para uso na atividade **E4**. Fora esse defeito, o circuito é idêntico ao original: mesmos componentes, mesmas ligações, mesmo conjunto de instruções.

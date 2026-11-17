@@ -1,4 +1,4 @@
-[Português](README.md) | Español (Coming soon) | English
+[Português](README.md) | [Español](README-es.md) | English
 
 # Instruction memory
 

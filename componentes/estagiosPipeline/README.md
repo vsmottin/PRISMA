@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Estágios do _Pipeline_
 Este diretório agrupa os quatro **registradores de estágio**, usados nos _datapaths_ com _pipeline_ de 5 estágios.
 

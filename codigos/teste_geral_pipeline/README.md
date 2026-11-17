@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Teste Geral do Pipeline (auto-verificável) — `teste_geral_pipeline.txt`
 
 Teste abrangente com **bolhas manuais** (3 NOPs entre dependências, sem

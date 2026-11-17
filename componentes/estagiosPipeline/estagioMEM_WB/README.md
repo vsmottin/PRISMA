@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Registrador de Estágio MEM/WB
 
 O **estagioMEM_WB** é o registrador posicionado entre a etapa de Acesso à Memória (MEM - _Memory_) e a etapa de Escrita no Registrador (WB - _Write-Back_).

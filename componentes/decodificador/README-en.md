@@ -1,16 +1,16 @@
-[Português](README.md) | Español (Coming soon) | English
+[Português](README.md) | [Español](README-es.md) | English
 
 # Instruction decoder
 
 ![Decoder Circuit](decodificador_imagem.png)
 
-The instruction decoder is the combinational component in charge of interpreting the 32-bit instruction coming from the instruction memory (`memInstrucoes`), separating it into its constituent fields and reconstructing the immediates necessary for execution in the *datapath*.
+The instruction decoder is the combinational component in charge of interpreting the 32-bit instruction coming from the instruction memory (`memInstr`), separating it into its constituent fields and reconstructing the immediates necessary for execution in the *datapath*.
 
 ## Interface
 
 | Pin | Direction | Width | Description |
 | :--- | :---: | :---: | :--- |
-| `Instruction` | Input | 32 bits | The raw instruction read from the instruction memory. |
+| `Instrucao` | Input | 32 bits | The raw instruction read from the instruction memory. |
 | `opcode` | Output | 7 bits | Bits `[6:0]`: identifies the category and format of the instruction. |
 | `rd` | Output | 5 bits | Bits `[11:7]`: destination register address (where the result will be written). |
 | `funct3` | Output | 3 bits | Bits `[14:12]`: 3-bit auxiliary code to identify the operation. |

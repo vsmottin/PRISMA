@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Soma de Vetor - `soma_vetor.txt` e `soma_vetor_pipeline.txt`
 
 Programa de teste que soma os elementos de um vetor armazenado na memória de dados.

@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Unidade de Controle da ULA
 
 ![Circuito da Unidade de Controle da ULA](ucULA_imagem.png)

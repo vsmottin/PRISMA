@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Unidade Lógica e Aritmética (ULA)
 
 ![Circuito da ULA](ULA_imagem.png)

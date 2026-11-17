@@ -1,4 +1,4 @@
-[Português](README.md) | Español (Coming soon) | English
+[Português](README.md) | [Español](README-es.md) | English
 
 # PRISMA Project
 ![Logisim_Evolution](https://img.shields.io/badge/Logisim_Evolution-006039) ![RISC-V](https://img.shields.io/badge/RISC--V-2C2C2C)

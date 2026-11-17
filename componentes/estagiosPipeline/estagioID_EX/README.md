@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Registrador de Estágio ID/EX
 
 O **estagioID_EX** atua na fronteira entre a etapa de Decodificação (ID - _Instruction Decode_) e a etapa de Execução (EX - _Execute_).

@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Componentes
 Este diretório reúne todos os blocos funcionais que compõem os _datapaths_ do processador. Cada bloco é um circuito independente, montado e testado isoladamente, que depois é importado como biblioteca pelos [_`datapaths`_](../datapaths/).
 

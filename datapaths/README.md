@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Datapaths
 
 Este diretório contém as implementações completas do caminho de dados (_datapath_) do processador RISC-V. Cada subdiretório é uma **arquitetura diferente** que executa o mesmo conjunto de instruções com tratamentos diferentes.

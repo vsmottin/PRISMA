@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Registrador de Estágio EX/MEM
 
 O **estagioEX_MEM** é o registrador posicionado entre a etapa de Execução (EX - _Execute_) e a etapa de Acesso à Memória (MEM - _Memory_).

@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Datapath — Pipeline
 
 ![Datapath do Pipeline](pipeline_simples.png)

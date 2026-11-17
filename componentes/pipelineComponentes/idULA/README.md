@@ -1,4 +1,4 @@
-Português | Español (Em breve) | [English](README-en.md)
+Português | [Español](README-es.md) | [English](README-en.md)
 
 # Mini-ULA de Desvio (idULA)
 
