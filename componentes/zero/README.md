@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Detector de Zero
 
 ![Circuito do Zero](zero_imagem.png)
