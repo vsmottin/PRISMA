@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Unidade de Controle Principal
 
 ![Circuito da Unidade de Controle Principal](ucPrincipal_imagem.png)

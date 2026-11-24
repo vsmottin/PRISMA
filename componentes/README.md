@@ -1,8 +1,10 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Componentes
 Este diretório reúne todos os blocos funcionais que compõem os _datapaths_ do processador. Cada bloco é um circuito independente, montado e testado isoladamente, que depois é importado como biblioteca pelos [_`datapaths`_](../datapaths/).
 
 > [!IMPORTANT]
-> Antes de criar ou alterar um componente, consulte **[`CONVENCOES.md`](../CONVENCOES.md)**.
+> Antes de criar ou alterar um componente, consulte **[`CONVENTIONS.md`](../CONVENTIONS.md)**.
 
 <br>
 
@@ -41,6 +43,7 @@ componentes/
 | :--- | :--- |
 | [estagiosPipeline](estagiosPipeline/README.md) | Os quatro **registradores de estágio** (`IF/ID`, `ID/EX`, `EX/MEM`, `MEM/WB`) que separam as etapas do _pipeline_. |
 | [pipelineComponentes/idULA](pipelineComponentes/idULA/README.md) | Mini-ULA que resolve os desvios já no estágio **ID**, reduzindo a penalidade de _branch_. |
+| [pipelineComponentes/ucEncaminhamento](pipelineComponentes/ucEncaminhamento/README.md) | Unidade de encaminhamento: compara `rs1`/`rs2` do ID e do EX com o `rd` das instruções no MEM e no WB e gera os quatro seletores `ForwardA`/`ForwardB` (`_ID` e `_EX`). |
 
 <br>
 

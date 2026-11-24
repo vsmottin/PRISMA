@@ -11,7 +11,8 @@ risc-v/
 ├── datapaths/                        # processadores
 │   ├── monociclo/                    # ciclo único
 │   ├── pipeline/                     # 5 estágios
-│   └── pipeline_bubble/              # 5 estágios com bolhas automáticas
+│   ├── pipeline_bubble/              # 5 estágios com bolhas automáticas
+│   └── pipelineEncaminhamento/       # 5 estágios com encaminhamento
 │
 ├── componentes/                      # um diretório por bloco funcional
 │   └── <componente>/
@@ -19,7 +20,7 @@ risc-v/
 │       └── README.md                 # manual: interface, funcionamento e implementação
 │
 ├── codigos/                          # programas em linguagem de máquina para teste
-├── CONVENCOES.md                     # regras de montagem e documentação dos circuitos
+├── CONVENTIONS.md                    # regras de montagem e documentação dos circuitos
 ├── LICENSE.md                        # licença para uso, cópia, modificação e distribuição
 ├── logisim-evolution-4.1.0-all.jar   # versão do Logisim Evolution recomendada
 └── RISCV_CARD.pdf                    # cartão de referência da ISA RISC-V
@@ -33,6 +34,7 @@ Cada _datapath_ tem seu próprio manual, com os estágios, os componentes usados
 | [monociclo](datapaths/monociclo/README.md) | Cada instrução é buscada, executada e finalizada em **um** ciclo de _clock_. É a versão mais simples e a base do _pipeline_. |
 | [pipeline](datapaths/pipeline/README.md) | Execução dividida em **5 estágios** simultâneos. |
 | [pipeline_bubble](datapaths/pipeline_bubble/README.md) | **5 estágios** com detecção de dependências e bolhas automáticas, sem _forwarding_. |
+| [pipelineEncaminhamento](datapaths/pipelineEncaminhamento/README.md) | _Pipeline_ com **encaminhamento** (_forwarding_) dos conflitos de dados. |
 
 
 ### Componentes
@@ -54,9 +56,10 @@ Cada componente também tem seu próprio manual, com interface, funcionamento e 
 | [zero](componentes/zero/README.md)                          | Flag de resultado zero da ULA.                               |
 | [estagiosPipeline](componentes/estagiosPipeline/README.md)  | Os quatro registradores de estágio (`IF/ID`, `ID/EX`, `EX/MEM`, `MEM/WB`). |
 | [idULA](componentes/pipelineComponentes/idULA/README.md)    | Mini-ULA que resolve os desvios no estágio de decodificação. |
+| [ucEncaminhamento](componentes/pipelineComponentes/ucEncaminhamento/README.md) | Unidade de encaminhamento (_forwarding_) do _pipeline_. |
 
 ## Convenções
-As regras de montagem e documentação dos circuitos: **nomenclatura**, **posição dos pinos**, **uso e nomeação de túneis** e **padrão dos READMEs** estão reunidas em **[`CONVENCOES.md`](CONVENCOES.md)**.
+As regras de montagem e documentação dos circuitos: **nomenclatura**, **posição dos pinos**, **uso e nomeação de túneis** e **padrão dos READMEs** estão reunidas em **[`CONVENTIONS.md`](CONVENTIONS.md)**.
 
 ## Tutorial em Video
 [![Projeto PRISMA tutorial - Primeiros Passos](https://img.youtube.com/vi/2wUBxHrwu9g/0.jpg)](https://www.youtube.com/watch?v=2wUBxHrwu9g)
@@ -85,6 +88,6 @@ java -jar logisim-evolution-4.1.0-all.jar
 6. Ative o **Clock** ou a simulação (**`Simular` &rarr; `Habilitar simulação...`**, `Alt+E`) para acompanhar a execução das instruções pelo _datapath_.
 
 > [!NOTE]
-> Os programas de [`codigos/`](codigos/) com prefixo `teste_pipeline_` já contêm as bolhas (`nop`) exigidas pelo _pipeline_ simples, que não possui _forwarding_ nem detecção de _hazard_. Como o `nop` é uma instrução válida, esses mesmos arquivos também rodam no monociclo, apenas gastando ciclos a mais.
+> Os programas de [`codigos/`](codigos/) com prefixo `teste_pipeline_` já contêm as bolhas (`nop`) exigidas pelo _pipeline_ simples, que não possui _forwarding_ nem detecção de _hazard_. Como o `nop` é uma instrução válida, esses mesmos arquivos também rodam no monociclo e no _pipeline_ com encaminhamento, apenas gastando ciclos a mais.
 
 Este projeto está licenciado sob os termos da Licença MIT – consulte o arquivo LICENSE para obter detalhes.
