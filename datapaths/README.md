@@ -1,3 +1,5 @@
+Português | [Español](README-es.md) | [English](README-en.md)
+
 # Datapaths
 
 Este diretório contém as implementações completas do caminho de dados (_datapath_) do processador RISC-V. Cada subdiretório é uma **arquitetura diferente** que executa o mesmo conjunto de instruções com tratamentos diferentes.
@@ -10,6 +12,7 @@ Este diretório contém as implementações completas do caminho de dados (_data
 | :--- | :--- |
 | [monociclo](monociclo/README.md) | Implementação ciclo único: cada instrução é buscada, decodificada, executada e finalizada dentro de **um** ciclo de _clock_. |
 | [pipeline](pipeline/README.md) | Implementação em **5 estágios**: a execução é dividida em etapas que operam simultaneamente sobre instruções diferentes, aumentando a vazão. |
+| [pipeline_bubble](pipeline_bubble/README.md) | Implementação em **5 estágios** com detecção de dependências e inserção automática de bolhas, sem _forwarding_. |
 | [pipelineEncaminhamento](pipelineEncaminhamento/README.md) | _Pipeline_ de 5 estágios com **encaminhamento** (_forwarding_): os conflitos de dados são resolvidos em hardware, dispensando a maior parte das bolhas. |
 
 <br>

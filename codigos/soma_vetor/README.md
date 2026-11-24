@@ -107,10 +107,9 @@ A **soma fica em `x3` = 50 (`0x32`)**.
 
 ## Como carregar e executar?
 
-1. Abra o `main.circ` no Logisim Evolution.
-2. Clique com o botão direito na **Memória de Instruções** &rarr; **`Load Image...`** e selecione `codigos/soma_vetor/soma_vetor.txt`.
-3. Ative o **Clock** e acompanhe o registrador `x3` (acumulador) e o conteúdo da **Memória de Dados**.
-4. A execução para sozinha quando o PC alcança `0x48`, onde o opcode inválido `ffffffff` ativa o sinal **Stop**.
+1. Carregue `soma_vetor`.txt na memória de instruções.
+2. Ative o **Clock** e acompanhe o registrador `x3` (acumulador) e o conteúdo da **Memória de Dados**.
+3. A execução para sozinha quando o PC alcança `0x48`, onde o opcode inválido `ffffffff` ativa o sinal **Stop**.
 
 ---
 

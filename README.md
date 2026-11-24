@@ -1,4 +1,4 @@
-# Projeto PRISMA
+# [Projeto PRISMA](https://vsmottin.github.io/PRISMA/)
 ![Logisim_Evolution](https://img.shields.io/badge/Logisim_Evolution-006039) ![RISC-V](https://img.shields.io/badge/RISC--V-2C2C2C)
 
 O Projeto PRISMA (Processador RISC-V Interativo para Simulação e Modelagem de Arquitetura) foi criado com o propósito de implementar versões de um _datapath_ (caminho de dados) para a arquitetura **RISC-V** usando a ferramenta **Logisim Evolution**.
@@ -11,6 +11,7 @@ risc-v/
 ├── datapaths/                        # processadores
 │   ├── monociclo/                    # ciclo único
 │   ├── pipeline/                     # 5 estágios
+│   ├── pipeline_bubble/              # 5 estágios com bolhas automáticas
 │   └── pipelineEncaminhamento/       # 5 estágios com encaminhamento
 │
 ├── componentes/                      # um diretório por bloco funcional
@@ -19,7 +20,7 @@ risc-v/
 │       └── README.md                 # manual: interface, funcionamento e implementação
 │
 ├── codigos/                          # programas em linguagem de máquina para teste
-├── CONVENCOES.md                     # regras de montagem e documentação dos circuitos
+├── CONVENTIONS.md                    # regras de montagem e documentação dos circuitos
 ├── LICENSE.md                        # licença para uso, cópia, modificação e distribuição
 ├── logisim-evolution-4.1.0-all.jar   # versão do Logisim Evolution recomendada
 └── RISCV_CARD.pdf                    # cartão de referência da ISA RISC-V
@@ -32,6 +33,7 @@ Cada _datapath_ tem seu próprio manual, com os estágios, os componentes usados
 | :--- | :--- |
 | [monociclo](datapaths/monociclo/README.md) | Cada instrução é buscada, executada e finalizada em **um** ciclo de _clock_. É a versão mais simples e a base do _pipeline_. |
 | [pipeline](datapaths/pipeline/README.md) | Execução dividida em **5 estágios** simultâneos. |
+| [pipeline_bubble](datapaths/pipeline_bubble/README.md) | **5 estágios** com detecção de dependências e bolhas automáticas, sem _forwarding_. |
 | [pipelineEncaminhamento](datapaths/pipelineEncaminhamento/README.md) | _Pipeline_ com **encaminhamento** (_forwarding_) dos conflitos de dados. |
 
 
@@ -57,7 +59,10 @@ Cada componente também tem seu próprio manual, com interface, funcionamento e 
 | [ucEncaminhamento](componentes/pipelineComponentes/ucEncaminhamento/README.md) | Unidade de encaminhamento (_forwarding_) do _pipeline_. |
 
 ## Convenções
-As regras de montagem e documentação dos circuitos: **nomenclatura**, **posição dos pinos**, **uso e nomeação de túneis** e **padrão dos READMEs** estão reunidas em **[`CONVENCOES.md`](CONVENCOES.md)**.
+As regras de montagem e documentação dos circuitos: **nomenclatura**, **posição dos pinos**, **uso e nomeação de túneis** e **padrão dos READMEs** estão reunidas em **[`CONVENTIONS.md`](CONVENTIONS.md)**.
+
+## Tutorial em Video
+[![Projeto PRISMA tutorial - Primeiros Passos](https://img.youtube.com/vi/2wUBxHrwu9g/0.jpg)](https://www.youtube.com/watch?v=2wUBxHrwu9g)
 
 ## Execução
 O `.jar` do Logisim Evolution já está incluso na raiz do repositório. É necessário ter o **Java (JRE/JDK)** instalado. Abra o terminal na raiz do projeto e execute:
@@ -67,15 +72,22 @@ java -jar logisim-evolution-4.1.0-all.jar
 ```
 
 ### Dentro do Logisim
-1. Com o Logisim aberto, clique em **`File` → `Open...`**.
-2. Selecione o circuito do _datapath_ desejado. Os componentes em `componentes/` são carregados automaticamente como bibliotecas.
-3. Para testar o processador, carregue um programa na memória:
-   - Clique com o botão direito sobre o componente da **Memória de Instruções**.
-   - Selecione **`Load Image...`**.
-   - Escolha um dos arquivos de teste da pasta [`codigos/`](codigos/).
-4. Use a ferramenta **`Poke`** (ícone da mãozinha) ou ative o **Clock** para acompanhar a execução das instruções pelo _datapath_.
+1. Com o Logisim aberto, clique em **`Arquivo` &rarr; `Abrir...`**.
+2. Selecione o circuito `main.circ` do _datapath_ desejado.
+3. Se já não estiver selecionado, escolha a ferramenta **Alterar valores no circuito** (ícone da mãozinha) no topo esquerdo (`Ctrl-1`).
+4. Para testar o processador, carregue um programa na memória:
+   
+   - Clique no componente **Memória de Instruções**, próximo ao PC.
+   - Ao aparecer um círculo rosa ao redor do componente, clique duas vezes na **Lupa** mostrada sobre ele.
+   - Clique com o mouse direito sobre a **`Memória ROM`** que está dentro da memória de instruções.
+   - Selecione a opção **`Carregar imagem...`**.
+   - Escolha um dos arquivos de teste da pasta [`codigos/`](codigos/) e feche a janela.
+     
+      - Alternativamente, você pode selecionar a opção **`Editar conteúdos...`** e colocar o código de máquina que preferir.
+        
+6. Ative o **Clock** ou a simulação (**`Simular` &rarr; `Habilitar simulação...`**, `Alt+E`) para acompanhar a execução das instruções pelo _datapath_.
 
 > [!NOTE]
-> Os programas de [`codigos/`](codigos/) com prefixo `teste_pipeline_` já contêm as bolhas (`nop`) exigidas pelo _pipeline_, que não possui _forwarding_ nem detecção de _hazard_. Como o `nop` é uma instrução válida, esses mesmos arquivos também rodam no monociclo e no _pipeline_ com encaminhamento, apenas gastando ciclos a mais.
+> Os programas de [`codigos/`](codigos/) com prefixo `teste_pipeline_` já contêm as bolhas (`nop`) exigidas pelo _pipeline_ simples, que não possui _forwarding_ nem detecção de _hazard_. Como o `nop` é uma instrução válida, esses mesmos arquivos também rodam no monociclo e no _pipeline_ com encaminhamento, apenas gastando ciclos a mais.
 
 Este projeto está licenciado sob os termos da Licença MIT – consulte o arquivo LICENSE para obter detalhes.
