@@ -1034,5 +1034,9 @@
     <wire from="(920,470)" to="(1200,470)"/>
     <wire from="(920,470)" to="(920,740)"/>
     <wire from="(920,740)" to="(2230,740)"/>
+    <comp lib="0" loc="(660,100)" name="Constant">
+      <a name="facing" val="south"/>
+    </comp>
+    <wire from="(660,100)" to="(660,130)"/>
   </circuit>
 </project>
