@@ -12,7 +12,8 @@ risc-v/
 │   ├── monociclo/                    # ciclo único
 │   ├── pipeline/                     # 5 estágios
 │   ├── pipeline_bubble/              # 5 estágios com bolhas automáticas
-│   └── pipelineEncaminhamento/       # 5 estágios com encaminhamento
+│   ├── pipelineEncaminhamento/       # 5 estágios com encaminhamento
+│   └── pipelineEncaminhamentoBolhas/ # 5 estágios com encaminhamento e bolhas automáticas
 │
 ├── componentes/                      # um diretório por bloco funcional
 │   └── <componente>/
@@ -35,6 +36,7 @@ Cada _datapath_ tem seu próprio manual, com os estágios, os componentes usados
 | [pipeline](datapaths/pipeline/README.md) | Execução dividida em **5 estágios** simultâneos. |
 | [pipeline_bubble](datapaths/pipeline_bubble/README.md) | **5 estágios** com detecção de dependências e bolhas automáticas, sem _forwarding_. |
 | [pipelineEncaminhamento](datapaths/pipelineEncaminhamento/README.md) | _Pipeline_ com **encaminhamento** (_forwarding_) dos conflitos de dados. |
+| [pipelineEncaminhamentoBolhas](datapaths/pipelineEncaminhamentoBolhas/README.md) | _Pipeline_ com **encaminhamento** e **bolhas automáticas**: pausa só quando o encaminhamento não resolve o conflito. |
 
 
 ### Componentes
@@ -57,6 +59,7 @@ Cada componente também tem seu próprio manual, com interface, funcionamento e 
 | [estagiosPipeline](componentes/estagiosPipeline/README.md)  | Os quatro registradores de estágio (`IF/ID`, `ID/EX`, `EX/MEM`, `MEM/WB`). |
 | [idULA](componentes/pipelineComponentes/idULA/README.md)    | Mini-ULA que resolve os desvios no estágio de decodificação. |
 | [ucEncaminhamento](componentes/pipelineComponentes/ucEncaminhamento/README.md) | Unidade de encaminhamento (_forwarding_) do _pipeline_. |
+| [ucConflitos](componentes/pipelineComponentes/ucConflitos/README.md) | Unidade de detecção de conflitos (_hazard detection unit_) do _pipeline_ com encaminhamento. |
 
 ## Convenções
 As regras de montagem e documentação dos circuitos: **nomenclatura**, **posição dos pinos**, **uso e nomeação de túneis** e **padrão dos READMEs** estão reunidas em **[`CONVENTIONS.md`](CONVENTIONS.md)**.

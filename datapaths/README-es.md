@@ -13,6 +13,7 @@ Este directorio contiene las implementaciones completas del camino de datos (_da
 | [monociclo](monociclo/README.md) | Implementación de ciclo único: cada instrucción se busca, decodifica, ejecuta y completa dentro de **un** ciclo de reloj. |
 | [pipeline](pipeline/README.md) | Implementación de **5 etapas**: la ejecución se divide en etapas que operan simultáneamente sobre instrucciones diferentes, aumentando el rendimiento. |
 | [pipeline_bubble](pipeline_bubble/README-es.md) | Implementación de **5 etapas** con detección de dependencias e inserción automática de burbujas, sin forwarding. |
+| [pipelineEncaminhamentoBolhas](pipelineEncaminhamentoBolhas/README-es.md) | Pipeline de **5 etapas** con **reenvío** y **burbujas automáticas**: las burbujas solo se insertan cuando el reenvío no resuelve el conflicto (load seguido de uso y bifurcación dependiente en ID). |
 
 <br>
 
