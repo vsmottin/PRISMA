@@ -44,6 +44,7 @@ componentes/
 | [estagiosPipeline](estagiosPipeline/README.md) | Os quatro **registradores de estágio** (`IF/ID`, `ID/EX`, `EX/MEM`, `MEM/WB`) que separam as etapas do _pipeline_. |
 | [pipelineComponentes/idULA](pipelineComponentes/idULA/README.md) | Mini-ULA que resolve os desvios já no estágio **ID**, reduzindo a penalidade de _branch_. |
 | [pipelineComponentes/ucEncaminhamento](pipelineComponentes/ucEncaminhamento/README.md) | Unidade de encaminhamento: compara `rs1`/`rs2` do ID e do EX com o `rd` das instruções no MEM e no WB e gera os quatro seletores `ForwardA`/`ForwardB` (`_ID` e `_EX`). |
+| [pipelineComponentes/ucConflitos](pipelineComponentes/ucConflitos/README.md) | Unidade de detecção de conflitos: pausa o _pipeline_ só quando o encaminhamento não resolve (_load_ seguido de uso e desvio dependente no ID) e controla o descarte nos desvios e saltos. |
 
 <br>
 

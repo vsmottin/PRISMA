@@ -46,6 +46,7 @@ componentes/
 | :--- | :--- |
 | [estagiosPipeline](estagiosPipeline/README.md) | The four **stage registers** (`IF/ID`, `ID/EX`, `EX/MEM`, `MEM/WB`) that separate the pipeline stages. |
 | [pipelineComponentes/idULA](pipelineComponentes/idULA/README.md) | Mini-ALU that resolves branches in the **ID** stage, reducing the branch penalty. |
+| [pipelineComponentes/ucConflitos](pipelineComponentes/ucConflitos/README.md) | Hazard detection unit: stalls the pipeline only when forwarding cannot help (load followed by use and dependent branch in ID) and controls the flush on branches and jumps. |
 
 <br>
 

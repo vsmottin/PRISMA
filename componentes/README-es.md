@@ -46,6 +46,7 @@ componentes/
 | :--- | :--- |
 | [estagiosPipeline](estagiosPipeline/README.md) | Los cuatro **registros de etapa** (`IF/ID`, `ID/EX`, `EX/MEM`, `MEM/WB`) que separan las etapas del pipeline. |
 | [pipelineComponentes/idULA](pipelineComponentes/idULA/README.md) | Mini-ALU que resuelve las bifurcaciones en la etapa **ID**, reduciendo la penalización de bifurcación. |
+| [pipelineComponentes/ucConflitos](pipelineComponentes/ucConflitos/README.md) | Unidad de detección de conflictos: detiene el pipeline solo cuando el reenvío no lo resuelve (load seguido de uso y bifurcación dependiente en ID) y controla el descarte en bifurcaciones y saltos. |
 
 <br>
 

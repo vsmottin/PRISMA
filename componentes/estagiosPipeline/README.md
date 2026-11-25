@@ -10,6 +10,7 @@ Eles são o que torna o _pipeline_ possível: como cinco instruções diferentes
 | :--- | :---: | :--- |
 | [estagioIF_ID](estagioIF_ID/README.md) | _Fetch_ &rarr; _Decode_ | Instrução crua, `PC` e `PC + 4`. |
 | [estagioID_EX](estagioID_EX/README.md) | _Decode_ &rarr; _Execute_ | Instrução, operandos `ld1`/`ld2`, `imm`, `PC`, `PC + 4`, `rd`, `rs1`, `rs2`, `opcode`, `funct3`, `funct7` e todos os sinais de controle. |
+| [estagioID_EX_bolha](estagioID_EX_bolha/README.md) | _Decode_ &rarr; _Execute_ | O mesmo que o `estagioID_EX`, com a entrada `Clear` que insere uma bolha. Usado no [`pipelineEncaminhamentoBolhas`](../../datapaths/pipelineEncaminhamentoBolhas/). |
 | [estagioEX_MEM](estagioEX_MEM/README.md) | _Execute_ &rarr; _Memory_ | Instrução, resultado da ULA, `ld2`, `rd`, `PC + 4`, `funct3` e o controle das fases MEM e WB. |
 | [estagioMEM_WB](estagioMEM_WB/README.md) | _Memory_ &rarr; _Write-Back_ | Instrução, dado lido da memória, resultado da ULA, `rd`, `PC + 4` e o controle da fase WB. |
 
